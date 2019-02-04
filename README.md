@@ -1,4 +1,4 @@
-statistics-explained
+statistics-coded
 ====================
 
 Catalogue of notebooks reproducing the results of _Eurostat_ Stastistics Explained articles.
