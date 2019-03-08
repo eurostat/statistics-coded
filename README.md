@@ -9,8 +9,12 @@ Catalogue of notebooks reproducing the results of _Eurostat_ Stastistics Explain
 The code source files provided herein will enable you to reproduce some of the results reported in _Eurostat_ [**Stastistics Explained**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page) articles. This aims at showing how the statistical information (contents) presented on the website can be (re)produced from the data published on _Eurostat_ online database using interactive computing notebooks.
 
 <table align="center">
-    <tr> <td align="left"><i>authors</i></td> <td align="left"> </td> </tr> 
-    <tr> <td align="left"><i>version</i></td> <td align="left">1.0</td> </tr> 
+    <tr> <td align="left"><i>contributors</i></td> 
+    <td align="left" valign="middle">
+<a href="https://github.com/agnebik"><img src="https://github.com/agnebik.png" width="40"></a>
+<a href="https://github.com/gjacopo"><img src="https://github.com/gjacopo.png" width="40"></a>
+</td>  </tr> 
+    <tr> <td align="left"><i>version</i></td> <td align="left">0.1</td> </tr> 
     <tr> <td align="left"><i>since</i></td> <td align="left">2019</td> </tr> 
     <tr> <td align="left"><i>license</i></td> <td align="left"><a href="https://joinup.ec.europa.eu/sites/default/files/eupl1.1.-licence-en_0.pdfEUPL">EUPL</a> <i></i></td> </tr> 
 </table>
