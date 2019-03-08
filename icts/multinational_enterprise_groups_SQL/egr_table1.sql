@@ -129,16 +129,12 @@ set geg_eu_infl = (case
                 else '-' 
             end);              
 
-
----- DISS_T1 ---------------------------------------------------------------
-
 drop table diss_t1 purge;
 
 create table diss_t1(
 country varchar2(5),
 groups_in_country number,
 gdc_in_country number);
-
 
 
 -- Import Countries, RefYear, Source
@@ -148,7 +144,6 @@ from egr_dict.egr_dict_country_code dic
 where dic.edcc_eu_indicator = 'Y'
 group by dic.edcc_code
 order by dic.edcc_code;
-
 
 
 update diss_t1
@@ -162,10 +157,6 @@ where exists (select geg_uci_country_code
               from diss_groups
               where diss_groups.geg_uci_country_code = diss_t1.country);   
 
-
-
-
-
 update diss_t1
 set  groups_in_country = (select count (distinct (ten_geg_egr_id))
   from ta_fats_tens
@@ -177,25 +168,14 @@ set  groups_in_country = (select count (distinct (ten_geg_egr_id))
                               and geg_c_w_empl>1)
   and ten_country_code = diss_t1.country);
 
-
-
 insert into diss_t1(country)
 values('EU-28');
-
-
-
-                     
-
-
 
 update diss_t1
 set     gdc_in_country = (  select sum(gdc_in_country)
                         from diss_t1
                         where country in  ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT', 'LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','LI','IS'))
 where country = 'EU-28';
-
-
-
 
 
 update diss_t1
