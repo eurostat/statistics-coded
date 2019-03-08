@@ -1,5 +1,3 @@
-
-
 create table DISS_GROUPS (
           FRAME_ID NUMBER(6,0),
           GEG_EGR_ID NUMBER(18,0),
