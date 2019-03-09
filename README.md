@@ -1,7 +1,7 @@
 statistics-coded
 ====================
 
-Catalogue of notebooks reproducing the results of _Eurostat_ Stastistics Explained articles.
+Catalogue of resources for reproducing the statistical results of _Eurostat_ Stastistics Explained articles.
 ---
 
 **About**
