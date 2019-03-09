@@ -6,7 +6,7 @@ Catalogue of notebooks reproducing the results of _Eurostat_ Stastistics Explain
 
 **About**
 
-The code source files provided herein will enable you to reproduce some of the results reported in _Eurostat_ [**Stastistics Explained**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page) articles. This aims at showing how the statistical information (contents) presented on the website can be (re)produced from the data published on _Eurostat_ online database using interactive computing notebooks.
+The code source files provided herein can be used to (re)produce some of the statistical results presented in _Eurostat_ [**Stastistics Explained**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page) articles. For some articles, the published figures can be directly generated using the open data disseminated on _Eurostat_ online database by running the available interactive computing notebooks.
 
 <table align="center">
     <tr> <td align="left"><i>contributors</i></td> 
@@ -25,8 +25,14 @@ The notebooks are organised according to the thematic structure already adopted 
 
 * [general/](general) for reproducing some of the Stastistics Explained articles on [_"General and regional statistics, EU policies"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General_and_regional_statistics,_EU_policies),
 * [economy/](economy) for [_"Economy and finance"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy_and_finance) articles,
-* [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles,
-* [**icts/**](icts) for [_"Industry and services"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry_and_services) articles,
+* [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles:
+
+  * [notebook](https://github.com/eurostat/statistics-coded/blob/master/popul/young-people-social-inclusion_R.ipynb) on [Young people - social inclusion](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Young_people_-_social_inclusion),
+  * ...
+* [**icts/**](icts) for [_"Industry and services"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry_and_services) articles:
+
+  * [source code](https://github.com/eurostat/statistics-coded/tree/master/icts/multinational_enterprise_groups_SQL) for [structure of multinational enterprise groups in the EU](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Structure_of_multinational_enterprise_groups_in_the_EU),
+  * ...
 * [agric/](agric) for [_"Agriculture, forestry and fisheries"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture,_forestry_and_fisheries) articles,
 * [external/](external) for [_"International trade"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International_trade) articles,
 * [transp/](transp) for [_"Transport"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport),
