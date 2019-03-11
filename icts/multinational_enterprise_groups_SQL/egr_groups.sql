@@ -1,5 +1,3 @@
-
-
 create table DISS_GROUPS (
           FRAME_ID NUMBER(6,0),
           GEG_EGR_ID NUMBER(18,0),
@@ -16,7 +14,6 @@ create table DISS_GROUPS (
           GEG_EU_C_W_EMPL NUMBER(6,0),
           GEG_EU_INFL VARCHAR2(3 CHAR)
 );
-
 comment on column diss_groups.FRAME_ID is 'ID number of the EGR frame.';
 comment on column diss_groups.GEG_EGR_ID is 'Unique ID number of a global enterprise group created by EGR. ';
 comment on column diss_groups.GEG_NAME is 'Official name of the global enterprise group.';
@@ -56,7 +53,6 @@ where exists (select ten_geg_egr_id from tmp
   
 drop table tmp purge;
 
-
 -- Calculation of geg_size - the code based on 0-249 => S, 250-2499 => M, 2500 or more => L- can also be null             
 update diss_groups
 set geg_size = (case 
@@ -65,7 +61,6 @@ set geg_size = (case
                     when geg_pers_empl is null then '-'
                     else 'L' 
                 end);   
-
 
 -- Calculation of geg_nace2_w_empl - number of 2-digit NACE (substring) with employment - can be calculated from TEN table, where TENs of the group do have employment (>0 in a 2-digit NACE
 create table tmp (
@@ -87,7 +82,6 @@ where exists (select ten_geg_egr_id from tmp
               where gr.geg_egr_id = tmp.ten_geg_egr_id);
   
 drop table tmp purge;
-
 
 -- Calculation of geg_compl - the code based on number of NACEs - Count nace =1 => MOA; 2-4 => DIV; >4 => VDIV               
 update diss_groups gr
@@ -112,15 +106,13 @@ insert into tmp
       and ten_pers_empl>0
  	 	group by ten_geg_egr_id;
 
-update diss_groups gr
+		update diss_groups gr
 set geg_eu_c_w_empl = (select NbCountry from tmp
                        where gr.geg_egr_id = tmp.ten_geg_egr_id
                       )
 where exists (select ten_geg_egr_id from tmp
               where gr.geg_egr_id = tmp.ten_geg_egr_id);
-  
 drop table tmp purge;
-
 
 -- Calculation of geg_eu_infl - the code based on EU countries number - NbCountry <3 => SEI; 3-5 => MEI; >5 LEI
 update diss_groups
@@ -129,4 +121,4 @@ set geg_eu_infl = (case
                 when (geg_eu_c_w_empl>2 and geg_eu_c_w_empl<6) then 'MEI' 
                 when geg_eu_c_w_empl>5 then 'LEI' 
                 else '-' 
-            end);              
+            end);

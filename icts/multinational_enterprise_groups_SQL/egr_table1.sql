@@ -5,7 +5,6 @@ country varchar2(5),
 groups_in_country number,
 gdc_in_country number);
 
-
 -- Import Countries, RefYear, Source
 Insert into diss_t1 (country)
 select dic.edcc_code as country
@@ -13,7 +12,6 @@ from egr_dict.egr_dict_country_code dic
 where dic.edcc_eu_indicator = 'Y'
 group by dic.edcc_code
 order by dic.edcc_code;
-
 
 update diss_t1
 set gdc_in_country = (select count (*)
@@ -39,13 +37,12 @@ set  groups_in_country = (select count (distinct (ten_geg_egr_id))
 
 insert into diss_t1(country)
 values('EU-28');
-
+              
 update diss_t1
 set     gdc_in_country = (  select sum(gdc_in_country)
                         from diss_t1
                         where country in  ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT', 'LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','LI','IS'))
 where country = 'EU-28';
-
 
 update diss_t1
 set groups_in_country = (  select  count (distinct (ten_geg_egr_id))
