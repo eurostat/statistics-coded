@@ -1,12 +1,3 @@
- 
-
- 
-
-From: BIKAUSKAITE Agne (ESTAT) <Agne.BIKAUSKAITE@ec.europa.eu> 
-Sent: Wednesday, March 13, 2019 2:30 PM
-To: BIKAUSKAITE Agne (ESTAT) <Agne.BIKAUSKAITE@ec.europa.eu>
-Subject: github
- 
 
 **Experimental statistics on structure of the multinational enterprise groups**
 
