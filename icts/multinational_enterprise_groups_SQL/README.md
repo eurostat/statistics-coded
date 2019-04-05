@@ -3,8 +3,6 @@
 
  
 
-![alt text](https://ec.europa.eu/eurostat/documents/7894008/7900968/experimental.png/)
-
 In an effort to better respond to users' needs, Eurostat publishes Experimental statistics on the related Eurostat website based on the EuroGroups Register (EGR) data. The EGR is part of the EU statistical infrastructure and has been built up to better capture globalisation effects as well as for improving the consistency of national data on enterprise groups.
 
  
