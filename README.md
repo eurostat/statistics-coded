@@ -1,7 +1,7 @@
 statistics-coded
 ====================
 
- Resources for reproducing the statistical results of _Eurostat_ Stastistics Explained articles.
+ Resources for reproducing the outputs of _Eurostat_ Stastistics Explained articles.
 ---
 
 **About**
