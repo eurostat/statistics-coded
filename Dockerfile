@@ -35,11 +35,6 @@ RUN apt-get update && \
     apt-utils \
     software-properties-common
 
-# Add the CRAN repository to apt sources
-# RUN gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E084DAB9 && \
-#    gpg -a --export E084DAB9 | apt-key add - && \
-#    add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
-# install R
 RUN apt-get update && \
     apt-get install -y \
     r-base \
@@ -68,7 +63,6 @@ RUN echo "update.packages" >> /tmp/install.R && \
     echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > /tmp/install.R && \
     echo "devtools::install_github('IRkernel/IRkernel');" >> /tmp/install.R && \
     echo "install.packages(c('rJava','rdbnomics','ggrepel','ggraph','ggiraph','ggnetwork','ggTimeSeries','plotrix','tmap','rsdmx','leaflet','shinyjs','TSsdmx','TSdbi','timeSeries','RJDemetra'),repos='https://cloud.r-project.org')" >> /tmp/install.R && \
-    echo "devtools::install_github('eurostat/flagr');" >> /tmp/install.R && \
     echo "devtools::install_github('eurostat/restatapi');" >> /tmp/install.R && \
     echo "devtools::install_github('rOpenGov/eurostat');" >> /tmp/install.R && \
     Rscript /tmp/install.R
