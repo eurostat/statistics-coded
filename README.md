@@ -21,7 +21,7 @@ The code source files provided herein can be used to (re)produce some of the sta
 
 **Description**
 
-The notebooks are organised according to the thematic structure already adopted for the Stastistics Explained articles:
+The notebooks are organised according to the thematic structure already adopted for the Statistics Explained articles:
 
 * [general/](general) for reproducing some of the Stastistics Explained articles on [_"General and regional statistics, EU policies"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General_and_regional_statistics,_EU_policies),
 * [economy/](economy) for [_"Economy and finance"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy_and_finance) articles,
@@ -41,7 +41,7 @@ The notebooks are organised according to the thematic structure already adopted 
 
 **<a name="References"></a>Tools and references**
 
-* **Statistical Explained** [main page](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page).
+* **Statistics Explained** [main page](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page).
 * [**How Open Are Official Statistics?**](http://opendatawatch.com/monitoring-reporting/how-open-are-official-statistics/).
 * Lahti L., Huovari J., Kainu M., and Biecek, P. (2017): [**Retrieval and analysis of Eurostat open data with the eurostat package**](https://journal.r-project.org/archive/2017/RJ-2017-019/RJ-2017-019.pdf), _The R Journal_, 9(1):385-392.
 * [**BBC Visual and Data Journalism cookbook for R graphics**](https://bbc.github.io/rcookbook/).
