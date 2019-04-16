@@ -6,7 +6,7 @@ statistics-coded
 
 **About**
 
-The code source files provided herein can be used to (re)produce some of the statistical results presented in _Eurostat_ [**Stastistics Explained**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page) articles. For some articles, the published figures can be directly generated using the open data disseminated on _Eurostat_ online database by running the available interactive computing notebooks.
+The code source files provided herein can be used to (re)produce some of the statistical results presented in _Eurostat_ [**Statistics Explained**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page) articles. For some articles, the published figures can be directly generated using the open data disseminated on _Eurostat_ online database by running the available interactive computing notebooks.
 
 <table align="center">
     <tr> <td align="left"><i>contributors</i></td> 
