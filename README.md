@@ -47,4 +47,5 @@ The notebooks are organised according to the thematic structure already adopted 
 * [**BBC Visual and Data Journalism cookbook for R graphics**](https://bbc.github.io/rcookbook/).
 * Package [_restatapi_ `R`](https://github.com/eurostat/restatapi) to access open data from Eurostat via _SDMX_.
 * Package [_eurostat_ `R`](http://ropengov.github.io/eurostat) to access open data from Eurostat.
+* Useful graphic tools galleries, in [_R_](https://www.r-graph-gallery.com/) and [_Python_](https://python-graph-gallery.com/).
 
