@@ -1,8 +1,4 @@
-# Copyright (c) Jupyter Development Team.
-# Distributed under the terms of the Modified BSD License.
-FROM jupyter/scipy-notebook
-
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
+FROM ubuntu:18.04
 
 USER root
 
@@ -17,6 +13,8 @@ RUN apt-get update && \
     libudunits2-0 \
     libudunits2-dev \
     gnupg \
+    r-base \
+    gdebi-core \
     python-rpy2 \
     python3-rpy2 \
     libssl-dev \
@@ -33,31 +31,14 @@ RUN apt-get update && \
     gcc \
     build-essential \
     apt-utils \
-    software-properties-common
+    ipython \
+    software-properties-common && \
+    apt-get autoremove -y && \
+    apt-get clean all
+     
+RUN pip install jupyter
 
-RUN apt-get update && \
-    apt-get install -y \
-    r-base \
-    r-base-core \
-    r-base-dev \
-    r-cran-plyr \
-    r-cran-rsqlite \
-    r-cran-caret \
-    r-cran-ggplot2 \
-    r-cran-reshape2 \
-    r-cran-rcurl \
-    r-cran-crayon \
-    r-cran-rjson \
-    r-cran-jsonlite \
-    r-cran-base64enc \
-    r-cran-e1071 \
-    r-cran-stringr \
-    r-cran-stringi \
-    r-cran-knitr \
-    r-cran-rcpp \
-    r-cran-rjava \
-    r-cran-randomforest && apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN jupyter notebook --allow-root
 
 RUN echo "update.packages" >> /tmp/install.R && \
     echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > /tmp/install.R && \
