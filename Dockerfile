@@ -101,18 +101,18 @@ RUN echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > 
     Rscript /tmp/install.R
     
 
-RUN mkdir environments && \
-    cd environments && \
-    python3 -m venv my_env && \
-#    source my_env/bin/activate && \
-    python3 -m pip install jupyter && \
-    jupyter notebook 
+ 
 
 WORKDIR /home/$USER
 
 USER $USER
 
-
+RUN mkdir environments && \
+    cd environments && \
+    python3 -m venv my_env && \
+#    source my_env/bin/activate && \
+    python3 -m pip install jupyter && \
+    jupyter notebook
 
 RUN echo "IRkernel::installspec();" > install.R && \
     Rscript install.R
