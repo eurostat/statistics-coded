@@ -52,9 +52,11 @@ RUN set -ex && \
     nano \
     net-tools \
     python3-notebook \
+    python3-dev \
     python3-rpy2 \
     python-ipykernel \  
     python-rpy2 \
+    python-pip \
     r-base \
     r-base-dev \
     software-properties-common \
