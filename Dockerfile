@@ -69,7 +69,7 @@ RUN set -ex && \
     vim \
     wget 
 
-#RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/' && \
+# RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/' && \
 #    add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic-backports main restricted universe' && \
 #    gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
 #    gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | apt-key add -
@@ -101,7 +101,12 @@ RUN echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > 
     Rscript /tmp/install.R
     
 
-
+RUN mkdir environments && \
+    cd environments && \
+    python3 -m venv my_env && \
+    source my_env/bin/activate && \
+    python3 -m pip install jupyter && \
+    jupyter notebook 
 
 WORKDIR /home/$USER
 
@@ -112,13 +117,8 @@ USER $USER
 RUN echo "IRkernel::installspec();" > install.R && \
     Rscript install.R
 
-RUN mkdir environments && \
-    cd environments && \
-    python3 -m venv my_env && \
-    source my_env/bin/activate && \
-    python3 -m pip install jupyter && \
-    jupyter notebook 
- 
+
+# RUN /bin/bash -c "source activate unidata-workshop && ipython kernel install --user"
 # RUN wget https://raw.githubusercontent.com/eurostat/statistics-coded.git/master/popul/young-people-social-inclusion_R.ipynb 
    
 # RUN git clone https://github.com/eurostat/statistics-coded.git
