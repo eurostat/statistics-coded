@@ -39,16 +39,14 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get clean all
      
-RUN pip install jupyter
+#RUN pip install jupyter
 
 RUN jupyter notebook --allow-root
 
-RUN echo "update.packages" >> /tmp/install.R && \
-    echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > /tmp/install.R && \
+RUN echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > /tmp/install.R && \
+    echo "install.packages(c('restatapi','eurostat','rdbnomics','TSsdmx','ggrepel','ggraph','ggiraph','ggnetwork','ggTimeSeries','plotrix','tmap','rjson','rsdmx','leaflet','shinyjs','TSdbi','timeSeries','RJDemetra','flagr','ggdemetra'),repos='https://cloud.r-project.org')" >> /tmp/install.R && \ 
+#    echo "update.packages" >> /tmp/install.R && \
     echo "devtools::install_github('IRkernel/IRkernel');" >> /tmp/install.R && \
-    echo "install.packages(c('rJava','rdbnomics','ggrepel','ggraph','ggiraph','ggnetwork','ggTimeSeries','plotrix','tmap','rsdmx','leaflet','shinyjs','TSsdmx','TSdbi','timeSeries','RJDemetra'),repos='https://cloud.r-project.org')" >> /tmp/install.R && \
-    echo "devtools::install_github('eurostat/restatapi');" >> /tmp/install.R && \
-    echo "devtools::install_github('rOpenGov/eurostat');" >> /tmp/install.R && \
     Rscript /tmp/install.R
     
 
