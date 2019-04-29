@@ -32,6 +32,9 @@ RUN apt-get update && \
     build-essential \
     apt-utils \
     ipython \
+    python3-notebook \
+    jupyter-core \
+    python-ipykernel \  
     software-properties-common && \
     apt-get autoremove -y && \
     apt-get clean all
