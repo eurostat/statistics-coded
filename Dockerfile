@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND="noninteractive" \
     USER=ubuntu
+    NBUSER=jupyter
 
 RUN set -ex && \
     apt-get update  && \
@@ -88,6 +89,9 @@ ENV LANGUAGE="en_US.UTF-8" \
 RUN locale-gen en_US.UTF-8 && \
     useradd --create-home --shell /bin/bash $USER && \
     echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER
+    useradd --create-home --shell /bin/bash $NBUSER && \
+    echo "$NBUSER ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/$NBUSER
+
 
 RUN apt-get autoclean -yqq && \
     apt-get autoremove -yqq && \
@@ -102,23 +106,28 @@ RUN echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > 
     Rscript /tmp/install.R
     
 RUN pip3 install --upgrade pip && \
-    pip3 install jupyter
+    pip3 install --user pipenv
 
  
 
-WORKDIR /home/$USER
+WORKDIR /home/$NBUSER
 
-USER $USER
+USER $NBUSER
 
-RUN mkdir environments && \
-    cd environments && \
+
+
+RUN virtualenv jnotebook && \
+    source jnotebook/bin/activate && \
 #    python3 -m venv my_env && \
-#    source my_env/bin/activate && \
-#    python3 -m pip install jupyter && \
+#    source my_env/bin/activate 
+    pip install jupyter && \
     jupyter notebook
+
+
 
 RUN echo "IRkernel::installspec();" > install.R && \
     Rscript install.R
+
 
 
 # RUN /bin/bash -c "source activate unidata-workshop && ipython kernel install --user"
