@@ -3,8 +3,7 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND="noninteractive" \
     USER=ubuntu
-    NBUSER=jupyter
-
+    
 RUN set -ex && \
     apt-get update  && \
     apt-get upgrade -y && \
@@ -89,8 +88,7 @@ ENV LANGUAGE="en_US.UTF-8" \
 RUN locale-gen en_US.UTF-8 && \
     useradd --create-home --shell /bin/bash $USER && \
     echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER
-    useradd --create-home --shell /bin/bash $NBUSER && \
-    echo "$NBUSER ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/$NBUSER
+ 
 
 
 RUN apt-get autoclean -yqq && \
@@ -110,9 +108,9 @@ RUN pip3 install --upgrade pip && \
 
  
 
-WORKDIR /home/$NBUSER
+WORKDIR /home/$USER
 
-USER $NBUSER
+USER $USER
 
 
 
