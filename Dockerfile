@@ -55,6 +55,7 @@ RUN set -ex && \
     python3-notebook \
     python3-dev \
     python3-rpy2 \
+    python3-venv \
     python-ipykernel \  
     python-rpy2 \
     python-pip \
@@ -111,7 +112,12 @@ USER $USER
 RUN echo "IRkernel::installspec();" > install.R && \
     Rscript install.R
 
-RUN jupyter notebook
+RUN mkdir environments && \
+    cd environments && \
+    python3 -m venv my_env && \
+    source my_env/bin/activate && \
+    python3 -m pip install jupyter && \
+    jupyter notebook 
  
 # RUN wget https://raw.githubusercontent.com/eurostat/statistics-coded.git/master/popul/young-people-social-inclusion_R.ipynb 
    
