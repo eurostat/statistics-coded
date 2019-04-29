@@ -55,6 +55,7 @@ RUN set -ex && \
     python3-notebook \
     python3-dev \
     python3-rpy2 \
+    python3-pip3 \
     python3-venv \
     python-ipykernel \  
     python-rpy2 \
