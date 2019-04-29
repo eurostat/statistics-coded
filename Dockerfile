@@ -110,6 +110,8 @@ USER $USER
 
 RUN echo "IRkernel::installspec();" > install.R && \
     Rscript install.R
+
+RUN jupyter notebook
  
 # RUN wget https://raw.githubusercontent.com/eurostat/statistics-coded.git/master/popul/young-people-social-inclusion_R.ipynb 
    
