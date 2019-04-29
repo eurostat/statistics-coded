@@ -33,6 +33,7 @@ RUN set -ex && \
     iputils-ping \
     ipython \
     jupyter-core \
+    juputer-client \
     language-pack-en \
     libcairo2-dev \
     libgdal-dev \
