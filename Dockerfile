@@ -56,6 +56,7 @@ RUN set -ex && \
     python-ipykernel \  
     python-rpy2 \
     r-base \
+    r-base-dev \
     software-properties-common \
     sudo \
     tar \
@@ -80,8 +81,6 @@ RUN apt-get autoclean -yqq && \
     rm -rf /var/tmp/*
 
 WORKDIR /home/$USER
-
-RUN jupyter notebook --allow-root
 
 USER $USER
 
