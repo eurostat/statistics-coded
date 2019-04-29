@@ -92,17 +92,20 @@ RUN apt-get autoclean -yqq && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/*
 
-WORKDIR /home/$USER
-
-USER $USER
-
-
 RUN echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > /tmp/install.R && \
     echo "install.packages(c('restatapi','eurostat','rdbnomics','TSsdmx','ggrepel','ggraph','ggiraph','ggnetwork','ggTimeSeries','plotrix','tmap','rjson','rsdmx','leaflet','shinyjs','TSdbi','timeSeries','RJDemetra','flagr','ggdemetra'),repos='https://cloud.r-project.org')" >> /tmp/install.R && \ 
 #    echo "update.packages" >> /tmp/install.R && \
     echo "devtools::install_github('IRkernel/IRkernel');" >> /tmp/install.R && \
     Rscript /tmp/install.R
     
+
+
+
+WORKDIR /home/$USER
+
+USER $USER
+
+
 
 RUN echo "IRkernel::installspec();" > install.R && \
     Rscript install.R
