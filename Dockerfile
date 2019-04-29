@@ -59,10 +59,6 @@ RUN set -ex && \
     python-pip \
     r-base \
     r-base-dev \
-    r-cran-sf \
-    r-cran-rjson \
-    r-cran-rstudioapi \
-    r-cran-rmarkdown \
     software-properties-common \
     sudo \
     tar \
@@ -75,7 +71,10 @@ RUN set -ex && \
 #    add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic-backports main restricted universe' && \
 #    gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
 #    gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | apt-key add -
-    
+#    r-cran-sf \
+#    r-cran-rjson \
+#    r-cran-rstudioapi \
+#    r-cran-rmarkdown \
 
 
 
