@@ -19,6 +19,10 @@ The code source files provided herein can be used to (re)produce some of the sta
     <tr> <td align="left"><i>license</i></td> <td align="left"><a href="https://joinup.ec.europa.eu/sites/default/files/eupl1.1.-licence-en_0.pdfEUPL">EUPL</a> <i></i></td> </tr> 
 </table>
 
+**Quick start**
+
+**Launch a notebook running both `R` and `Python`: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eurostat/statistics-coded/master) with packages already installed to access Eurostat database!**
+
 **Description**
 
 The notebooks are organised according to the thematic structure already adopted for the Statistics Explained articles:
