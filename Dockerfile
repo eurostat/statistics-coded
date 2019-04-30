@@ -106,7 +106,7 @@ RUN echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > 
 #RUN pip3 install --upgrade pip && \
 RUN pip3 install --user pipenv
 
- 
+RUN pip3 install virtualenv
 
 WORKDIR /home/$USER
 
