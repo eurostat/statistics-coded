@@ -103,8 +103,8 @@ RUN echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > 
     echo "devtools::install_github('IRkernel/IRkernel');" >> /tmp/install.R && \
     Rscript /tmp/install.R
     
-RUN pip3 install --upgrade pip && \
-    pip3 install --user pipenv
+#RUN pip3 install --upgrade pip && \
+RUN pip3 install --user pipenv
 
  
 
