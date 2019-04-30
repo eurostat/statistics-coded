@@ -114,12 +114,10 @@ USER $USER
 RUN mkdir ~/jpn && \
     cd ~/jpn
     
-RUN virtualenv jnotebook && \
-    source jnotebook/bin/activate && \
-#    python3 -m venv my_env && \
-#    source my_env/bin/activate 
-    pip install jupyter && \
-    jupyter notebook
+RUN sudo pip install --upgrade pip 
+RUN sudo -H pip install jupyter
+
+RUN jupyter notebook
 
 
 
