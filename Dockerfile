@@ -111,9 +111,10 @@ WORKDIR /home/$USER
 USER $USER
 
 
-RUN mkdir ~/jnotebook && \
-    cd ~/jnotebook && \
-    virtualenv jnotebook && \
+RUN mkdir ~/jpn && \
+    cd ~/jpn
+    
+RUN virtualenv jnotebook && \
     source jnotebook/bin/activate && \
 #    python3 -m venv my_env && \
 #    source my_env/bin/activate 
