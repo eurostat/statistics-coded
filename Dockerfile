@@ -118,7 +118,10 @@ RUN sudo -H pip3 install --upgrade pip
 RUN sudo -H pip3 install virtualenv
 RUN sudo -H pip3 install jupyter
 
-RUN jupyter notebook
+RUN virtualenv my_project_env && \
+    source my_project_env/bin/activate && \
+    pip install jupyter && \
+    jupyter notebook
 
 
 
