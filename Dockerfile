@@ -114,8 +114,9 @@ USER $USER
 RUN mkdir ~/jpn && \
     cd ~/jpn
     
-RUN sudo pip install --upgrade pip 
-RUN sudo -H pip install jupyter
+RUN sudo pip3 install --upgrade pip 
+RUN sudo -H pip3 install virtualenv
+RUN sudo -H pip3 install jupyter
 
 RUN jupyter notebook
 
