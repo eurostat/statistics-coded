@@ -1,129 +1,131 @@
 
-FROM ubuntu:18.04
+# Copyright (c) Jupyter Development Team.
+# Distributed under the terms of the Modified BSD License.
+FROM jupyter/scipy-notebook
+#FROM jupyter/datascience-notebook:87210526f381
 
-ENV DEBIAN_FRONTEND="noninteractive" \
-    USER=ubuntu
-    
-RUN set -ex && \
-    apt-get update  && \
-    apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends --no-install-suggests \
-    aptitude \
-    apt-transport-https \
+MAINTAINER Jupyter Project <jupyter@googlegroups.com>
+
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
     apt-utils \
-    autoconf \
-    autotools-dev \
-    build-essential \
-    ca-certificates \
-    curl \
-    default-jdk \
-    default-jdk-headless \
-    dpkg-dev \
-    dselect \
-    file \
+    dirmngr \
+    gpg-agent \
+    software-properties-common 
+
+#RUN sudo apt purge r-base r-recommended r-cran-* &&\
+#    sudo apt autoremove &&\
+#    sudo apt update
+       
+RUN add-apt-repository ppa:marutter/c2d4u3.5 &&\
+    add-apt-repository ppa:marutter/rrutter3.5 &&\
+    echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/" >> /etc/sources.list &&\
+    gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 &&\
+    gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | apt-key add - &&\
+    apt-get update &&\ 
+    apt-get upgrade -y
+
+#RUN apt-get dist-upgrade -y
+
+RUN apt-get install -y --no-install-recommends \
     fonts-dejavu \
-    gcc \
-    gdebi-core \
     gfortran \
-    git \
-    git-extras \
-    gnupg \
-    gzip \
-    htop \
-    iputils-ping \
-    ipython \
-    jupyter-core \
-    jupyter-client \
-    language-pack-en \
-    libcairo2-dev \
-    libgdal-dev \
-    libgit2-26 \
-    libgit2-dev \
-    libopenblas-base \
-    libopenblas-dev \
-    libssh2-1 \
-    libssh2-1-dev \
-    libssl-dev \
+    java-common \
+    build-essential \
     libudunits2-0 \
     libudunits2-dev \
+    libgdal20 \
+    gdal-bin \
+    gdal-data \
+    libgdal-dev \
+    libssl-dev \
+    libssh2-1 \
+    libssh2-1-dev \
+    libgeos-3.6.2 \
+    libproj12 \
+    proj-bin \
+    libproj-dev \
+    libpoppler73 \
+    poppler-utils \
+    libpoppler-dev \
+    libgit2-dev \
+    gnupg \
+    libtool \ 
     libunwind-dev \
     libzmq3-dev \
-    make \
-    mc \
-    nano \
-    net-tools \
-    python3-notebook \
-    python3-dev \
-    python3-rpy2 \
-    python3-pip \
-    python3-venv \
-    python-ipykernel \  
-    python-rpy2 \
-    python-pip \
-    r-base \
+    libcairo2-dev \
+    libopenblas-base \
+    libopenblas-dev \
+    libexpat1-dev \
+    libpq-dev \
+    libsqlite3-dev \
+    postgis \
+    r-base-core \
     r-base-dev \
-    software-properties-common \
-    sudo \
-    tar \
-    tzdata \
-    unzip \
-    vim \
-    wget 
+    r-cran-broom \
+    r-cran-codetools \
+    r-cran-crosstalk \
+    r-cran-desc \
+    r-cran-devtools \
+    r-cran-dichromat \
+    r-cran-dplyr \
+    r-cran-eurostat \
+    r-cran-ggforce \
+    r-cran-ggplot2 \
+    r-cran-ggrepel \
+    r-cran-ggraph \
+    r-cran-htmltools \
+    r-cran-htmlwidgets \
+    r-cran-leaflet \
+    r-cran-mapview \
+    r-cran-mgcv \
+    r-cran-nlme \
+    r-cran-pkgbuild \
+    r-cran-pkgload \
+    r-cran-pkgkitten \
+    r-cran-plyr \
+    r-cran-raster \
+    r-cran-rcmdcheck \
+    r-cran-rcolorbrewer \
+    r-cran-rcpp \
+    r-cran-readr \
+    r-cran-refmanager \
+    r-cran-rjdemetra \
+    r-cran-rjava \
+    r-cran-rjson \
+    r-cran-rprojroot \
+    r-cran-scales \
+    r-cran-sf \
+    r-cran-sp \
+    r-cran-tmap \
+    r-cran-tmaptools \
+    r-cran-tidyr \
+    r-cran-units \
+    r-cran-uuid \
+    r-cran-usethis \
+    r-cran-viridis \
+    r-cran-xml2 \
+    gdb \
+    valgrind \
+    mc \
+    gcc && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/' && \
-#    add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic-backports main restricted universe' && \
-#    gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
-#    gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | apt-key add -
-#    r-cran-sf \
-#    r-cran-rjson \
-#    r-cran-rstudioapi \
-#    r-cran-rmarkdown \
-
-
-
-ENV LANGUAGE="en_US.UTF-8" \
-    LANG="en_US.UTF-8" \
-    LC_ALL="en_US.UTF-8"
-
-RUN locale-gen en_US.UTF-8 && \
-    useradd --create-home --shell /bin/bash $USER && \
-    echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER
  
-
-
-RUN apt-get autoclean -yqq && \
-    apt-get autoremove -yqq && \
-    rm -rf /var/lib/{apt,dpkg,cache,log}/ && \
-    rm -rf /tmp/* && \
-    rm -rf /var/tmp/*
-
-RUN echo "install.packages('devtools',repos='https://cloud.r-project.org');"  > /tmp/install.R && \
-    echo "install.packages(c('restatapi','eurostat','rdbnomics','TSsdmx','ggrepel','ggraph','ggiraph','ggnetwork','ggTimeSeries','plotrix','tmap','rjson','rsdmx','leaflet','shinyjs','TSdbi','timeSeries','RJDemetra','flagr','ggdemetra'),repos='https://cloud.r-project.org')" >> /tmp/install.R && \ 
-#    echo "update.packages" >> /tmp/install.R && \
-    echo "devtools::install_github('IRkernel/IRkernel');" >> /tmp/install.R && \
+RUN R CMD javareconf
+RUN echo "install.packages(c('restatapi','rdbnomics','TSsdmx','ggiraph','ggnetwork','ggTimeSeries','plotrix','rsdmx','shinyjs','TSdbi','timeSeries','flagr','ggdemetra'),repos='https://cloud.r-project.org')" >> /tmp/install.R && \
+#    echo "devtools::install_github('eurostat/restatapi');" >> /tmp/install.R && \
     Rscript /tmp/install.R
     
-#RUN pip3 install --upgrade pip && \
-RUN pip3 install --user pipenv
-RUN pip3 install virtualenv
-
-WORKDIR /home/$USER
-USER $USER
-
-
-RUN mkdir ~/jpn && \
-    cd ~/jpn
+RUN echo "devtools::install_github('IRkernel/IRkernel');" >> /tmp/install.R && \
+    Rscript /tmp/install.R
     
-RUN sudo -H pip3 install --upgrade pip 
-RUN sudo -H pip3 install virtualenv
-RUN sudo -H pip3 install jupyter
-
-RUN sudo jupyter notebook --allow-root
-    
-
+USER $NB_USER
 
 RUN echo "IRkernel::installspec();" > install.R && \
     Rscript install.R
+
 
 
 
