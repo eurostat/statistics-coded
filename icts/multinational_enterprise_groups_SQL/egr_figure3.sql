@@ -1,80 +1,95 @@
-drop table diss_t4 purge;
+---- European presence of MNE groups by country in 2017 ---------------------------------
+
+--- In the fourth table of dissemination report DISS_T4, the enterprise groups are categorized based on their number of countries where group is operating.
+
+--- For count of legal units operating in less than 3 countries the group is categorized as Low EU presence, between 3 and 6 the group is categorized as Medium EU presence and for 5 or more the group is categorized as High EU presence.
+
+drop table diss_4;
 
 create table diss_t4(
+
 country varchar2(5),
+
 total_group number,
-sei number,
-mei number,
-lei number,
-total_class number,
-missing_data number);
+
+lep number,
+
+mep number,
+
+hep number);
+
+ 
 
 insert into diss_t4
-  select geg_uci_country_code, count(geg_egr_id),0,0,0,0,0
-  from diss_groups
-  where geg_uci_country_code in ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT', 'LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','IS','LI','CH','NO')
-    and geg_c_w_empl>1
+
+  select geg_uci_country_code,0,0,0
+
+  from ta_fats_gegs
+
+where frame_id=100051
+
+  and  geg_uci_country_code in ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT','LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','IS','LI','CH','NO')
+
   group by geg_uci_country_code
+
   order by geg_uci_country_code;
-  
-update diss_t4 
-set sei = ( select count(geg_eu_infl) 
-          from diss_groups
-          where geg_uci_country_code = diss_t4.country
-             and geg_eu_infl='SEI'
-             and geg_c_w_empl>1
-                       )
-where exists (select geg_uci_country_code 
-              from diss_groups
-              where diss_groups.geg_uci_country_code = diss_t4.country);  
-              
-update diss_t4 
-set mei = (select count(geg_eu_infl) from diss_groups
-         where geg_uci_country_code = diss_t4.country
-            and geg_eu_infl='MEI'
-            and geg_c_w_empl>1
-                       )
-where exists (select geg_uci_country_code 
-              from diss_groups
-              where diss_groups.geg_uci_country_code = diss_t4.country);  
-              
-update diss_t4 
-set lei = ( select count(geg_eu_infl) 
-          from diss_groups
-          where geg_uci_country_code = diss_t4.country
-              and geg_eu_infl='LEI'
-              and geg_c_w_empl>1
-                       )
-where exists (select geg_uci_country_code 
-              from diss_groups
-              where diss_groups.geg_uci_country_code = diss_t4.country);    
-              
-update diss_t4 
-set total_class = sei+mei+lei;
 
-update diss_t4 
-set missing_data = total_group - total_class;
+ 
 
-insert into diss_t4(country)
-values('EU-28');
+  drop table temp1;
 
-update diss_t4
-set total_group = ( select sum(total_group)
-                    from diss_t4
-                    where country in  ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT', 'LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','LI','IS')),
-    sei = ( select sum(sei)
-          from diss_t4
-          where country in  ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT', 'LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','LI','IS')),
-    mei = ( select sum(mei)
-          from diss_t4
-          where country in  ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT', 'LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','LI','IS')),      
-    lei = ( select sum(lei)
-          from diss_t4
-          where country in  ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT', 'LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','LI','IS')), 
-    total_class = ( select sum(total_class)
-                    from diss_t4
-                    where country in  ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT', 'LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','LI','IS')), 
-    missing_data = ( select sum(missing_data)
-                     from diss_t4
-                     where country in  ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT', 'LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','LI','IS'))
-where country = 'EU-28';
+ 
+
+create table temp1 (
+
+geg_egr_id number,
+
+gdc varchar2 (5),
+
+count_leus varchar2 (5)
+
+);
+
+ 
+
+insert into temp1
+
+select geg.GEG_EGR_ID,tg.geg_uci_country_code ,count(distinct leu.leu_country_code)
+
+from ta_leus leu , ta_geg_leu_links geg, ta_fats_gegs tg
+
+where leu.frame_id=100051
+
+and geg.frame_id=100051
+
+and tg.frame_id=100051
+
+and leu.leu_egr_id=geg.leu_egr_id
+
+and tg.geg_egr_id=geg.geg_egr_id
+
+and tg.geg_uci_country_code in ('AT','BE','BG','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE','IT','LT','LU','LV','MT','NL','PL','PT','RO','SE','SI','SK','IS','LI','CH','NO')
+
+group by geg.GEG_EGR_ID,tg.geg_uci_country_code;
+
+ 
+
+  select *
+
+  from temp1;
+
+ 
+
+update temp1
+
+set count_leus = (case
+
+                when count_leus<3 then 'LEP'
+
+                when (count_leus>2 and count_leus<6) then 'MEP'
+
+                when count_leus>5 then 'HEP'
+
+                else '-'
+
+            end);
