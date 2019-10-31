@@ -51,9 +51,9 @@ This repository is organised into different folders, each of them corresponding 
 In particular, different Statistics Explained articles have been published in order to tackle the different 
 analytical and methodological issues such statistics raise. Hence, some of the folders contain pieces of 
 script that make it possible to generate the figures shown in the different articles, namely:
-* the folder [icw1](icw1) for the graphs in the analytical article on [the interaction of household income, consumption and wealth](http://ec.europa.eu/eurostat/statistics-explained/index.php?title=Interaction_of_household_income,_consumption_and_wealth_-_statistics_on_main_results);
-* the folder [icw2](icw2) for the graphs in the background paper on [the methodological issues](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_-_methodological_issues);
-* the folder [icw3](icw3) for the graphs in the analytical article on [the statistics on taxation](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_%E2%80%93_statistics_on_taxation).
+* the script [icw1.R](icw1.R) for the graphs in the analytical article on [the interaction of household income, consumption and wealth](http://ec.europa.eu/eurostat/statistics-explained/index.php?title=Interaction_of_household_income,_consumption_and_wealth_-_statistics_on_main_results);
+* the script [icw2.R](icw2.R) for the graphs in the background paper on [the methodological issues](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_-_methodological_issues);
+* the script [icw3.R](icw3.R) (together with the data in the folder [data/](data/)) for the graphs in the analytical article on [the statistics on taxation](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_%E2%80%93_statistics_on_taxation).
 
 Other pieces of codes are made available, such as:
 * the computation of [VAT paid by the households](VAT), on the basis of the structure of their consumption, 
