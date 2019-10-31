@@ -22,7 +22,7 @@ gaps between micro and macro statistics using harmonised micro data on joint dis
 reply to the data needs of policy users in the EU. There are two different workflows associated to this 
 project, still with a high degree of coordination and collaboration, and they are described in the following. 
 
-**The code**
+**Description**
 
 The first workflow is purely micro-related, aiming at bringing closer the 
 different existing surveys and enlightening the **joint distribution of Income, Consumption and Wealth**. 
@@ -51,13 +51,32 @@ This repository is organised into different folders, each of them corresponding 
 In particular, different Statistics Explained articles have been published in order to tackle the different 
 analytical and methodological issues such statistics raise. Hence, some of the folders contain pieces of 
 script that make it possible to generate the figures shown in the different articles, namely:
-* the script [icw1.R](icw1.R) for the graphs in the analytical article on [the interaction of household income, consumption and wealth](http://ec.europa.eu/eurostat/statistics-explained/index.php?title=Interaction_of_household_income,_consumption_and_wealth_-_statistics_on_main_results);
-* the script [icw2.R](icw2.R) for the graphs in the background paper on [the methodological issues](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_-_methodological_issues);
-* the script [icw3.R](icw3.R) (together with the data in the folder [data/](data/)) for the graphs in the analytical article on [the statistics on taxation](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_%E2%80%93_statistics_on_taxation).
+* the script [**icw1.R**](icw1.R) for the graphs in the analytical article on [the interaction of household income, consumption and wealth](http://ec.europa.eu/eurostat/statistics-explained/index.php?title=Interaction_of_household_income,_consumption_and_wealth_-_statistics_on_main_results);
+* the script [**icw2.R**](icw2.R) for the graphs in the background paper on [the methodological issues](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_-_methodological_issues);
+* the script [**icw3.R**](icw3.R) (together with the _country_order.csv_ file in folder [data/](data/)) for the graphs in the analytical article on [the statistics on taxation](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_%E2%80%93_statistics_on_taxation).
 
-Other pieces of codes are made available, such as:
-* the computation of [VAT paid by the households](VAT), on the basis of the structure of their consumption, 
-  according to the [COICOP](https://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=5) in the Household Budget Survey;
+In addition, code is also made available for the computation of VAT paid by the households 
+of the structure of their consumption, according to the COICOP in the Household Budget Survey (see note
+[below](#VAT)):
+* the script [**rates.R**](rates.R) computes tax rates (see also files _listCOICOP_withRATE.xls_ and _vat_rates_en.xls_ 
+ in folder _data/_);
+* the script [**vat.R**](rates.R) estimates VAT paid by the households represented in the micro-data (this shall be run
+ after the previous script).
+
+**<a name="VAT"></a>Note on the VAT paid by the households**
+
+Analysing the effect of VAT across groups of households requires not only to measure consumption and its 
+composition at the household level, but also to have detailed pieces of information regarding the VAT rate
+applied according to the type of purchased good.
+
+On the one hand, the classification commonly used to describe households' consumption for the European 
+Household Budget Survey is the Classification of Individual Consumption According to Purpose 
+([COICOP](https://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=5)). 
+On the other hand, the [European Commission's Directorate-General for Taxation and Customs Union](https://ec.europa.eu/taxation_customs/home_en) disseminates some harmonised data on VAT tax rates in the European Union. 
+The principle of the exercise is therefore to perform a mapping between the different classifications 
+so as to come up with an estimation of the tax rate applied to the products that households declare 
+having purchased in the Household Budget Survey. The scripts made available in this repository perform  
+such a mapping.
 
 **<a name="References"></a>References**
 
