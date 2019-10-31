@@ -1,12 +1,12 @@
 ![experimental](http://ec.europa.eu/eurostat/statistics-explained/images/9/95/Experimental.png)<br />
 
-** Experimental statistics on Household Income, Consumption and Wealth (ICW) **
+**Experimental statistics on Household Income, Consumption and Wealth (ICW)**
 
 This repository is intended to store the codes (in _SAS_, _R_ or _Stata_) related to the design and 
 dissemination of the different experimental statistics for the project on European households' 
 income, consumption and wealth.
 
-** Context **
+**Context**
 
 The European Commission has stressed the need to bring social indicators on a par with macroeconomic 
 indicators within the macroeconomic governance. A key part of the strategy is the availability of 
@@ -22,7 +22,7 @@ gaps between micro and macro statistics using harmonised micro data on joint dis
 reply to the data needs of policy users in the EU. There are two different workflows associated to this 
 project, still with a high degree of coordination and collaboration, and they are described in the following. 
 
-** The code  **
+**The code**
 
 The first workflow is purely micro-related, aiming at bringing closer the 
 different existing surveys and enlightening the **joint distribution of Income, Consumption and Wealth**. 
@@ -45,7 +45,7 @@ and Wealth. Similarly to the work carried out by several organisations (OECD, EC
 reconcile concepts from macro and micro-statistics and produce meso-data that will be consistent at the micro 
 and the macro-level.
 
-** Material **
+**Material**
 
 This repository is organised into different folders, each of them corresponding to a part of this project. 
 In particular, different Statistics Explained articles have been published in order to tackle the different 
@@ -67,6 +67,6 @@ Other pieces of codes are made available, such as:
 * Lahti L., Huovari J., Kainu M., and Biecek, P. (2017): 
 [**Retrieval and analysis of Eurostat open data with the eurostat package**](https://journal.r-project.org/archive/2017/RJ-2017-019/RJ-2017-019.pdf), _The R Journal_, 9(1):385-392.
 
-** Contact ** 
+**Contact** 
 
 <a href="https://github.com/pierre-lamarche"><img src="https://github.com/pierre-lamarche.png" width="40"></a>
