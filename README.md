@@ -33,7 +33,7 @@ The notebooks are organised according to the thematic structure already adopted 
 * [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles:
 
   * [notebook](https://github.com/eurostat/statistics-coded/blob/master/popul/young_people_social_inclusion/young-people-social-inclusion_R.ipynb) on [Young people - social inclusion](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Young_people_-_social_inclusion),
-  * [source code](https://github.com/eurostat/statistics-coded/tree/master/icts/income_consumption_wealth) for [income, consumption and wealth](https://ec.europa.eu/eurostat/web/experimental-statistics/income-consumption-and-wealth),
+  * [source code](https://github.com/eurostat/statistics-coded/tree/master/popul/income_consumption_wealth) for [income, consumption and wealth](https://ec.europa.eu/eurostat/web/experimental-statistics/income-consumption-and-wealth),
   * ...
 * [**icts/**](icts) for [_"Industry and services"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry_and_services) articles:
 
