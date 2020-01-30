@@ -11,6 +11,7 @@ The code source files provided herein can be used to (re)produce some of the sta
 <table align="center">
     <tr> <td align="left"><i>contributors</i></td> 
     <td align="left" valign="middle">
+<a href="https://github.com/fmshka"><img src="https://github.com/fmshka.png" width="40"></a>
 <a href="https://github.com/agnebik"><img src="https://github.com/agnebik.png" width="40"></a>
 <a href="https://github.com/pierre-lamarche"><img src="https://github.com/pierre-lamarche.png" width="40"></a>
 <a href="https://github.com/gjacopo"><img src="https://github.com/gjacopo.png" width="40"></a>
@@ -42,7 +43,7 @@ The notebooks are organised according to the thematic structure already adopted 
 * [agric/](agric) for [_"Agriculture, forestry and fisheries"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture,_forestry_and_fisheries) articles,
 * [**external/**](external) for [_"International trade"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International_trade) articles,
   * [source code](https://github.com/eurostat/statistics-coded/tree/master/external/eu_int_trade_transport) for  [**EU international trade in transport services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=EU_international_trade_in_transport_services),
-    * ...  
+  * ...  
 * [transp/](transp) for [_"Transport"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport),
 * [envir/](envir) for [_"Environment and energy"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment_and_energy) articles,
 * [science/](science) for [_"Science, technology and digital society"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science,_technology_and_digital_society) articles.
