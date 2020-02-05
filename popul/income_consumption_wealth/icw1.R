@@ -3,6 +3,7 @@
 # https://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_-_statistics_on_main_results
 # Run on R 64-bits 3.3.1
 
+# Please insert the link to the folder where you want the files to be saved
 path_results <- "./1.MainResults"
 
 library(dplyr)
