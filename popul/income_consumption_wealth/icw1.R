@@ -3,7 +3,7 @@
 # https://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_-_statistics_on_main_results
 # Run on R 64-bits 3.3.1
 
-path_results <- "//net1.cec.eu.int/ESTAT/F/1/common/04 Income Consumption Wealth/06 Output/joint_distribution/paper/Statistics_Explained/1.MainResults"
+path_results <- "./1.MainResults"
 
 library(dplyr)
 library(haven)
