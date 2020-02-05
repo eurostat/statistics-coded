@@ -4,7 +4,7 @@
 # Run on R 64-bits 3.3.1
 
 # Please insert the link to the folder where you want the files to be saved
-path_results <- "./1.MainResults"
+path_results <- "./MainResults"
 
 library(dplyr)
 library(haven)
