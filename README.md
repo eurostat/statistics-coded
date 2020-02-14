@@ -24,11 +24,11 @@ The code source files provided herein can be used to (re)produce some of the sta
 
 **Quick start**
 
-**Launch a notebook running both `R` and `Python` [`in binder`](https://mybinder.org/): [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eurostat/statistics-coded/master) with packages already installed to access Eurostat database!**
+**Launch the notebooks (both `R` and `Python`) [`in binder`](https://mybinder.org/)**. Packages already installed to access Eurostat database.
 
- - Launch `Jupyter` alone:  [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master) <!--[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/gjacopo/dockertestarea/master?filepath=test.ipynb)-->
- - Launch `JupyterLab`: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/gjacopo/dockertestarea/master?urlpath=lab)
- - Launch `RStudio`: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/binder-examples/r_with_python/master?urlpath=rstudio)
+ - Launch `Jupyter` alone:  [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master) <!--[![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/gjacopo/dockertestarea/master?filepath=test.ipynb)-->
+ - Launch `JupyterLab`: [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/gjacopo/dockertestarea/master?urlpath=lab)
+ - Launch `RStudio`: [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/binder-examples/r_with_python/master?urlpath=rstudio)
  
 **Description**
 
