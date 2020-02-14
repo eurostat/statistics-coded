@@ -24,8 +24,12 @@ The code source files provided herein can be used to (re)produce some of the sta
 
 **Quick start**
 
-**Launch a notebook running both `R` and `Python`: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eurostat/statistics-coded/master) with packages already installed to access Eurostat database!**
+**Launch a notebook running both `R` and `Python` [`in binder`](https://mybinder.org/): [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eurostat/statistics-coded/master) with packages already installed to access Eurostat database!**
 
+ - Launch `Jupyter` alone:  [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master) <!--[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/gjacopo/dockertestarea/master?filepath=test.ipynb)-->
+ - Launch `JupyterLab`: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/gjacopo/dockertestarea/master?urlpath=lab)
+ - Launch `RStudio`: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/binder-examples/r_with_python/master?urlpath=rstudio)
+ 
 **Description**
 
 The notebooks are organised according to the thematic structure already adopted for the Statistics Explained articles:
