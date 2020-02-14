@@ -1,0 +1,14 @@
+dependencies:
+  - ipython
+  - matplotlib
+  - numpy
+  - scipy
+  - pandas
+  - requests 
+  - scikit-learn
+  - jupyter_contrib_nbextensions
+  - ipywidgets
+  - pip:
+    - eurostatapiclient
+    - jsonstat.py
+    - -r file:requirements.txt
