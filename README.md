@@ -24,11 +24,11 @@ The code source files provided herein can be used to (re)produce some of the sta
 
 **Quick start**
 
-**Launch the notebooks (both `R` and `Python`) [`in binder`](https://mybinder.org/)**. Packages already installed to access Eurostat database.
+**Run the notebooks (both `R` and `Python`) in [`binder`](https://mybinder.org/)**. Packages already installed to access Eurostat database.
 
- - Launch `Jupyter` alone:  [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master) <!--[![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master?filepath=test.ipynb)-->
- - Launch `JupyterLab`: [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master?urlpath=lab)
- - Launch `RStudio`: [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master?urlpath=rstudio)
+ - Launch [`Jupyter`](https://jupyter.org/) alone:  [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master) <!--[![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master?filepath=test.ipynb)-->
+ - Launch [`JupyterLab`](https://jupyterlab.readthedocs.io/): [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master?urlpath=lab)
+ - Launch [`RStudio`](https://rstudio.com/): [![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/eurostat/statistics-coded/master?urlpath=rstudio)
  
 **Description**
 
