@@ -9,5 +9,6 @@ dependencies:
   - seaborn
   - jupyter_contrib_nbextensions
   - ipywidgets
+  - gdal
   - pip:
     - -r file:requirements.txt
