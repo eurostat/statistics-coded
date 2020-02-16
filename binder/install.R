@@ -1,5 +1,5 @@
 #install.packages("devtools",repos="https://cloud.r-project.org")
-install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/"))
+install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/")
 # devtools::install_github('IRkernel/IRkernel')
 # IRkernel::installspec()
 
