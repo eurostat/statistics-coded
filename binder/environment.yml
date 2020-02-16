@@ -6,6 +6,7 @@ dependencies:
   - pandas
   - requests 
   - scikit-learn
+  - seaborn
   - jupyter_contrib_nbextensions
   - ipywidgets
   - pip:
@@ -15,4 +16,6 @@ dependencies:
     - dbnomics
     - simplejson
     - geojson
+    - geopandas
+    - shapely
     - -r file:requirements.txt
