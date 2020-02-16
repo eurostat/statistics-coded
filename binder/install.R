@@ -1,15 +1,18 @@
 # install.packages('devtools',repos='https://cloud.r-project.org')
-#install.packages("devtools")
-#devtools::install_github('IRkernel/IRkernel')
+install.packages("devtools")
+# devtools::install_github('IRkernel/IRkernel')
 # IRkernel::installspec()
-# devtools::install_github("user/repo", ref = "tag")
 
 install.packages(c("tidyr", "repr", "dplyr"))
 install.packages("ggplot2")
 
-# devtools::install_github("eurostat/restatapi")
-install.packages("restatapi")
-#install.packages(c('eurostat','ggrepel','ggraph','ggiraph','ggnetwork','ggTimeSeries','plotrix','tmap','rsdmx','leaflet','shinyjs'),
+# Eurostat package restatapi: we get the dev version
+devtools::install_github("eurostat/restatapi")
+# install.packages("restatapi")
+install.packages(c("rsdmx", "RJSDMX"))
+
+# eurostat packages: many dependencies...
+#install.packages(c('eurostat','ggrepel','ggraph','ggiraph','ggnetwork','ggTimeSeries','plotrix','tmap','leaflet','shinyjs'),
 #			repos='https://cloud.r-project.org')
 
-#install.packages("reticulate") # python support in RMarkdown
+install.packages("reticulate") # python support in RMarkdown
