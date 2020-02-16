@@ -12,7 +12,7 @@ dependencies:
     - eurostatapiclient
     - jsonstat.py
     - pandaSDMX
-    - json
+    - dbnomics
+    - simplejson
     - geojson
-    - bs4
     - -r file:requirements.txt
