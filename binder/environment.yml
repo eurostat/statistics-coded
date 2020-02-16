@@ -8,6 +8,10 @@ dependencies:
   - scikit-learn
   - jupyter_contrib_nbextensions
   - ipywidgets
+  - pandaSDMX
+  - json
+  - geojson
+  - bs4
   - pip:
     - eurostatapiclient
     - jsonstat.py
