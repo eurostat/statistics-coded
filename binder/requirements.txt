@@ -6,4 +6,5 @@ geojson
 geopandas
 shapely
 pyproj
+geopy
 folium
