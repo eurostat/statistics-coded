@@ -13,7 +13,7 @@ devtools::install_github("eurostat/restatapi")
 install.packages("restatapi", repos="http://cran.rstudio.com/")
 
 install.packages(c("rjson", "rsdmx", "RJSDMX","rdbnomics"), repos="http://cran.rstudio.com/")
-install.packages(c("timeSeries","ggdemetra"), repos="http://cran.rstudio.com/")
+install.packages(c("timeSeries", "ggdemetra", "prophet"), repos="http://cran.rstudio.com/")
 
 # eurostat packages: many dependencies...
 #install.packages(c('eurostat','ggrepel','ggraph','ggiraph','ggnetwork','ggTimeSeries','plotrix','tmap','leaflet','shinyjs'),
