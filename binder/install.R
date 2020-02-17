@@ -10,7 +10,7 @@ install.packages(c("ggplot2", "data.table"), repos="http://cran.rstudio.com/")
 
 # Eurostat package restatapi: we get the dev version
 devtools::install_github("eurostat/restatapi")
-install.packages("restatapi", repos="http://cran.rstudio.com/")
+# install.packages("restatapi", repos="http://cran.rstudio.com/")
 
 install.packages(c("rjson", "rsdmx", "RJSDMX","rdbnomics"), repos="http://cran.rstudio.com/")
 install.packages(c("timeSeries", "ggdemetra", "prophet"), repos="http://cran.rstudio.com/")
