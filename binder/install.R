@@ -1,9 +1,8 @@
-# install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/")
 install.packages("devtools", dependencies=TRUE, repos="https://cloud.r-project.org")
+# install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/")
+
 # devtools::install_github('IRkernel/IRkernel')
 # IRkernel::installspec()
-
-install.packages("reticulate") # python support in RMarkdown
 
 install.packages(c("tidyr", "repr", "dplyr"), repos="https://cloud.r-project.org")
 install.packages(c("ggplot2", "data.table", "rjson"), repos="https://cloud.r-project.org")
@@ -17,3 +16,5 @@ install.packages(c("rsdmx", "RJSDMX","rdbnomics"), repos="https://cloud.r-projec
 # eurostat packages: many dependencies...
 #install.packages(c('eurostat','ggrepel','ggraph','ggiraph','ggnetwork','ggTimeSeries','plotrix','tmap','leaflet','shinyjs'),
 #			repos='https://cloud.r-project.org')
+
+install.packages("reticulate") # python support in RMarkdown
