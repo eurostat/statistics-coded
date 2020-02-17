@@ -12,6 +12,7 @@ The code source files provided herein can be used to (re)produce some of the sta
     <tr> <td align="left"><i>contributors</i></td> 
     <td align="left" valign="middle">
 <a href="https://github.com/fmshka"><img src="https://github.com/fmshka.png" width="40"></a>
+<a href="https://github.com/Dgojsic"><img src="https://github.com/Dgojsic.png" width="40"></a>
 <a href="https://github.com/agnebik"><img src="https://github.com/agnebik.png" width="40"></a>
 <a href="https://github.com/flopaleur"><img src="https://github.com/flopaleur.png" width="40"></a>
 <a href="https://github.com/pierre-lamarche"><img src="https://github.com/pierre-lamarche.png" width="40"></a>
