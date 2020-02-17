@@ -20,7 +20,7 @@ The code source files provided herein can be used to (re)produce some of the sta
 <a href="https://github.com/gjacopo"><img src="https://github.com/gjacopo.png" width="40"></a>
 </td>  </tr> 
     <tr> <td align="left"><i>version</i></td> <td align="left">0.1</td> </tr> 
-    <tr> <td align="left"><i>since</i></td> <td align="left">2019</td> </tr> 
+    <tr> <td align="left"><i>status</i></td> <td align="left">since 2019</td> </tr> 
     <tr> <td align="left"><i>license</i></td> <td align="left"><a href="https://joinup.ec.europa.eu/sites/default/files/eupl1.1.-licence-en_0.pdfEUPL">EUPL</a> <i></i></td> </tr> 
 </table>
 
