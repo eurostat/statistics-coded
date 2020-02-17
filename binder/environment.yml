@@ -10,6 +10,10 @@ dependencies:
   - seaborn
   - jupyter_contrib_nbextensions
   - ipywidgets
+  - ipyvega
+  - traitlets
+  - altair 
+  - vega_datasets
   - gdal
   - pip:
     - -r file:requirements.txt
