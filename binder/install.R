@@ -2,8 +2,8 @@
 install.packages("devtools", repos="https://cloud.r-project.org")
 # install.packages("devtools", repos="http://cran.rstudio.com/")
 
-# devtools::install_github('IRkernel/IRkernel')
-# IRkernel::installspec()
+devtools::install_github('IRkernel/IRkernel')
+IRkernel::installspec()
 
 install.packages(c("tidyr", "repr", "dplyr"), repos="https://cloud.r-project.org")
 install.packages("ggplot2", repos="https://cloud.r-project.org")
