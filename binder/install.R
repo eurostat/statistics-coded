@@ -14,7 +14,7 @@ install.packages(c("data.table", "rjson", "xml2"), repos="http://cran.rstudio.co
 devtools::install_github("eurostat/restatapi")
 # install.packages("restatapi", repos="http://cran.rstudio.com/")
 
-install.packages(c("rsdmx", "RJSDMX","rdbnomics"), repos="http://cran.rstudio.com/")
+install.packages(c("rsdmx", "RJSDMX", "rdbnomics"), repos="http://cran.rstudio.com/")
 install.packages(c("timeSeries", "ggdemetra", "prophet"), repos="http://cran.rstudio.com/")
 
 # eurostat packages: many dependencies...
