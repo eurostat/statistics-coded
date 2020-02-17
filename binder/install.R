@@ -1,4 +1,4 @@
-install.packages("devtools", dependencies=TRUE, repos="https://cloud.r-project.org")
+# install.packages("devtools", dependencies=TRUE, repos="https://cloud.r-project.org")
 # install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/")
 
 # devtools::install_github('IRkernel/IRkernel')
@@ -8,8 +8,8 @@ install.packages(c("tidyr", "repr", "dplyr"), dependencies=TRUE, repos="https://
 install.packages(c("ggplot2", "data.table"), repos="https://cloud.r-project.org")
 
 # Eurostat package restatapi: we get the dev version
-devtools::install_github("eurostat/restatapi")
-# install.packages("restatapi")
+# devtools::install_github("eurostat/restatapi")
+install.packages("restatapi")
 
 install.packages(c("rjson", "rsdmx", "RJSDMX","rdbnomics"), repos="https://cloud.r-project.org")
 
