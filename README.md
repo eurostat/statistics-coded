@@ -67,7 +67,8 @@ The notebooks are organised according to the thematic structure already adopted 
 * `Python` modules to access open data: [`pandaSDMX`](https://github.com/dr-leo/pandaSDMX) (via _SDMX_), [`jsonstat.py`](https://github.com/26fe/jsonstat.py), [`eurostatapiclient`](https://github.com/opus-42/eurostat-api-client), [`pyrostat`](https://github.com/eruostat/pyrostat.py) (via _JSON-stat_).
 * [More](https://json-stat.org/tools/) on _JSON-stat_ format and tools.
 * Useful graphic tools galleries, in [`R`](https://www.r-graph-gallery.com/) and [`Python`](https://python-graph-gallery.com/).
-* BBC Visual and Data Journalism [**cookbook for `R` graphics**](https://bbc.github.io/rcookbook/).
+* BBC visual and data journalism [**cookbook for `R` graphics**](https://bbc.github.io/rcookbook/).
+* World Bank [atlas of Sustainable Development Goals 2018](http://datatopics.worldbank.org/sdgatlas/) with the [source code](https://github.com/worldbank/sdgatlas2018). 
 
 **<a name="References"></a>References**
 
