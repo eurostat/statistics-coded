@@ -53,15 +53,22 @@ The notebooks are organised according to the thematic structure already adopted 
 * [envir/](envir) for [_"Environment and energy"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment_and_energy) articles,
 * [science/](science) for [_"Science, technology and digital society"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science,_technology_and_digital_society) articles.
 
-**<a name="References"></a>Tools and references**
+**<a name="Resources"></a>Resources**
 
+* _Eurostat_ [**online database**](https://ec.europa.eu/eurostat/data/database).
 * **Statistics Explained** [main page](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page).
+* `repo2docker` [configuration files](https://repo2docker.readthedocs.io/en/latest/config_files.html).
+* `binder` [examples](https://github.com/binder-examples).
+* `R` packages used to access open data from _Eurostat_: [`restatapi`](https://github.com/eurostat/restatapi) (via _SDMX_), [`eurostat`](http://ropengov.github.io/eurostat), [`rjstat`](https://github.com/ajschumacher/rjstat).
+* `Python` packages used to access open data from _Eurostat_: [`jsonstat.py`](https://github.com/26fe/jsonstat.py), [`pandaSDMX`](https://github.com/dr-leo/pandaSDMX) (via _SDMX_), [`eurostatapiclient`](https://github.com/opus-42/eurostat-api-client), [`rsdmx`](https://github.com/opensdmx/rsdmx).
+* [More](https://json-stat.org/tools/) on `JSON-stat` format and tools.
+* Useful graphic tools galleries, in [`R`](https://www.r-graph-gallery.com/) and [`Python`](https://python-graph-gallery.com/).
+* [**BBC Visual and Data Journalism cookbook for `R` graphics**](https://bbc.github.io/rcookbook/).
+
+**<a name="References"></a>References**
+
 * [**How Open Are Official Statistics?**](http://opendatawatch.com/monitoring-reporting/how-open-are-official-statistics/).
 * Luhmann S., Grazzini J., Ricciato F., Meszaros M., Giannakouris K., Museux J.-M. and Hahn M. (2019): [**Promoting reproducibility-by-design in statistical offices**](https://www.researchgate.net/publication/332045930_Promoting_reproducibility-by-design_in_statistical_offices), in Proc. _New Techniques and Technologies for Statistics_, doi:[10.5281/zenodo.3240198](https://dx.doi.org/10.5281/zenodo.3240198).
+* Grazzini J., Gaffuri J. and Museux J.-M. (2019): [**Delivering Official Statistics as Do-It-Yourself services to foster produsers' engagement with Eurostat open data**](https://www.researchgate.net/publication/332079417_Delivering_Official_Statistics_as_Do-It-Yourself_services_to_foster_produsers%27_engagement_with_Eurostat_open_data) in Proc. _New Techniques and Technologies for Statistics_, doi:[10.5281/zenodo.3240272](https://dx.doi.org/10.5281/zenodo.3240272).
 * Grazzini J., Museux J.-M. and Hahn M. (2018): [**Empowering and interacting with statistical produsers: A practical example with Eurostat data as a service**](https://www.researchgate.net/publication/325973362_Empowering_and_interacting_with_statistical_produsers_a_practical_example_with_Eurostat_data_as_a_service), in Proc. _Conference of European Statistics Stakeholders_, doi:[10.5281/zenodo.3240557](https://dx.doi.org/10.5281/zenodo.3240557).
 * Lahti L., Huovari J., Kainu M., and Biecek, P. (2017): [**Retrieval and analysis of Eurostat open data with the eurostat package**](https://journal.r-project.org/archive/2017/RJ-2017-019/RJ-2017-019.pdf), _The R Journal_, 9(1):385-392.
-* [**BBC Visual and Data Journalism cookbook for R graphics**](https://bbc.github.io/rcookbook/).
-* Package [_restatapi_ `R`](https://github.com/eurostat/restatapi) to access open data from Eurostat via _SDMX_.
-* Package [_eurostat_ `R`](http://ropengov.github.io/eurostat) to access open data from Eurostat.
-* Useful graphic tools galleries, in [_R_](https://www.r-graph-gallery.com/) and [_Python_](https://python-graph-gallery.com/).
-
