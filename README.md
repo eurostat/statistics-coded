@@ -59,8 +59,8 @@ The notebooks are organised according to the thematic structure already adopted 
 * **Statistics Explained** [main page](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page).
 * `repo2docker` [configuration files](https://repo2docker.readthedocs.io/en/latest/config_files.html).
 * `binder` [examples](https://github.com/binder-examples).
-* `R` packages used to access open data from _Eurostat_: [`restatapi`](https://github.com/eurostat/restatapi) (via _SDMX_), [`eurostat`](http://ropengov.github.io/eurostat), [`rjstat`](https://github.com/ajschumacher/rjstat).
-* `Python` packages used to access open data from _Eurostat_: [`jsonstat.py`](https://github.com/26fe/jsonstat.py), [`pandaSDMX`](https://github.com/dr-leo/pandaSDMX) (via _SDMX_), [`eurostatapiclient`](https://github.com/opus-42/eurostat-api-client), [`rsdmx`](https://github.com/opensdmx/rsdmx).
+* `R` packages used to access open data from _Eurostat_: [`restatapi`](https://github.com/eurostat/restatapi), [`rsdmx`](https://github.com/opensdmx/rsdmx) (via _SDMX_), [`eurostat`](http://ropengov.github.io/eurostat), [`rjstat`](https://github.com/ajschumacher/rjstat) (via _JSONstat_).
+* `Python` packages used to access open data from _Eurostat_: [`pandaSDMX`](https://github.com/dr-leo/pandaSDMX) (via _SDMX_), [`jsonstat.py`](https://github.com/26fe/jsonstat.py), [`eurostatapiclient`](https://github.com/opus-42/eurostat-api-client), [`pyrostat`](https://github.com/eruostat/pyrostat.py) (via _JSONstat_).
 * [More](https://json-stat.org/tools/) on `JSON-stat` format and tools.
 * Useful graphic tools galleries, in [`R`](https://www.r-graph-gallery.com/) and [`Python`](https://python-graph-gallery.com/).
 * [**BBC Visual and Data Journalism cookbook for `R` graphics**](https://bbc.github.io/rcookbook/).
