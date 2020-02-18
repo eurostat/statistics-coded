@@ -1,5 +1,6 @@
 channels:
   - conda-forge
+  - r
   - defaults
   - conda-forge/label/broken
 dependencies:
