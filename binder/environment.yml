@@ -3,8 +3,8 @@ channels:
   - defaults
   - conda-forge/label/broken
 dependencies:
-  - ipython=7.11
-  - r-base=3.6
+  - ipython
+  - r-base
   - r-tidyverse
   - r-tidyr
   - r-repr
