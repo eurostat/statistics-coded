@@ -5,11 +5,7 @@ channels:
   - conda-forge/label/broken
 dependencies:
   - ipython
-  - r-base
   - r-essentials
-  - r-data.table
-  - r-xml2
-  - r-rjson
   - r-rjava
   - pip
   - matplotlib
