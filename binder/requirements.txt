@@ -1,0 +1,10 @@
+eurostatapiclient
+jsonstat.py
+pandaSDMX
+dbnomics
+geojson
+geopandas
+shapely
+pyproj
+geopy
+folium
