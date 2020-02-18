@@ -6,16 +6,11 @@ channels:
 dependencies:
   - ipython
   - r-base
-  - r-tidyverse
-  - r-tidyr
-  - r-repr
-  - r-dplyr 
-  - r-devtools
-  - r-ggplot2
+  - r-essentials
   - r-data.table
   - r-xml2
   - r-rjson
-  - r-reticulate
+  - r-rjava
   - pip
   - matplotlib
   - numpy
