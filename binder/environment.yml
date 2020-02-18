@@ -1,0 +1,15 @@
+dependencies:
+  - ipython
+  - pip
+  - matplotlib
+  - numpy
+  - scipy
+  - pandas
+  - requests 
+  - scikit-learn
+  - seaborn
+  - jupyter_contrib_nbextensions
+  - ipywidgets
+  - gdal
+  - pip:
+    - -r file:requirements.txt
