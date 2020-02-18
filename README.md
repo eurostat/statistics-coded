@@ -61,12 +61,12 @@ The notebooks are organised according to the thematic structure already adopted 
 
 * _Eurostat_ [**online database**](https://ec.europa.eu/eurostat/data/database).
 * **Statistics Explained** [main page](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page).
-* `repo2docker` [configuration files](https://repo2docker.readthedocs.io/en/latest/config_files.html).
-* `binder` [examples](https://github.com/binder-examples).
 * `R` packages to access open data: [`restatapi`](https://github.com/eurostat/restatapi), [`rsdmx`](https://github.com/opensdmx/rsdmx) (via _SDMX_), [`eurostat`](http://ropengov.github.io/eurostat), [`rjstat`](https://github.com/ajschumacher/rjstat) (via _JSON-stat_).
 * `Python` modules to access open data: [`pandaSDMX`](https://github.com/dr-leo/pandaSDMX) (via _SDMX_), [`jsonstat.py`](https://github.com/26fe/jsonstat.py), [`eurostatapiclient`](https://github.com/opus-42/eurostat-api-client), [`pyrostat`](https://github.com/eruostat/pyrostat.py) (via _JSON-stat_).
 * [More](https://json-stat.org/tools/) on _JSON-stat_ format and tools.
 * Useful graphic tools galleries, in [`R`](https://www.r-graph-gallery.com/) and [`Python`](https://python-graph-gallery.com/).
+* `binder` [documentation](https://mybinder.readthedocs.io/en/latest/) and [examples](https://github.com/binder-examples).
+* `repo2docker` [configuration files](https://repo2docker.readthedocs.io/en/latest/config_files.html).
 * BBC visual and data journalism [**cookbook for `R` graphics**](https://bbc.github.io/rcookbook/).
 * World Bank [atlas of Sustainable Development Goals 2018](http://datatopics.worldbank.org/sdgatlas/) with the [source code](https://github.com/worldbank/sdgatlas2018). 
 
