@@ -34,6 +34,39 @@ The code source files provided herein can be used to (re)produce some of the sta
  
 **Description**
 
+<table align="center">
+<tr> <td align="left" valign="middle">
+    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/general.png">
+     <p style="font-size:15px">General and regional statistics/EU policies</p></td> 
+    <td align="left" valign="middle">
+    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/economy.png">
+     Economy and finance </td> 
+    <td align="left" valign="middle">
+    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/population.png">
+     Population and social conditions </td> 
+ </tr> 
+<tr> <td align="left" valign="middle">
+    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/industry.png">
+     Industry and services </td> 
+    <td align="left" valign="middle">
+    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/agriculture.png">
+     Agriculture, forestry and fisheries </td> 
+    <td align="left" valign="middle">
+    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/international.png">
+     International trade </td> 
+ </tr> 
+<tr> <td align="left" valign="middle">
+    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/transport.png">
+     Transport </td> 
+    <td align="left" valign="middle">
+    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/environment.png">
+     Environment and energy </td> 
+    <td align="left" valign="middle">
+    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/science.png">
+     Science, technology and digital society</td> 
+ </tr> 
+</table>
+
 The notebooks are organised according to the thematic structure already adopted for the Statistics Explained articles:
 
 * [general/](general) for reproducing some of the Stastistics Explained articles on [_"General and regional statistics, EU policies"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General_and_regional_statistics,_EU_policies),
