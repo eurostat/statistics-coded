@@ -60,7 +60,7 @@ The notebooks are organised according to the thematic structure already adopted 
 
 <table align="center">
 <tr> <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General and regional statistics/EU policies"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/general.png"></a>General and regional statistics/EU policies</td> 
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General and regional statistics/EU policies"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/general.png"></a>General and regional statistics / EU policies</td> 
     <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy and finance"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/economy.png"></a>Economy and finance</td> 
     <td align="left" valign="middle">
