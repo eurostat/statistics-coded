@@ -34,39 +34,6 @@ The code source files provided herein can be used to (re)produce some of the sta
  
 **Description**
 
-<table align="center">
-<tr> <td align="left" valign="middle">
-    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/general.png">
-     <p style="font-size:15px">General and regional statistics/EU policies</p></td> 
-    <td align="left" valign="middle">
-    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/economy.png">
-     Economy and finance </td> 
-    <td align="left" valign="middle">
-    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/population.png">
-     Population and social conditions </td> 
- </tr> 
-<tr> <td align="left" valign="middle">
-    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/industry.png">
-     Industry and services </td> 
-    <td align="left" valign="middle">
-    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/agriculture.png">
-     Agriculture, forestry and fisheries </td> 
-    <td align="left" valign="middle">
-    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/international.png">
-     International trade </td> 
- </tr> 
-<tr> <td align="left" valign="middle">
-    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/transport.png">
-     Transport </td> 
-    <td align="left" valign="middle">
-    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/environment.png">
-     Environment and energy </td> 
-    <td align="left" valign="middle">
-    <img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/science.png">
-     Science, technology and digital society</td> 
- </tr> 
-</table>
-
 The notebooks are organised according to the thematic structure already adopted for the Statistics Explained articles:
 
 * [general/](general) for reproducing some of the Stastistics Explained articles on [_"General and regional statistics, EU policies"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General_and_regional_statistics,_EU_policies),
@@ -90,6 +57,31 @@ The notebooks are organised according to the thematic structure already adopted 
   * [demo code](https://github.com/eurostat/statistics-coded/tree/master/science/R_demo_digital_econ_soc_stat) for [**Digital economy and society statistics - households and individuals**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Digital_economy_and_society_statistics_-_households_and_individuals),
   * ...  
   
+
+<table align="center">
+<tr> <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General and regional statistics/EU policies"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/general.png"></a>General and regional statistics/EU policies</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy and finance"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/economy.png"></a>Economy and finance</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population and social conditions"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/population.png"></a><a href="popul">Population and social conditions<\a> </td> 
+ </tr> 
+<tr> <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry and services"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/industry.png"></a>Industry and services</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture, forestry and fisheries"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/agriculture.png"></a>Agriculture, forestry and fisheries</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International trade"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/international.png"></a><a href="external">International trade<\a></td> 
+ </tr> 
+<tr> <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/transport.png"></a>Transport</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment and energy"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/environment.png"></a>Environment and energy</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science, technology and digital society"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/science.png"></a><a href="science">Science, technology and digital society<\a></td> 
+ </tr> 
+</table>  
+
 **<a name="Resources"></a>Resources**
 
 * _Eurostat_ [**online database**](https://ec.europa.eu/eurostat/data/database).
