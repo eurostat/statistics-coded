@@ -64,21 +64,21 @@ The notebooks are organised according to the thematic structure already adopted 
     <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy and finance"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/economy.png"></a>Economy and finance</td> 
     <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population and social conditions"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/population.png"></a><a href="popul">Population and social conditions<\a> </td> 
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population and social conditions"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/population.png"></a><a href="popul">Population and social conditions</a></td> 
  </tr> 
 <tr> <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry and services"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/industry.png"></a>Industry and services</td> 
     <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture, forestry and fisheries"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/agriculture.png"></a>Agriculture, forestry and fisheries</td> 
     <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International trade"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/international.png"></a><a href="external">International trade<\a></td> 
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International trade"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/international.png"></a><a href="external">International trade</a></td> 
  </tr> 
 <tr> <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/transport.png"></a>Transport</td> 
     <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment and energy"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/environment.png"></a>Environment and energy</td> 
     <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science, technology and digital society"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/science.png"></a><a href="science">Science, technology and digital society<\a></td> 
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science, technology and digital society"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/science.png"></a><a href="science">Science, technology and digital society</a></td> 
  </tr> 
 </table>  
 
