@@ -55,8 +55,9 @@ The notebooks are organised according to the thematic structure already adopted 
   * ...  
 * [transp/](transp) for [_"Transport"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport),
 * [envir/](envir) for [_"Environment and energy"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment_and_energy) articles,
-* [science/](science) for [_"Science, technology and digital society"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science,_technology_and_digital_society) articles.
-
+* [**science**/](science) for [_"Science, technology and digital society"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science,_technology_and_digital_society) articles.
+  * [demo code](https://github.com/eurostat/statistics-coded/tree/master/science/R_demo) for [**[Digital economy and society statistics - households and individuals**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Digital_economy_and_society_statistics_-_households_and_individuals)
+  
 **<a name="Resources"></a>Resources**
 
 * _Eurostat_ [**online database**](https://ec.europa.eu/eurostat/data/database).
