@@ -1,12 +1,9 @@
 channels:
   - conda-forge
-  - r
   - defaults
   - conda-forge/label/broken
 dependencies:
   - ipython
-  - r-essentials
-  - r-rjava
   - pip
   - matplotlib
   - numpy
