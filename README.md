@@ -24,7 +24,7 @@ The code source files provided herein can be used to (re)produce some of the sta
     <tr> <td align="left"><i>license</i></td> <td align="left"><a href="https://joinup.ec.europa.eu/sites/default/files/eupl1.1.-licence-en_0.pdfEUPL">EUPL</a> <i></i></td> </tr> 
 </table>
 
-**Quick start**
+**<a name="Quick-start"></a>Quick start**
 
  **Run the notebooks (both `R` and `Python`) in [`binder`](https://mybinder.org/)**. We provide the interactive environments with already installed packages to query and access _Eurostat_ database for notebook resources below (current build with commit [9a01c24](https://github.com/eurostat/statistics-coded/commit/9a01c24a124aa80310a84f156b11a20caff2d926)):
 <!-- generate new badges: https://mybinder.readthedocs.io/en/latest/howto/badges.html -->
