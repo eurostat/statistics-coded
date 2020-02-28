@@ -24,6 +24,10 @@ col5 <- rgb(93, 179, 64, maxColorValue = 255)
 
 year <- 2015
 
+path_data <- "//net1.cec.eu.int/ESTAT/F/1/common/04 Income Consumption Wealth/06 Output/joint_distribution/paper/Statistics_Explained"
+setwd(path_data)
+countryOrder <- read.csv("country_order.csv")
+
 #################################################################################################################################################
 ### FIGURE 1 (removed)
 #################################################################################################################################################
@@ -195,6 +199,8 @@ figure6 <- mutate(figure6,
                   bar3 = NLOW_YES_ARP)
 figure6 <- figure6[order(figure6$bar1),]
 
+figure6 <- figure6[,c("geo","time","NLOW_YES_ARP","LOW_YES_ARP","LOW_NO_ARP","bar1","bar2","bar3")]
+
 barplot(t(figure6$bar1), col = col3, main = NA,
         border = NA, space = 1.5, ylim = c(0,40),
         names.arg = figure6$geo, cex.names = 0.5)
@@ -225,6 +231,8 @@ figure7 <- mutate(figure7,
                   bar3 = NLOW_NSAV)
 
 figure7 <- figure7[order(figure7$bar1),]
+
+figure7 <- figure7[,c("geo","time","NLOW_NSAV","LOW_NSAV","LOW_SAV","bar1","bar2","bar3")]
 
 barplot(t(figure7$bar1), col = col3, main = NA,
         border = NA, space = 1.5, ylim = c(0,80),
@@ -275,8 +283,11 @@ figure8 <- merge(figure8[,c(1,2,3,4,5)], pps[,c(1,4)], all=T)
 figure8 <- mutate(figure8,values_corr = values*pps_values)
 
 figure8 <- dcast(figure8, geo~quantile, value.var = "values_corr")
+figure8 <- merge(figure8, countryOrder, by.x = "geo", by.y = "Country")
+figure8 <- arrange(figure8, Protocol_order)
+figure8 <- figure8[,c("geo","D1","D2","D3","D4","D5","D6","D7","D8","D9","D10")]
 
-setwd(path_results)
+Rsetwd(path_results)
 write.xlsx(figure8,"DataFiguresSE1.xlsx",sheetName = "Figure 8",append = TRUE)
 
 #################################################################################################################################################
@@ -287,6 +298,8 @@ prospensity <- get_eurostat("icw_sr_10", time_format = "num")
 figure9 <- filter(prospensity,
                    quantile != "TOTAL" & time == year)
 figure9 <- dcast(figure9, geo~quantile, value.var = "values")
+figure9 <- merge(figure9, countryOrder, by.x = "geo", by.y = "Country")
+figure9 <- arrange(figure9, Protocol_order)
 
 barplot(t(figure9[,2:6]), beside = TRUE, col = c(col1, col2, col3, col4, col5), 
         main = NA, ylim = c(0,250),
@@ -305,6 +318,9 @@ indicators_sr_age <- get_eurostat("icw_sr_01", time_format = "num")
 figure10 <- filter(indicators_sr_age,
                   age != "UNK" & time == year)
 figure10 <- dcast(figure10, geo~age, value.var = "values")
+figure10 <- merge(figure10, countryOrder, by.x = "geo", by.y = "Country")
+figure10 <- arrange(figure10, Protocol_order)
+figure10 <- figure10[,c("geo","TOTAL","Y_LT30","Y30-44","Y45-59","Y_GE60","Protocol_order")]
 
 barplot(t(figure10[,c(6,3:5)]), beside = TRUE, col = c(col1, col2, col3, col4), main = NA,
         border = NA, legend.text = c("Less than 30","Between 30 and 44","Between 45 and 60","60 and more"),
@@ -322,6 +338,9 @@ indicators_sr_hhcomp <- get_eurostat("icw_sr_02", time_format = "num")
 figure11 <- filter(indicators_sr_hhcomp,
                    hhcomp != "TOTAL" & time == year)
 figure11 <- dcast(figure11, geo~hhcomp, value.var = "values")
+figure11 <- merge(figure11, countryOrder, by.x = "geo", by.y = "Country")
+figure11 <- arrange(figure11, Protocol_order)
+figure11 <- figure11[,c("geo","A1","A2","A_GE3","A1_DCH","A2_DCH","A_GE3_DCH","Protocol_order")]
 
 barplot(t(figure11[,2:7]), beside = TRUE, col = c(col1, col1_faded, col2, col2_faded, col3, col3_faded), 
         main = NA, ylim = c(-60,60),
@@ -341,6 +360,8 @@ indicators_sr_inc <- get_eurostat("icw_sr_03", time_format = "num")
 figure12 <- filter(indicators_sr_inc,
                    quantile != "TOTAL" & time == year)
 figure12 <- dcast(figure12, geo~quantile, value.var = "values")
+figure12 <- merge(figure12, countryOrder, by.x = "geo", by.y = "Country")
+figure12 <- arrange(figure12, Protocol_order)
 
 barplot(t(figure12[,2:6]), beside = TRUE, col = c(col1, col2, col3, col4, col5), 
         main = NA, ylim = c(-80,80),
