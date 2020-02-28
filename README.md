@@ -39,7 +39,7 @@ The code source files provided herein can be used to (re)produce some of the sta
 
 * **Run the notebooks in [`Google colab`](https://colab.research.google.com/)**. 
  
- - Launch [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/eurostat/statistics-coded/blob/master/) (try for instance **[this link](https://colab.research.google.com/github/eurostat/statistics-coded/blob/master/external/trade_investment_employment_globalisation/trade_investment_employment_globalisation_py.ipynb)**).
+ - Launch [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/eurostat/statistics-coded/blob/master/) (try for instance **[this notebook](https://colab.research.google.com/github/eurostat/statistics-coded/blob/master/external/trade_investment_employment_globalisation/trade_investment_employment_globalisation_py.ipynb)**).
  
 **Description**
 
