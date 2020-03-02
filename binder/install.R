@@ -7,13 +7,12 @@
 # IRkernel::installspec()
 
 # install through conda conda-forge?
-install.packages(c("tidyr", "repr", "dplyr"), repos="https://cloud.r-project.org")
-install.packages("ggplot2", repos="https://cloud.r-project.org")
-install.packages(c("data.table", "rjson", "xml2"), repos="https://cloud.r-project.org")
+install.packages(c("tidyr", "repr", "dplyr","reshape2"), repos="https://cloud.r-project.org")
+install.packages(c("ggplot2","plotly"),repos="https://cloud.r-project.org")
+install.packages(c("restatapi","rjson", "xml2","data.table"), repos="https://cloud.r-project.org")
 # install.packages("reticulate", repos="https://cloud.r-project.org") # python support in RMarkdown
 
 # Eurostat package restatapi: we get the dev version
-install.packages("restatapi", repos="https://cloud.r-project.org")
 # devtools::install_github("eurostat/restatapi")
 install.packages(c("rsdmx", "rdbnomics"), repos="https://cloud.r-project.org")
 # install.packages(c("timeSeries", "ggdemetra", "prophet"), repos="https://cloud.r-project.org")
