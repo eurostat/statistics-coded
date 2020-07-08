@@ -39,7 +39,7 @@ The resources are organised according to the thematic structure already adopted 
 * [general/](general) for reproducing some of the Stastistics Explained articles on [_"General and regional statistics, EU policies"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General_and_regional_statistics,_EU_policies),
 * [economy/](economy) for [_"Economy and finance"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy_and_finance) articles,
 * [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles:
-  * [notebook](https://github.com/eurostat/statistics-coded/blob/master/popul/young_people_social_inclusion/young-people-social-inclusion_R.ipynb) on [**young people and social inclusion**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Young_people_-_social_inclusion),
+  * [notebook](https://github.com/eurostat/statistics-coded/blob/master/popul/young_people_social_inclusion/young-people-social-inclusion_r.ipynb) on [**young people and social inclusion**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Young_people_-_social_inclusion),
   * [source code](https://github.com/eurostat/statistics-coded/tree/master/popul/income_consumption_wealth) for [**income, consumption and wealth**](https://ec.europa.eu/eurostat/web/experimental-statistics/income-consumption-and-wealth),
   * ...
 * [**icts/**](icts) for [_"Industry and services"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry_and_services) articles:
@@ -47,8 +47,8 @@ The resources are organised according to the thematic structure already adopted 
   * ...
 * [agric/](agric) for [_"Agriculture, forestry and fisheries"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture,_forestry_and_fisheries) articles,
 * [**external/**](external) for [_"International trade"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International_trade) articles:
-  * [notebook](external/eu_int_trade_transport) for  [**EU international trade in transport services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=EU_international_trade_in_transport_services),
-  * [notebook](https://github.com/eurostat/statistics-coded/tree/master/external/trade_investment_employment_globalisation) for 
+  * [notebook](external/eu_int_trade_transport/eu_int_trade_transport_r.ipynb) for  [**EU international trade in transport services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=EU_international_trade_in_transport_services),
+  * [notebook](external/trade_investment_employment_globalisation/trade_investment_employment_globalisation_py.ipynb) for 
   [**trade, investment and employment as aspects of globalisation**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Trade,_investment_and_employment_as_aspects_of_globalisation),
   * ...  
 * [transp/](transp) for [_"Transport"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport),
