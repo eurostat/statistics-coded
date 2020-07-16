@@ -4,25 +4,32 @@ statistics-coded
  Resources for reproducing the outputs of _Eurostat_ Statistics Explained articles.
 ---
 
-**About**
-
 The material provided herein can be used to (re)produce some of the statistical results presented in _Eurostat_ [**Statistics Explained**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page) articles. it is used to generate the figures published in the articles and are made available in the form of either code source files or computing notebooks. The latter will allow you to fetch the open data disseminated on _Eurostat_ online database and interact with it dynamically.
 
+
 <table align="center">
-    <tr> <td align="left"><i>contributors</i></td> 
+<tr> <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General and regional statistics/EU policies"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/general.png"></a>General and regional statistics / EU policies</td> 
     <td align="left" valign="middle">
-<a href="https://github.com/fmshka"><img src="https://github.com/fmshka.png" width="40"></a>
-<a href="https://github.com/Dgojsic"><img src="https://github.com/Dgojsic.png" width="40"></a>
-<a href="https://github.com/agnebik"><img src="https://github.com/agnebik.png" width="40"></a>
-<a href="https://github.com/flopaleur"><img src="https://github.com/flopaleur.png" width="40"></a>
-<a href="https://github.com/pierre-lamarche"><img src="https://github.com/pierre-lamarche.png" width="40"></a>
-<a href="https://github.com/mmatyi"><img src="https://github.com/mmatyi.png" width="40"></a>
-<a href="https://github.com/gjacopo"><img src="https://github.com/gjacopo.png" width="40"></a>
-</td>  </tr> 
-    <tr> <td align="left"><i>version</i></td> <td align="left">0.1</td> </tr> 
-    <tr> <td align="left"><i>status</i></td> <td align="left">since 2019</td> </tr> 
-    <tr> <td align="left"><i>license</i></td> <td align="left"><a href="https://joinup.ec.europa.eu/sites/default/files/eupl1.1.-licence-en_0.pdfEUPL">EUPL</a> <i></i></td> </tr> 
-</table>
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy and finance"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/economy.png"></a>Economy and finance</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population and social conditions"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/population.png"></a><a href="popul">Population and social conditions</a></td> 
+ </tr> 
+<tr> <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry and services"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/industry.png"></a>Industry and services</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture, forestry and fisheries"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/agriculture.png"></a>Agriculture, forestry and fisheries</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International trade"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/international.png"></a><a href="external">International trade</a></td> 
+ </tr> 
+<tr> <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/transport.png"></a>Transport</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment and energy"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/environment.png"></a>Environment and energy</td> 
+    <td align="left" valign="middle">
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science, technology and digital society"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/science.png"></a><a href="science">Science, technology and digital society</a></td> 
+ </tr> 
+</table>  
 
 **<a name="Quick-start"></a>Quick start**
 
@@ -57,30 +64,27 @@ The resources are organised according to the thematic structure already adopted 
   * [demo notebook](science/digital_economy_society_statistics/households_individuals_demo_r.ipynb) for [**Digital economy and society statistics - households and individuals**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Digital_economy_and_society_statistics_-_households_and_individuals),
   * ...  
   
+**About**
 
 <table align="center">
-<tr> <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General and regional statistics/EU policies"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/general.png"></a>General and regional statistics / EU policies</td> 
+    <tr> <td align="left"><i>contributors</i></td> 
     <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy and finance"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/economy.png"></a>Economy and finance</td> 
-    <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population and social conditions"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/population.png"></a><a href="popul">Population and social conditions</a></td> 
- </tr> 
-<tr> <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry and services"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/industry.png"></a>Industry and services</td> 
-    <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture, forestry and fisheries"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/agriculture.png"></a>Agriculture, forestry and fisheries</td> 
-    <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International trade"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/international.png"></a><a href="external">International trade</a></td> 
- </tr> 
-<tr> <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/transport.png"></a>Transport</td> 
-    <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment and energy"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/environment.png"></a>Environment and energy</td> 
-    <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science, technology and digital society"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/science.png"></a><a href="science">Science, technology and digital society</a></td> 
- </tr> 
-</table>  
+<a href="https://github.com/fmshka"><img src="https://github.com/fmshka.png" width="40"></a>
+<a href="https://github.com/Dgojsic"><img src="https://github.com/Dgojsic.png" width="40"></a>
+<a href="https://github.com/agnebik"><img src="https://github.com/agnebik.png" width="40"></a>
+<a href="https://github.com/flopaleur"><img src="https://github.com/flopaleur.png" width="40"></a>
+<a href="https://github.com/pierre-lamarche"><img src="https://github.com/pierre-lamarche.png" width="40"></a>
+<a href="https://github.com/mmatyi"><img src="https://github.com/mmatyi.png" width="40"></a>
+<a href="https://github.com/gjacopo"><img src="https://github.com/gjacopo.png" width="40"></a>
+</td>  </tr> 
+    <tr> <td align="left"><i>version</i></td> <td align="left">0.1</td> </tr> 
+    <tr> <td align="left"><i>status</i></td> <td align="left">since 2019</td> </tr> 
+    <tr> <td align="left"><i>license</i></td> <td align="left"><a href="https://joinup.ec.europa.eu/sites/default/files/eupl1.1.-licence-en_0.pdfEUPL">EUPL</a> <i></i></td> </tr> 
+</table>
+
+**<a name="Contribute"></a>Contribute**
+
+You want to contribute to the development of a *Statistics Explained* article? Please submit your pull requests to "master" branch!
 
 **<a name="Resources"></a>Resources**
 
