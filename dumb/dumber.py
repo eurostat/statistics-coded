@@ -6,7 +6,7 @@
    "source": [
     "## *Statistics coded:* My first notebook\n",
     "\n",
-    "Prepared by [Jacopo Grazzini](jacopo.grazzini@ec.europa.eu) (Eurostat).\n"
+    "Prepared by [Jacopo Grazzini](jacopo.grazzini@ec.europa.eu) (Eurostat)."
    ]
   },
   {
