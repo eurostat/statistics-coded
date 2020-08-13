@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 
 class RequestHandeler:
 
@@ -92,8 +93,10 @@ class RequestHandeler:
                 print("\t%s" % (self.status[key][0]))
                 if '[-]' in message:
                     print('\tData not extracted successfully')
-                    print('Exiting ...')
-                    sys.exit()
+                    print('\ton the request %s' %(self.url))
+                    return None, None, r.status_code
+                    #print('Exiting ...')
+                    #sys.exit()
         # json dict
         data = json.loads(r.text)
         #jason string
