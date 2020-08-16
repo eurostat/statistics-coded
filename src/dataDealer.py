@@ -7,6 +7,13 @@ import numpy as np
 import pandas as pd
 import sys
 
+class Data:
+
+    def __init__(self, lines, columns, values):
+        self.lines = lines
+        self.columns = columns
+        self.values = values
+
 def check_data_by_status(data, toZero=False):
     missing_index = []
     for key in data['status']:

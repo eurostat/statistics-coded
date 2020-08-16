@@ -82,8 +82,9 @@ class RequestHandeler:
         return : string                : datastr : jason string
         return : integer               : response : server response
     '''
-    def get_request(self, args):
-        self.args = args
+    def get_request(self, args=None):
+        if args != None:
+            self.args = args
         self.url = self.prepare_request()
         r = requests.get(self.url)
         for key in self.status:
@@ -94,14 +95,45 @@ class RequestHandeler:
                 if '[-]' in message:
                     print('\tData not extracted successfully')
                     print('\ton the request %s' %(self.url))
-                    return None, None, r.status_code
+                    return Response({'dict' : None , 'str' : None}, {r.status_code : message}, self.url)
                     #print('Exiting ...')
                     #sys.exit()
         # json dict
-        data = json.loads(r.text)
+        datadict = json.loads(r.text)
         #jason string
-        datastr = json.dumps(data, indent=4, sort_keys=True)
-        return data, datastr, r.status_code
+        datastr = json.dumps(datadict, indent=4, sort_keys=True)
+        data = {'dict': datadict, 'str' : datastr}
+
+        return Response(data, {r.status_code : message}, self.url)
+
+    def update_arg(self, arg):
+        args_dict = update_args_to_dict(arg)
+        for key in args_dict:
+            self.args[key] = args_dict[key]
+
+
+
+class Response:
+
+    def __init__(self, data, status, get_url):
+        self.data = data
+        self.status = status
+        self.url = get_url
+
+    def __str__(self):
+        output = ''
+        for key in self.__dict__:
+            if type(self.__dict__[key]) == type({1:2}):
+                output += '%s =>\n' % key
+                if key == 'data':
+                    output += "\t%s => %s - json-dictionary\n" % ('dict', type(self.__dict__[key]['dict']))
+                    output += "\t%s => %s - json-string\n" % ('str', type(self.__dict__[key]['str']))
+                elif key == 'status':
+                    output += "\t%s => %s\n" % (list(self.__dict__[key].keys())[0], list(self.__dict__[key].values())[0])
+            else:
+                output += "%s => %s\n" % (key, self.__dict__[key])
+        return output
+
 
 '''
 From separated arguments to dict
@@ -117,3 +149,10 @@ def args_to_dict(table, *args, **kwargs):
         l = ar.split("=")
         url_args[l[0].strip(" ")] = l[1].strip(" ")
     return url_args
+
+def update_args_to_dict(arg):
+    update_dict = {}
+    l = arg.split("=")
+    update_dict[l[0].strip(" ")] = l[1].strip(" ")
+
+    return update_dict
