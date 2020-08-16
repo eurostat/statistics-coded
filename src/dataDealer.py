@@ -52,6 +52,17 @@ def create_d(lines,columns, values, remove_list,invert=False, void_item=False):
                     if void_item:
                         d[lines[k], columns[i]] = 0.
                 j += 1
+    else:
+        j = 0
+        for i in range(len(lines)):
+            for k in range(len(columns)):
+                if lines[i] not in remove_list:
+                    d[lines[i], columns[k]]= values[j]
+                else:
+                    if void_item:
+                        d[lines[i], columns[k]] = 0.
+                j += 1
+
     return d
 
 
@@ -65,25 +76,12 @@ def json_to_data(lines, columns, values, remove_list=[], void_item=False, clean_
             for key in clean_dict:
                 if key in lines[i]:
                     lines[i] = clean_dict[key]
-    d = {}
-    j = 0
-    remove = remove_list
+
     if multiple_key != 'time' and multiple_key != '':
-        d = create_d(lines=lines, columns=columns, values=values, remove_list=remove, invert=True, void_item=True)
+        d = create_d(lines=lines, columns=columns, values=values, remove_list=remove_list, invert=True, void_item=void_item)
     else:
-        for i in range(len(lines)):
-            if clean_dict:
-                for key in clean_dict:
-                    if key in lines[i]:
-                        lines[i] = clean_dict[key]
-                for k in range(len(columns)):
-                    if lines[i] not in remove_list:
-                        d[lines[i], columns[k]]= values[j]
-                    else:
-                        if void_item:
-                            d[lines[i], columns[k]] = 0.
-                    j += 1
-                    
+        d = create_d(lines=lines, columns=columns, values=values, remove_list=remove_list, invert=False, void_item=void_item)
+
     if remove_list and not void_item:
         for item in remove_list:
             try:
