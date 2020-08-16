@@ -79,8 +79,8 @@ class RequestHandeler:
     Do the get request
         params: RequestHandeler_Object
         return:  dict                  : data :    jason dict
-        return : string                : datastr : jason string
-        return : integer               : response : server response
+        return : Response_Object       : response object with
+                                            response data, status and GET url as attributes
     '''
     def get_request(self, args=None):
         if args != None:
