@@ -106,7 +106,14 @@ class RequestHandeler:
 
         return Response(data, {r.status_code : message}, self.url)
 
-    def update_arg(self, arg):
+    '''
+        Updates filters for the ger request
+
+        params: RequestHandeler_Object
+        params: list of str: opional arguments in the 'key = value' form
+        return: void
+    '''
+    def update_args(self, *arg):
         args_dict = update_args_to_dict(arg)
         for key in args_dict:
             self.args[key] = args_dict[key]
@@ -150,9 +157,15 @@ def args_to_dict(table, *args, **kwargs):
         url_args[l[0].strip(" ")] = l[1].strip(" ")
     return url_args
 
-def update_args_to_dict(arg):
-    update_dict = {}
-    l = arg.split("=")
-    update_dict[l[0].strip(" ")] = l[1].strip(" ")
-
-    return update_dict
+'''
+From separated arguments to dict fixed argument list coming from RequestHandeler.update_args
+    params:  list of str :  args :  'key = value' form
+    return:  dict:  update_args:  dictionary of arguments to update
+                                    - to update RequestHandeler.args attribute
+'''
+def update_args_to_dict(args):
+    update_args = {}
+    for ar in args:
+        l = ar.split("=")
+        update_args[l[0].strip(" ")] = l[1].strip(" ")
+    return update_args
