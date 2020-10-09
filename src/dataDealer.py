@@ -25,7 +25,7 @@ class Data:
 def check_data_by_status(data, toZero=False):
     missing_index = []
     for key in data['status']:
-        if data['status'][key] == ':':
+        if data['status'][key] == ':' or data['status'][key] == ':z' or data['status'][key] == 'p':
             missing_index.append(key)
     for item in missing_index:
         r = None
