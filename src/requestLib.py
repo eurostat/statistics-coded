@@ -117,7 +117,7 @@ class RequestHandeler:
         args_dict = update_args_to_dict(arg)
         for key in args_dict:
             self.args[key] = args_dict[key]
-
+        args_dict
 
 
 class Response:
@@ -169,3 +169,22 @@ def update_args_to_dict(args):
         l = ar.split("=")
         update_args[l[0].strip(" ")] = l[1].strip(" ")
     return update_args
+
+
+def args_to_dict_fun(table='', na_item='', precision='1', unit='', time='', sector=''):
+    tmp = list(locals().keys())
+    inputs = [table, na_item, precision, unit, time, sector]
+    url_args = {}
+    for i in range(len(tmp)):
+        if inputs[i] != '':
+            url_args[tmp[i]] = inputs[i]
+    return url_args
+
+
+
+
+def namestr(obj, namespace):
+    #return [name for name in namespace if namespace[name] is obj]
+    for name in namespace:
+        if namespace[name] is obj:
+            return name
