@@ -1,8 +1,8 @@
 #!/bin/bash
 # @brief:    Quick lab setup - Fetch shared notebook resources from a git project 
-#            and create a conda computing environment (conda) for running them.
+#            and create a conda computing environment (conda) for running them.";
 #
-#    setup-gitenv.sh [-h] [-v] [-t] [-p <prj>] [-r <rep>] [-w <url>] [-d <dir>] 
+#    setup-gitenv.sh [-h] [-v] [-t] [-p <prj>] [-r <rep>] [-d <dir>] 
 #                   [-e <env>] [-y <yaml>] [-u] [-c] [-a]
 #
 # @description:
@@ -21,7 +21,7 @@
 # 3. On Windows, consider using shells provided by Cygwin (https://www.cygwin.com/) or Putty 
 # (http://www.putty.org/).
 # 4. To launch the command, run on the shell command line:
-#            bash setup-gitenv.sh <arguments>
+#            bash setup-datalab-start.sh <arguments>
 # with your own arguments/instructions.
 # @date:     20/10/2020
 # @credit:   ESTAT B1 <mailto:ESTAT-Methodology@ec.europa.eu>
@@ -29,13 +29,12 @@
 
 ## Change the default parameters if needed...
 
-DEFURL="https://github.com"
-DEFREP="eurostat"
+DEFREP="https://github.com/eurostat"
 DEFPRJ="statistics-coded"
 DEFYML="environment.yml"
 # DEFPRJ=("statistics-coded" "PRost")
 
-DEFDIR=Examples/projects
+DEFDIR=$HOME/Examples/projects
 DEFENV=ex
 DEFBRC=master
 
@@ -104,18 +103,15 @@ function help() {
     echo "";
     echo "Syntax";
     echo "------";
-    echo "    ${PROGRAM} [-h] [-v] [-t] [-p <proj>] [-r <repo>] [-w <url>] [-b <branch>]";
-    echo "                [-d <folder>] [-e <envir>] [-y <yaml>] [-u] [-c] [-a]";
+    echo "    ${PROGRAM} [-h] [-v] [-t] [-p <proj>] [-r <repo>] [-b <branch>] [-d <folder>]";
+    echo "                [-e <envir>] [-y <yaml>] [-u] [-c] [-a]";
     echo "";
     echo "Arguments";
     echo "---------";
     echo "";
     echo " -p <proj> : (opt.) name of the git project to clone/copy; def.: $DEFPRJ.";
-    echo " -r <repo> : (opt.) name of the repository/organisation (e.g., on github) where the";
-    echo "              project <prj> is distributed; can be ignored when <url> is parsed (see";
-    echo "              \"-w\" below); def.: $DEFREP.";
-    echo " -w <url>  : (opt.) name of the server (e.g., github.com) where repository are shared;";
-    echo "              def.: $DEFURL.";
+    echo " -r <repo> : (opt.) name of the (remote) repository server (e.g., on github) where the";
+    echo "              project <prj> is distributed; def.: $DEFREP.";
     echo " -b <branch> : branch of the project <prj> to clone/copy; def.: $DEFBRC.";
     echo " -d <folder> : name of the local directory where to clone/copy the project <prj>; def.:";
     echo "              $DEFDIR.";
@@ -138,8 +134,8 @@ function help() {
     echo "Note";
     echo "----";
     echo "Note the syntax with long option names:"
-    echo "    ${PROGRAM} [--prj <prj>] [--rep <repo>] [--url <url>] [--branch <branch>]";
-    echo "                [-dir <folder>] [--env <envir>] [--yaml <yaml>] [-copy] [-update]";
+    echo "    ${PROGRAM} [--prj <prj>] [--rep <repo>] [--branch <branch>] [-dir <folder>] ";
+    echo "                [--env <envir>] [--yaml <yaml>] [-copy] [-update]";
     echo "                [--verb] [--help] [--test]";
     echo "";
     echo " European Commission  -  DG ESTAT  -  B1 unit: Methodology & Innovation  -  2020 ";
@@ -219,7 +215,7 @@ VERB=0
 TESTECHO=
 
 PRJ=
-URL=
+REP=
 DIR=
 ENV=
 YML=
@@ -230,12 +226,12 @@ UPDATE=0
 ACTIVATE=0
 
 # we use getopt to pass the arguments
-# options are:  [--verb] [--help] [--test] [--prj <Git_project>] [--rep <Git_repository>] [--url <Git_URL>] 
-#               [--branch <Git_branch>] [-dir <local_directory>] [--env <conda_environment>] [--yaml <yaml_configuration>] [-copy] [-update]
+# options are:  [--verb] [--help] [--test] [--prj <Git_project>] [--rep <Git_repository>] [--branch <Git_branch>] 
+#               [-dir <local_directory>] [--env <conda_environment>] [--yaml <yaml_configuration>] [-copy] [-update]
 
 # option strings
-SHORT=htvp:r:w:d:e:b:y::uc
-LONG=test,help,verb,proj:,repo:,web:,dir:,env:,branch:,yaml::,update,copy
+SHORT=htvp:r:d:e:b:y::uc
+LONG=test,help,verb,proj:,repo:,dir:,env:,branch:,yaml::,update,copy
 
 # read the options
 PARSED=$(getopt --options $SHORT --long $LONG --name "${PROGRAM}" -- "$@")
@@ -251,8 +247,6 @@ while true ; do
         -p|--proj) PRJ=$2; 
             shift 2;;
         -r|--repo) REP=$2; 
-            shift 2;;
-        -w|--url) URL=$2; 
             shift 2;;
         -d|--dir) DIR=$2; 
             shift 2;;
@@ -290,20 +284,20 @@ done
 # help announcement (if not done already above)	
 [ $HELP -eq 1 ] && help
 
-# retrieve the URL
-if [ -z "$URL" ]; then
-    URL=$DEFURL
+# retrieve the remote REPository server
+if [ -z "$REP" ]; then
+    REP=$DEFREP
 fi
 
-function check_url_domain() {
-    # argument: 1:URL name
+function check_repo_domain() {
+    # argument: 1:repository name
     # note: 0 is the normal bash "success" return value
-    local prefix domains=("http" "https" "ftp")
+    local prefix domains=("http" "https" "ftp" "ssh")
     return $(starts_with $1 ${domains[@]})
 }
 
-function check_url_exists() {
-    # argument: 1:URL
+function check_repo_exists() {
+    # argument: 1:repository
     # see: https://stackoverflow.com/questions/12199059/how-to-check-if-an-url-exists-with-the-shell-and-probably-curl
     [[ $(curl  --silent --head --fail $1) ]] && return 0
     # or: [[ $(wget -S --max-redirect=0 --spider $1  2>/dev/null | grep 'HTTP/1.1 200 OK') ]] && return 0
@@ -313,32 +307,23 @@ function check_url_exists() {
     #     else return 1; fi
 }
 
-$(check_url_domain $URL) || usage "!!! Domain URL of \"$URL\" not recognised - Aborting !!!"
-$(check_url_exists $URL) || usage "!!! URL \"$URL\" not found - Aborting !!!"
- 
-# retrieve the repository
-if [ -z "$REP" ]; then
-    REP=$DEFREP
-fi
-if ! $(check_url_domain $REP); then
-    REP=$URL/$REP
-fi
-$(check_url_exists $REP) || usage "!!! Online repository \"$REP\" does not exist - Aborting !!!"
+$(check_repo_domain $REP) || usage "!!! Protocol of remote repository \"$REP\" not recognised - Aborting !!!"
+$(check_repo_exists $REP) || usage "!!! Remote repository \"$REP\" does not exist - Aborting !!!"
 
 # retrieve the project
 if [ -z "$PRJ" ]; then
     PRJ=$DEFPRJ
 fi
-if ! $(check_url_domain $PRJ); then
+if ! $(check_repo_domain $PRJ); then
     PRJ=${PRJ##*/}
 fi
   
 SRC=$REP/$PRJ
-$(check_url_exists $SRC) || usage "!!! Online project \"$SRC\" does not exist - Aborting !!!"
+$(check_repo_exists $SRC) || usage "!!! Online project \"$SRC\" does not exist - Aborting !!!"
 
 # retrieve the directory
 if [ -z "$DIR" ]; then
-    DIR=$HOME/$DEFDIR
+    DIR=$DEFDIR
 fi
 
 # retrieve the environment name
@@ -369,7 +354,6 @@ fi
 ## Start operations
 
 # check directory: create if it does not exist
-    
 if ! [ -d $DIR ]; then
     # directory does not exist and shall be created
     ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n* Creating directory \"$DIR\"..."
@@ -387,17 +371,21 @@ function find_git_project() {
     echo $folder
 }
 
+# check whether the destination project already exists in local
 if ! [ -d $DIR/$PRJ ]; then
-    # first check whether the file is actually... somewhere else
+    # if not, first check whether the file is actually... somewhere else in local
     prj=$(find_git_project $PRJ .) # $DIR
     if [ -z $prj ]; then 
-        $TESTECHO create_git_project $COPY $REP $PRJ $BRC $DIR
+        # if not, create the project from scratch
         prj=$DIR/$PRJ
+        $TESTECHO create_git_project $COPY $REP $PRJ $BRC $DIR
         ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n! git project repository created: \"$prj\" !"
     else
+        # otherwise... proceed
         ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n! git project repository found: \"$prj\" !"
     fi
 else
+    # else, proceed
     prj=$DIR/$PRJ
     ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n! Project directory defined as: \"$prj\" !"
 fi
@@ -457,34 +445,41 @@ function update_git_project() {
     fi
 }
 
+# check whether an update is requested
 if [ $UPDATE -eq 0 ]; then 
-    # no update requested: quit...
+    # not requested: break...
     ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n! Leaving directory \"$prj\" unchanged !"     
-elif $(check_git_dir $prj); then  
-    # project is a git repository
-    if [ $COPY -eq 0 ]; then
-        $TESTECHO update_git_project $prj $BRC
-    else
-        ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n* Removing repository \"$prj\"..."
-        $TESTECHO rm -fr $prj 
-        ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n* Creating repository \"$prj\"..."
-        $TESTECHO create_git_project 1 $REP $(basename $prj) $BRC $(dirname $prj)
-    fi
+# else, check whether the project is a git repository and shall remain so
+elif ($(check_git_dir $prj) && [ $COPY -eq 0 ]); then  
+    # normally update the git
+    $TESTECHO update_git_project $prj $BRC
+else
+    # otherwise, remove everything and create a copy
+    ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n* Removing repository \"$prj\"..."
+    $TESTECHO rm -fr $prj 
+    ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n* Creating repository \"$prj\"..."
+    $TESTECHO create_git_project 1 $REP $(basename $prj) $BRC $(dirname $prj)
 fi
 
+# check whether conda is actually available
 hash conda 2>/dev/null || { echo >&2 -e "\n! Software CONDA not installed - Ignoring CONDA commands !"; exit 0; }
 
 function find_conda_yml() {
     # arguments: 1:yaml file to find - 2:folder to explore (def.: current directory)
     local yml dir file
+    # yml=$(starts_with $1 . && echo \*.yml || echo $1)
+    yml=$1
     dir=${2:-./}
-    yml=$(starts_with $1 . && echo \*.yml || echo $1)
     file=$(find $OPTFIND $dir ${OPTDEPTH[@]} ${OPTREGEX[@]} -name "$yml" -type f)
     echo $file
 }
 
+# retrieve the YAML file
 yml=$(find_conda_yml $YML $prj)
 [ -z $yml ] && { echo >&2 -e "\n! No YAML configuration file found - Ignoring CONDA commands !"; exit 0; }
+# in case there is more than one file... then we arbitrarly decide to pick up the first one in the list...
+ayml=($(echo $yml | tr ";" "\n"))
+yml=${ayml[0]}
 ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n! YAML configuration file found: \"$yml\" !"
 
 function check_env_exists() {
@@ -495,6 +490,7 @@ function check_env_exists() {
     return 1
 }
 
+# check whether the conda environment already exists, in which case update the name
 env=$(check_env_exists $ENV && increment_name $ENV || echo $ENV)
 ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && echo -e "\n! conda environment defined as: \"$yml\" !"
 
@@ -510,10 +506,12 @@ function update_conda_env() {
     return 1
 }
 
+# create/update the conda environment
 if ([ "$env" == "$ENV" ] && [ $UPDATE -eq 0 ]); then
     $TESTECHO create_conda_env $env $yml
 else
     $TESTECHO update_conda_env $env $yml
 fi
 
+# display the list of available environments
 ([ $VERB -eq 1 ] || ! [ -z $TESTECHO ]) && $TESTECHO conda env list
