@@ -21,7 +21,7 @@
 # 3. On Windows, consider using shells provided by Cygwin (https://www.cygwin.com/) or Putty 
 # (http://www.putty.org/).
 # 4. To launch the command, run on the shell command line:
-#            bash setup-datalab-start.sh <arguments>
+#            bash setup-gitenv.sh <arguments>
 # with your own arguments/instructions.
 # @date:     20/10/2020
 # @credit:   ESTAT B1 <mailto:ESTAT-Methodology@ec.europa.eu>
