@@ -254,7 +254,7 @@ while true ; do
             shift 2;;
         -y|--yml) 
             case "$2" in
-                 "") YML=".yml";; 
+                 "") YML="*.yml";; 
                  *) YML=$2;; 
             esac; shift 2 ;;
         -b|branch) BRC=$2;
