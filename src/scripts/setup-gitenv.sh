@@ -1,6 +1,6 @@
 #!/bin/bash
 # @brief:    Quick lab setup - Fetch shared notebook resources from a git project 
-#            and create a conda computing environment (conda) for running them.";
+#            and create a conda computing environment (conda) for running them.
 #
 #    setup-gitenv.sh [-h] [-v] [-t] [-p <prj>] [-r <rep>] [-w <url>] [-d <dir>] 
 #                   [-e <env>] [-y <yaml>] [-u] [-c] [-a]
