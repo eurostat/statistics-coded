@@ -7,6 +7,10 @@ import pandas as pd
 import requestLib
 import dataDealer
 
+print(requestLib.args_to_dict_fun(table='hello'))
+sys.exit()
+
+
 def clean_country(country):
     for i in range(len(country)):
         if 'Germany' in country[i]:
