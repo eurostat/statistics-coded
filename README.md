@@ -11,12 +11,12 @@ The material provided herein can be used to (re)produce some of the statistical 
 <tr> <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General and regional statistics/EU policies"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/general.png"></a>General and regional statistics / EU policies</td> 
     <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy and finance"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/economy.png"></a>Economy and finance</td> 
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy and finance"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/economy.png"></a><a href="economy">Economy and finance</a></td> 
     <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population and social conditions"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/population.png"></a><a href="popul">Population and social conditions</a></td> 
  </tr> 
 <tr> <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry and services"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/industry.png"></a>Industry and services</td> 
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry and services"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/industry.png"></a><a href="icts">Industry and services</a></td> 
     <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture, forestry and fisheries"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/agriculture.png"></a>Agriculture, forestry and fisheries</td> 
     <td align="left" valign="middle">
@@ -25,7 +25,7 @@ The material provided herein can be used to (re)produce some of the statistical 
 <tr> <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/transport.png"></a>Transport</td> 
     <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment and energy"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/environment.png"></a>Environment and energy</td> 
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment and energy"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/environment.png"></a><a href="envir">Environment and energy</a></td> 
     <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science, technology and digital society"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/statexpflat/css/statexpflat/themes/32x32/color/science.png"></a><a href="science">Science, technology and digital society</a></td> 
  </tr> 
@@ -44,25 +44,45 @@ The material provided herein can be used to (re)produce some of the statistical 
 The resources are organised according to the thematic structure already adopted for the Statistics Explained articles:
 
 * [general/](general) for reproducing some of the Stastistics Explained articles on [_"General and regional statistics, EU policies"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General_and_regional_statistics,_EU_policies),
-* [economy/](economy) for [_"Economy and finance"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy_and_finance) articles,
-* [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles:
-  * [notebook](https://github.com/eurostat/statistics-coded/blob/master/popul/young_people_social_inclusion/young-people-social-inclusion_r.ipynb) on [**young people and social inclusion**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Young_people_-_social_inclusion),
-  * [source code](https://github.com/eurostat/statistics-coded/tree/master/popul/income_consumption_wealth) for [**income, consumption and wealth**](https://ec.europa.eu/eurostat/web/experimental-statistics/income-consumption-and-wealth),
-  * ...
-* [**icts/**](icts) for [_"Industry and services"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry_and_services) articles:
-  * [source code](https://github.com/eurostat/statistics-coded/tree/master/icts/multinational_enterprise_groups_SQL) for  [**structure of multinational enterprise groups in the EU**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Structure_of_multinational_enterprise_groups_in_the_EU),
-  * ...
-* [agric/](agric) for [_"Agriculture, forestry and fisheries"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture,_forestry_and_fisheries) articles,
-* [**external/**](external) for [_"International trade"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International_trade) articles:
-  * [notebook](external/eu_int_trade_transport/eu_int_trade_transport_r.ipynb) for  [**EU international trade in transport services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=EU_international_trade_in_transport_services),
-  * [notebook](external/trade_investment_employment_globalisation/trade_investment_employment_globalisation_py.ipynb) for 
+
+* [**economy/**](economy) for [_"Economy and finance"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy_and_finance) articles:
+  - [`Python` notebook](economy/balance-payments/trade-investment-employment-globalisation_py.ipynb) on 
   [**trade, investment and employment as aspects of globalisation**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Trade,_investment_and_employment_as_aspects_of_globalisation),
-  * ...  
+  - [`Python` notebook](economy/comparative-price-levels/comparative-price-consumer-goods-services_py.ipynb) on 
+  [**comparative price levels of consumer goods and services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Comparative_price_levels_of_consumer_goods_and_services),
+  - ...  
+  
+* [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles:
+  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/health/causes-death-statistics_r.ipynb) on [**causes of death statistics**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Causes_of_death_statistics),
+  - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/labour-market/hours-work-quarterly-statistics_py.ipynb) on [**hours of work**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Hours_of_work_-_quarterly_statistics),
+  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/population/population-structure-ageing_r.ipynb) on [**population structure and ageing**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Young_people_-_social_inclusion),
+  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/population/young-people-social-inclusion_r.ipynb) on [**young people and social inclusion**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Young_people_-_social_inclusion),
+  - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/living-conditions/living-conditions-poverty-social-exclusion_py.ipynb) on [**poverty and social exclusion**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Living_conditions_in_Europe_-_poverty_and_social_exclusion),
+  - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/mortality-viz/blob/master/02_mortality_european_regions.ipynb) on [**weekly death statistics**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Weekly_death_statistics&stable),
+  - [`R` source code](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/living-conditions/income-consumption-wealth_r) for [**income, consumption and wealth**](https://ec.europa.eu/eurostat/web/experimental-statistics/income-consumption-and-wealth),
+  - ...  
+  
+* [**icts/**](icts) for [_"Industry and services"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry_and_services) articles:
+  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/icts/tourism/tourism-statistics_r.ipynb) on [**tourism statistics**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Tourism_statistics),
+  - [`SQL` source code](icts/business-registers/multinational-enterprise-groups_sql) for [**structure of multinational enterprise groups in the EU**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Structure_of_multinational_enterprise_groups_in_the_EU),
+  - ... 
+  
+* [agric/](agric) for [_"Agriculture, forestry and fisheries"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture,_forestry_and_fisheries) articles,
+
+* [**external/**](external) for [_"International trade"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International_trade) articles:
+  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/external/services/eu-international-trade-transport-services_r.ipynb) on [**EU international trade in transport services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=EU_international_trade_in_transport_services),
+  - ...  
+
 * [transp/](transp) for [_"Transport"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Transport),
-* [envir/](envir) for [_"Environment and energy"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment_and_energy) articles,
+
+* [**envir/**](envir) for [_"Environment and energy"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environment_and_energy) articles:
+  - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/envir/environment/environmental-economy-employment-growth_py.ipynb) on [**employment and growth statistics**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Environmental_economy_–_statistics_on_employment_and_growth#Development_of_key_indicators_for_the_environmental_economy),
+  - ...
+
 * [**science**/](science) for [_"Science, technology and digital society"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science,_technology_and_digital_society) articles:
-  * [demo notebook](science/digital_economy_society_statistics/households_individuals_demo_r.ipynb) for [**Digital economy and society statistics - households and individuals**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Digital_economy_and_society_statistics_-_households_and_individuals),
-  * ...  
+  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/science/digital-economy-society/social-media-use-by-enterprises-statistics_py.ipynb) on [**social media use by enterprises**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Social_media_-_statistics_on_the_use_by_enterprises),
+  - [`R` demo notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/science/digital-economy-society/digital-economy-society-households-individuals_r-demo.ipynb) for [**Digital economy and society statistics - households and individuals**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Digital_economy_and_society_statistics_-_households_and_individuals),
+  - ...    
   
 **About**
 
@@ -71,6 +91,15 @@ The resources are organised according to the thematic structure already adopted 
     <td align="left" valign="middle">
 <a href="https://github.com/fmshka"><img src="https://github.com/fmshka.png" width="40"></a>
 <a href="https://github.com/Dgojsic"><img src="https://github.com/Dgojsic.png" width="40"></a>
+<a href="https://github.com/beatrizq"><img src="https://github.com/beatrizq.png" width="40"></a>
+<a href="https://github.com/ericofrs"><img src="https://github.com/ericofrs.png" width="40"></a>
+<a href="https://github.com/IsabellaMarinetti"><img src="https://github.com/IsabellaMarinetti.png" width="40"></a>
+<a href="https://github.com/kkatha"><img src="https://github.com/kkatha.png" width="40"></a>
+<a href="https://github.com/LasaiBarrenada"><img src="https://github.com/LasaiBarrenada.png" width="40"></a>
+<a href="https://github.com/LBonamino"><img src="https://github.com/LBonamino.png" width="40"></a>
+<a href="https://github.com/mattiagirardi"><img src="https://github.com/mattiagirardi.png" width="40"></a>
+<a href="https://github.com/rderayati"><img src="https://github.com/rderayati.png" width="40"></a>
+<a href="https://github.com/sarah2397"><img src="https://github.com/sarah2397.png" width="40"></a>
 <a href="https://github.com/agnebik"><img src="https://github.com/agnebik.png" width="40"></a>
 <a href="https://github.com/flopaleur"><img src="https://github.com/flopaleur.png" width="40"></a>
 <a href="https://github.com/pierre-lamarche"><img src="https://github.com/pierre-lamarche.png" width="40"></a>
