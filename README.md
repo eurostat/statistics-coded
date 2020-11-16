@@ -1,10 +1,10 @@
 statistics-coded
 ====================
 
- Resources for reproducing the outputs of _Eurostat_ Statistics Explained articles.
+ Resources for reproducing some of the visualisations in _Eurostat_ Statistics Explained articles.
 ---
 
-The material provided herein can be used to (re)produce some of the statistical results presented in _Eurostat_ [**Statistics Explained**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page) articles. it is used to recreate the figures published in the articles and are made available in the form of either code source files or computing notebooks. The latter will allow you to fetch the open data disseminated on _Eurostat_ online database and interact with it dynamically.
+The material provided herein can be used to (re)produce some of the statistical outputs (tables and figures) presented in _Eurostat_ [**Statistics Explained**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Main_Page) articles. it is used to recreate the figures published in the articles and are made available in the form of either code source files or computing notebooks. The latter will allow you to fetch the open data disseminated on _Eurostat_ online database and interact with it dynamically.
 
 
 <table align="center">
