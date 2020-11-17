@@ -27,7 +27,7 @@ def import_libs(libs):
 
             import_libs(['numpy', 'np'],  ['pandas', 'pd'], ['matplotlib.pyplot', 'plt'], ['requests'])
 
-    Canot use dynamically imported modules in the notebook - imported module daoes not exist in notebook
+    Canot use dynamically imported modules in the notebook - imported module does from here not exist in the notebook
           Can't fix the issue
     '''
     exceptions = []
