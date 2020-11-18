@@ -84,7 +84,7 @@ The resources are organised according to the thematic structure already adopted 
   - [`R` demo notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/science/digital-economy-society/digital-economy-society-households-individuals_r-demo.ipynb) for [**Digital economy and society statistics - households and individuals**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Digital_economy_and_society_statistics_-_households_and_individuals),
   - ...    
   
-**About**
+**<a name="About"></a>About**
 
 <table align="center">
     <tr> <td align="left"><i>contributors</i></td> 
