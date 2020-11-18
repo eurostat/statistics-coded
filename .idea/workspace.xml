@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9765b034-6f07-41a3-840d-9434bd73d100" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="32c60c38-82d6-4fdc-afe2-299721bb6e2d" />
+  <component name="ProjectId" id="1hyrXIRejvKartWGUlKLxWL1CDW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/README.md" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="Python.pythonic">
+    <configuration name="TABLE1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="statistics-coded" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/envir" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/envir/TABLE1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="env_economy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="statistics-coded" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/envir" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/envir/env_economy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="env_employment" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="statistics-coded" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/envir" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/envir/env_employment.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pythonic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\envs\statistics-coded\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pythonic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="table-test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="statistics-coded" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/envir" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/envir/table-test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.env_economy" />
+      <item itemvalue="Python.env_employment" />
+      <item itemvalue="Python.pythonic" />
+      <item itemvalue="Python.table-test" />
+      <item itemvalue="Python.TABLE1" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.pythonic" />
+        <item itemvalue="Python.TABLE1" />
+        <item itemvalue="Python.table-test" />
+        <item itemvalue="Python.env_employment" />
+        <item itemvalue="Python.env_economy" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9765b034-6f07-41a3-840d-9434bd73d100" name="Default Changelist" comment="" />
+      <created>1600994210771</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600994210771</updated>
+      <workItem from="1600994780384" duration="220000" />
+      <workItem from="1600995033444" duration="669000" />
+      <workItem from="1600995806710" duration="86000" />
+      <workItem from="1600995918315" duration="499000" />
+      <workItem from="1600996443695" duration="3000" />
+      <workItem from="1600996471673" duration="914000" />
+      <workItem from="1601244483150" duration="583000" />
+      <workItem from="1601245113948" duration="3101000" />
+      <workItem from="1601248262624" duration="7000" />
+      <workItem from="1601248292330" duration="9797000" />
+      <workItem from="1601391306744" duration="12600000" />
+      <workItem from="1601483431915" duration="20159000" />
+      <workItem from="1601560954305" duration="10204000" />
+      <workItem from="1601631648749" duration="10727000" />
+      <workItem from="1601748967739" duration="15535000" />
+      <workItem from="1601819716301" duration="52000" />
+      <workItem from="1601819779772" duration="11376000" />
+      <workItem from="1601946476534" duration="1263000" />
+      <workItem from="1601987434880" duration="746000" />
+      <workItem from="1602699100539" duration="1745000" />
+      <workItem from="1603228010185" duration="16728000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="219" y="55" width="1097" height="769" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602700197826">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="219" y="55" width="1097" height="769" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1602700197826" />
+    <state x="458" y="193" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601421900487">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="458" y="193" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1601421900487" />
+    <state x="635" y="105" width="421" height="613" key="#xdebugger.XInspectDialog" timestamp="1601847431653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="635" y="105" width="421" height="613" key="#xdebugger.XInspectDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601847431653" />
+    <state x="495" y="107" key="FileChooserDialogImpl" timestamp="1601946646519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="495" y="107" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601946646519" />
+    <state width="1481" height="195" key="GridCell.Tab.0.bottom" timestamp="1603247312245">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="400" key="GridCell.Tab.0.bottom/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601847804852" />
+    <state width="1481" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603247312245" />
+    <state width="1481" height="195" key="GridCell.Tab.0.center" timestamp="1603247312245">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="400" key="GridCell.Tab.0.center/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601847804852" />
+    <state width="1481" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603247312245" />
+    <state width="1481" height="195" key="GridCell.Tab.0.left" timestamp="1603247312245">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="400" key="GridCell.Tab.0.left/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601847804852" />
+    <state width="1481" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603247312245" />
+    <state width="1481" height="195" key="GridCell.Tab.0.right" timestamp="1603247312245">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="400" key="GridCell.Tab.0.right/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601847804852" />
+    <state width="1481" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603247312245" />
+    <state width="1481" height="203" key="GridCell.Tab.1.bottom" timestamp="1603247312224">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="400" key="GridCell.Tab.1.bottom/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601847809197" />
+    <state width="1481" height="203" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603247312224" />
+    <state width="1481" height="203" key="GridCell.Tab.1.center" timestamp="1603247312224">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="400" key="GridCell.Tab.1.center/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601847809197" />
+    <state width="1481" height="203" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1603247312224" />
+    <state width="1481" height="203" key="GridCell.Tab.1.left" timestamp="1603247312224">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="400" key="GridCell.Tab.1.left/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601847809197" />
+    <state width="1481" height="203" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1603247312224" />
+    <state width="1481" height="203" key="GridCell.Tab.1.right" timestamp="1603247312224">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="400" key="GridCell.Tab.1.right/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601847809197" />
+    <state width="1481" height="203" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1603247312224" />
+    <state x="153" y="0" key="SettingsEditor" timestamp="1603229760941">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="153" y="0" key="SettingsEditor/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1601826055679" />
+    <state x="153" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603229760941" />
+    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1603244262676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1603244262676" />
+    <state x="411" y="79" width="714" height="666" key="find.popup" timestamp="1601606084499">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="411" y="79" width="714" height="666" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1601606084499" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="tuple(values.values())" language="Python" />
+        <watch expression="list(df[lbl].groupby(['time'])['values'].sum()/1000)" language="Python" />
+        <watch expression="labels[::-1]" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/statistics_coded$pie_GVA.coverage" NAME="pie.GVA Coverage Results" MODIFIED="1601644236007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/envir" />
+    <SUITE FILE_PATH="coverage/statistics_coded$env_economy.coverage" NAME="env_economy Coverage Results" MODIFIED="1601758926806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/envir" />
+    <SUITE FILE_PATH="coverage/statistics_coded$env_employment.coverage" NAME="env_employment Coverage Results" MODIFIED="1601767377463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/envir" />
+    <SUITE FILE_PATH="coverage/statistics_coded$table_test.coverage" NAME="table-test Coverage Results" MODIFIED="1601841827633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/envir" />
+    <SUITE FILE_PATH="coverage/statistics_coded$TABLE1.coverage" NAME="TABLE1 Coverage Results" MODIFIED="1601847804717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/envir" />
+    <SUITE FILE_PATH="coverage/statistics_coded$pythonic.coverage" NAME="pythonic Coverage Results" MODIFIED="1603245271734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/statistics_coded$figure_4.coverage" NAME="figure 4 Coverage Results" MODIFIED="1601605471187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/envir" />
+  </component>
+</project>
