@@ -82,7 +82,7 @@ class RequestHandeler:
         return : Response_Object       : response object with
                                             response data, status and GET url as attributes
     '''
-    def get_request(self, args=None):
+    def get_request(self, args=None, display_success=False):
         if args != None:
             self.args = args
         self.url = self.prepare_request()
@@ -90,14 +90,17 @@ class RequestHandeler:
         for key in self.status:
             if key == r.status_code:
                 message = self.status[key][1]
-                print(message)
-                print("\t%s" % (self.status[key][0]))
                 if '[-]' in message:
+                    print(message)
+                    print("\t%s" % (self.status[key][0]))
                     print('\tData not extracted successfully')
                     print('\ton the request %s' %(self.url))
                     return Response({'dict' : None , 'str' : None}, {r.status_code : message}, self.url)
-                    #print('Exiting ...')
-                    #sys.exit()
+                else:
+                    if display_success:
+                        print(message)
+                        print("\t%s" % (self.status[key][0]))
+
         # json dict
         datadict = json.loads(r.text)
         #jason string
