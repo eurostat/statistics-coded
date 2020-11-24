@@ -87,6 +87,7 @@ class RequestHandeler:
             self.args = args
         self.url = self.prepare_request()
         r = requests.get(self.url)
+        message = ''
         for key in self.status:
             if key == r.status_code:
                 message = self.status[key][1]
