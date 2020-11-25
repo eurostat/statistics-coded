@@ -87,7 +87,7 @@ The resources are organised according to the thematic structure already adopted 
   
 **<a name="About"></a>About**
 
-Want to contribute? For instance, implement a *Statistics Explained* article you find very interesting in your favourite language? Please submit your pull requests to "master" branch!
+Want to contribute? For instance, implement a *Statistics Explained* article you find very interesting in your favourite language? Please submit your [pull requests](https://github.com/eurostat/statistics-coded/pulls) directly to the _master_ branch!
 
 Found a mistake in the code? Please, report it to us in the [issues section](https://github.com/eurostat/statistics-coded/issues).
 
