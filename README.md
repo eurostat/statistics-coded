@@ -53,6 +53,7 @@ The resources are organised according to the thematic structure already adopted 
   - ...  
   
 * [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles:
+  - [`JavaScript` notebook](https://observablehq.com/@joewdavies/health-statistics-regional-level_js) on [**health statistics at regional level**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Health_statistics_at_regional_level),
   - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/health/causes-death-statistics_r.ipynb) on [**causes of death statistics**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Causes_of_death_statistics),
   - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/labour-market/hours-work-quarterly-statistics_py.ipynb) on [**hours of work**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Hours_of_work_-_quarterly_statistics),
   - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/population/population-structure-ageing_r.ipynb) on [**population structure and ageing**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Young_people_-_social_inclusion),
@@ -86,6 +87,10 @@ The resources are organised according to the thematic structure already adopted 
   
 **<a name="About"></a>About**
 
+Want to contribute? For instance, implement a *Statistics Explained* article you find very interesting in your favourite language? Please submit your pull requests to "master" branch!
+
+Found a mistake in the code? Please, report it to us in the [issues section](https://github.com/eurostat/statistics-coded/issues).
+
 <table align="center">
     <tr> <td align="left"><i>contributors</i></td> 
     <td align="left" valign="middle">
@@ -102,6 +107,7 @@ The resources are organised according to the thematic structure already adopted 
 <a href="https://github.com/sarah2397"><img src="https://github.com/sarah2397.png" width="40"></a>
 <a href="https://github.com/agnebik"><img src="https://github.com/agnebik.png" width="40"></a>
 <a href="https://github.com/flopaleur"><img src="https://github.com/flopaleur.png" width="40"></a>
+<a href="https://github.com/flopaleur"><img src="https://github.com/JoeWDavies.png" width="40"></a>
 <a href="https://github.com/pierre-lamarche"><img src="https://github.com/pierre-lamarche.png" width="40"></a>
 <a href="https://github.com/mmatyi"><img src="https://github.com/mmatyi.png" width="40"></a>
 <a href="https://github.com/gjacopo"><img src="https://github.com/gjacopo.png" width="40"></a>
@@ -110,10 +116,6 @@ The resources are organised according to the thematic structure already adopted 
     <tr> <td align="left"><i>status</i></td> <td align="left">since 2019</td> </tr> 
     <tr> <td align="left"><i>license</i></td> <td align="left"><a href="https://joinup.ec.europa.eu/sites/default/files/eupl1.1.-licence-en_0.pdfEUPL">EUPL</a> <i></i></td> </tr> 
 </table>
-
-**<a name="Contribute"></a>Contribute**
-
-You want to contribute to the development of a *Statistics Explained* article? Please submit your pull requests to "master" branch!
 
 **<a name="Resources"></a>Resources**
 
