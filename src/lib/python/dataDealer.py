@@ -1,7 +1,9 @@
 '''
-    Handels the conversion jsonStat forrmat to dataframe format
+    Handles the conversion jsonStat forrmat to dataframe format
         and cleans the data for the plots
 '''
+
+# author: L.Bonamino
 
 import numpy as np
 import pandas as pd
