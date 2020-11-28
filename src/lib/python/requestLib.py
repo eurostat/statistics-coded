@@ -2,6 +2,8 @@ import requests
 import json
 import sys
 
+# author: L.Bonamino
+
 class RequestHandeler:
 
     '''
