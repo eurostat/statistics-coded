@@ -46,9 +46,9 @@ The resources are organised according to the thematic structure already adopted 
 * [general/](general) for reproducing some of the Stastistics Explained articles on [_"General and regional statistics, EU policies"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General_and_regional_statistics,_EU_policies),
 
 * [**economy/**](economy) for [_"Economy and finance"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy_and_finance) articles:
-  - [`Python` notebook](economy/balance-payments/trade-investment-employment-globalisation_py.ipynb) on 
+  - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/economy/balance-payments/trade-investment-employment-globalisation_py.ipynb) on 
   [**trade, investment and employment as aspects of globalisation**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Trade,_investment_and_employment_as_aspects_of_globalisation),
-  - [`Python` notebook](economy/comparative-price-levels/comparative-price-consumer-goods-services_py.ipynb) on 
+  - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/economy/comparative-price-levels/comparative-price-consumer-goods-services_py.ipynb) on 
   [**comparative price levels of consumer goods and services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Comparative_price_levels_of_consumer_goods_and_services),
   - ...  
   
