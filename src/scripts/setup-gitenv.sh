@@ -1,6 +1,6 @@
 #!/bin/bash
 # @brief:    Quick lab setup - Fetch shared notebook resources from a git project 
-#            and create a conda computing environment (conda) for running them.";
+#            and create a computing environment (conda) for running them.";
 #
 #    setup-gitenv.sh [-h] [-v] [-t] [-p <prj>] [-r <rep>] [-d <dir>] 
 #                   [-e <env>] [-y <yaml>] [-u] [-c] [-a]
@@ -46,7 +46,8 @@ PROGRAM=`basename $0`
 TODAY=`date +'%y%m%d'` # `date +%Y-%m-%d`
 BASHVERS=${BASH_VERSION%.*} # 4.4 in the datalab at the time of development
 
-case "$(uname -s)" in
+OSTYPE=$(uname -s)
+case $OSTYPE in
     Linux*)     MACHINE=Linux;;
     Darwin*)    MACHINE=Mac;;
     CYGWIN*)    MACHINE=Cygwin;;
@@ -85,7 +86,7 @@ function usage() {
     echo "";
     echo "=================================================================================";
     echo "${PROGRAM} : Quick lab setup - Fetch shared notebook resources from a git";  
-    echo "             project and create a conda computing environment (conda) for running"; 
+    echo "             project and create a computing environment (conda) for running"; 
     echo "             them.";
     echo "Run: ${PROGRAM} -help for further help. Exiting program...";
     echo "=================================================================================";
