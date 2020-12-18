@@ -108,7 +108,7 @@ Found a mistake in the code? Please, report it to us in the [issues section](htt
 <a href="https://github.com/sarah2397"><img src="https://github.com/sarah2397.png" width="40"></a>
 <a href="https://github.com/agnebik"><img src="https://github.com/agnebik.png" width="40"></a>
 <a href="https://github.com/flopaleur"><img src="https://github.com/flopaleur.png" width="40"></a>
-<a href="https://github.com/flopaleur"><img src="https://github.com/JoeWDavies.png" width="40"></a>
+<a href="https://github.com/JoeWDavies"><img src="https://github.com/JoeWDavies.png" width="40"></a>
 <a href="https://github.com/pierre-lamarche"><img src="https://github.com/pierre-lamarche.png" width="40"></a>
 <a href="https://github.com/mmatyi"><img src="https://github.com/mmatyi.png" width="40"></a>
 <a href="https://github.com/gjacopo"><img src="https://github.com/gjacopo.png" width="40"></a>
