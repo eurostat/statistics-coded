@@ -15,6 +15,5 @@ dependencies:
   - jupyter_contrib_nbextensions
   - ipywidgets
   - gdal
-  - eurostat
   - pip:
     - -r file:requirements.txt
