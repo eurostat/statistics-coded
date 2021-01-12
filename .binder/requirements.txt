@@ -9,3 +9,4 @@ pyproj
 geopy
 folium
 eurostat
+plotly
