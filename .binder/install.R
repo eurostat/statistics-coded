@@ -8,7 +8,7 @@
 
 # install through conda conda-forge?
 install.packages(c("tidyr", "repr", "dplyr","reshape2"), repos="https://cloud.r-project.org")
-install.packages(c("ggplot2","plotly","patchwork","kableExtra"),repos="https://cloud.r-project.org")
+install.packages(c("ggplot2","ggforce","plotly","patchwork","kableExtra"),repos="https://cloud.r-project.org")
 install.packages(c("restatapi","rjson", "xml2","data.table"), repos="https://cloud.r-project.org")
 # install.packages("reticulate", repos="https://cloud.r-project.org") # python support in RMarkdown
 
