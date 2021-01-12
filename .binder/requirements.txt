@@ -8,3 +8,4 @@ shapely
 pyproj
 geopy
 folium
+eurostat
