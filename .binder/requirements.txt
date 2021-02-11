@@ -10,3 +10,5 @@ geopy
 folium
 eurostat
 plotly
+descartes
+rtree
