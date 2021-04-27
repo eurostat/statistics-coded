@@ -13,7 +13,7 @@ install.packages(c("restatapi","rjson", "xml2","data.table"), repos="https://clo
 # install.packages("reticulate", repos="https://cloud.r-project.org") # python support in RMarkdown
 
 # Eurostat package restatapi: we get the dev version
-# devtools::install_github("eurostat/restatapi")
+devtools::install_github("eurostat/restatapi")
 install.packages(c("rsdmx", "rdbnomics"), repos="https://cloud.r-project.org")
 # install.packages(c("timeSeries", "ggdemetra", "prophet"), repos="https://cloud.r-project.org")
 
