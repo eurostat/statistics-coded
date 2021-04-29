@@ -1,0 +1,321 @@
+---
+title: "Regional Household Income Statistics"
+author: "luis.biedma@ec.europa.eu"
+date: "29/04/2021"
+output:
+  html_document: 
+    code_folding: show
+    theme: readable
+    fig_width: 10
+    fig_height: 7.5
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+
+This file shows the code to reproduce similar maps and charts as those included in the following Statistics Explained article <https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Regional_household_income_statistics>.
+
+
+```{r libraries}
+library(eurostat)
+library(tidyverse)
+library(sf)
+library(tmap)
+library(plotly)
+library(hrbrthemes)
+library(Hmisc)
+```
+
+```{r data}
+hh2 <- get_eurostat("nama_10r_2hhinc", time_format = "num")
+gdp2 <- get_eurostat("nama_10r_2gdp", time_format = "num")
+pop3 <- get_eurostat("nama_10r_3popgdp", time_format = "num")
+map <- get_eurostat_geospatial(
+  output_class = "sf",
+  resolution = "60",
+  nuts_level = "2",
+  year = "2016"
+)
+```
+
+### Map 1: Household primary income per capita as % EU27 average in 2018
+
+```{r Map1}
+temp <- hh2 %>%
+  filter(time == 2018 & na_item == "B5N" & unit == "PPS_EU27_2020_HAB") %>%
+  select(geo, values) %>%
+  rename(b5n = "values") %>%
+  mutate(eu_index = round(b5n * 100 / b5n[geo == "EU27_2020"], 1))
+
+sf <- left_join(map, temp)
+
+tmap_mode("view")
+sf %>%
+  filter(CNTR_CODE != "UK") %>%
+  tm_shape() +
+  tm_fill("eu_index",
+    popup.vars = c("eu_index", "NUTS_ID", "NUTS_NAME"),
+    palette = "RdPu", # similar to Economy and Finance
+    breaks = c(29, 63, 85, 103, 124, 192),
+    title = "Net primary income per capita in PPS as % of EU average in 2018 "
+  ) +
+  tm_borders()
+
+```
+
+### Map 2: Household primary income as % of GDP, 2018
+
+```{r Map2}
+hh2w <- hh2 %>%
+  filter(time == 2018 & na_item == "B5N" & unit == "MIO_EUR") %>%
+  select(geo, values) %>%
+  rename(b5n = "values")
+
+gdp2w <- gdp2 %>%
+  filter(time == 2018 & unit == "MIO_EUR") %>%
+  select(geo, values) %>%
+  rename(gdp = "values")
+
+temp <- full_join(hh2w, gdp2w) %>%
+  mutate(b5n_gdp = round(b5n * 100 / gdp, digits = 1))
+
+sf <- left_join(map, temp)
+
+tmap_mode("view")
+sf %>%
+  filter(CNTR_CODE != "UK") %>%
+  tm_shape() +
+  tm_fill("b5n_gdp",
+    popup.vars = c("b5n_gdp", "NUTS_ID", "NUTS_NAME"),
+    palette = "RdPu",
+    breaks =c(26, 59, 64, 68, 73, 100),
+    title = "Ratio of primary income to GDP in 2018 in MEUR"
+  ) +
+  tm_borders()
+
+```
+
+### Chart 1: Components of primary income
+
+```{r Chart1}
+temp <- hh2 %>%
+  unite(sto, c(direct, na_item)) %>%
+  filter(time == "2018" & unit == "MIO_EUR" & !geo %in% c("ESZZ", "FRZZ")) %>%
+  pivot_wider(
+    names_from = sto,
+    values_from = values
+  ) %>%
+  select(geo, BAL_B5N, RECV_D1, BAL_B2A3N, RECV_D4, PAID_D4) %>%
+  mutate(BAL_D4 = RECV_D4 - PAID_D4) %>%
+  select(-RECV_D4, -PAID_D4) %>%
+  mutate(
+    D1 = round(RECV_D1 * 100 / BAL_B5N, 1),
+    B2A3N = round(BAL_B2A3N * 100 / BAL_B5N, 1),
+    D4 = round(BAL_D4 * 100 / BAL_B5N, 1)
+  ) %>%
+  mutate(
+    country = str_sub(geo, 1, 2),
+    NUTS = str_length(geo) - 2
+  ) %>%
+  filter(NUTS == "2" & country != "UK") %>%
+  select(country, geo, D1, B2A3N, D4) %>%
+  pivot_longer(
+    cols = c("D1", "B2A3N", "D4"),
+    names_to = "Shares",
+    values_to = "values"
+  )
+
+p <- ggplot(temp, aes(values, fct_rev(country), colour = Shares, label = geo)) +
+  geom_point() +
+  scale_colour_manual(values = c("#B82370", "#213A9E", "#ABED79")) +
+  theme_ipsum_rc() +
+  xlab("Share, %") +
+  ylab("Country") +
+  labs(title = "Component shares of Net primary income, 2018") +
+  theme(legend.title = element_blank())
+
+ggplotly(p)
+
+```
+
+### Chart 2: Standard Deviation EU primary income
+
+```{r Chart2}
+hh2w <- hh2 %>%
+  filter(time >= 2000 & time <= 2018 &
+    na_item == "B5N" &
+    unit == "PPS_EU27_2020_HAB" &
+    !geo %in% c("ESZZ", "FRZZ")) %>%
+  select(geo, time, values) %>%
+  group_by(time) %>%
+  mutate(
+    eu_index = round(values * 100 / values[geo == "EU27_2020"], 1),
+    NUTS = str_length(geo) - 2
+  ) %>%
+  filter(NUTS == "2")
+
+std <- hh2w %>%
+  group_by(time) %>%
+  summarise(sd = sd(eu_index))
+
+ggplot(std, aes(time, sd)) +
+  geom_line(size = 1, colour = "steelblue") +
+  xlab("") +
+  ylab("") +
+  labs(
+    title = "Standard deviation of regional net primary income in PPS",
+    subtitle = "in PPS as % EU average",
+    caption = "Source: Eurostat (online data code: nama_10r_2hhinc)"
+  ) +
+  coord_fixed(ylim = c(0, 40), ratio = 0.2) +
+  theme_ipsum_rc()
+
+```
+
+### Chart 3: Comparison 2010-2018
+
+```{r Chart3}
+temp <- hh2w %>%
+  filter(time %in% c("2010", "2018")) %>%
+  select(-values) %>%
+  pivot_wider(
+    names_from = time,
+    values_from = eu_index,
+    names_prefix = "y"
+  ) %>%
+  mutate(
+    country = str_sub(geo, 1, 2),
+    NUTS = str_length(geo) - 2
+  ) %>%
+  filter(NUTS == "2" & country != "UK") %>% 
+  mutate(group= case_when(
+    country == "DE" ~ "DE",
+    country =="FR" ~ "FR",
+    country %in% c("BG", "HR", "CZ", "LT","LV", "HU", "PL", "RO", "SK") ~ "BG, HR, LV, HU, PL, RO, SK",
+    country %in% c("EL", "ES", "IT", "PT") ~ "EL, ES, IT, PT",
+    country %in% c("AT", "BE",  "CY", "DK", "EE", "FI", "IE", "LU", "NL", "NO", "SE", "SI") ~"Other countries"
+  ))
+
+
+p <- ggplot(temp, aes(y2010, y2018, colour = group, group = geo)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0) +
+  xlab("2010") +
+  ylab("2018") +
+  theme_ipsum_rc() +
+  scale_colour_ipsum()+
+  theme(legend.title = element_blank())+
+  ggtitle("Net primary income per capita in PPS as % EU, 2010 and 2018")
+
+ggplotly(p)
+```
+### Chart 4: Regional differences by country
+
+```{r Chart4}
+temp <- hh2 %>%
+  unite(na_item, c(na_item, direct)) %>%
+  filter(unit == "MIO_NAC" & time == "2018" & na_item %in% c("B5N_BAL", "B6N_BAL")) %>%
+  pivot_wider(
+    names_from = na_item,
+    values_from = values
+  ) %>%
+  mutate(
+    country = str_sub(geo, 1, 2),
+    NUTS = str_length(geo) - 2
+  ) %>%
+  filter(NUTS %in% c("0", "2") & country != "UK") %>%
+  select(geo, country, NUTS, time, B5N_BAL, B6N_BAL) %>%
+  pivot_longer(
+    cols = c("B5N_BAL", "B6N_BAL"),
+    names_to = "na_item",
+    values_to = "values"
+  )
+
+pop <- pop3 %>%
+  select(-unit) %>%
+  rename(pop = values)
+
+temp <- left_join(temp, pop) %>%
+  mutate(percapita = values * 1000 / pop) %>%
+  droplevels() %>%
+  group_by(country, na_item) %>%
+  mutate(nat_percapita = percapita * 100 / percapita[NUTS == "0"]) %>%
+  filter(NUTS == "2" & !geo %in% c("ESZZ", "FRZZ") & !country %in% c("EE", "CY", "MT", "LV", "LT", "LU", "HR", "SI")) %>%
+  summarise(wsd = sqrt(wtd.var(nat_percapita, pop, na.rm = TRUE))) %>%
+  pivot_wider(
+    names_from = na_item,
+    values_from = wsd
+  )
+
+ggplot(temp) +
+  geom_point(aes(B5N_BAL, reorder(country, B5N_BAL)), size = 5, colour = "#B82370") +
+  geom_point(aes(B6N_BAL, reorder(country, B5N_BAL)), size = 5, colour = "#213A9E") +
+  geom_segment(aes(x = B6N_BAL, xend = B5N_BAL, y = country, yend = country), size = 1.5, colour = "gray") +
+  theme_ipsum_rc() +
+  #  theme(panel.background = element_rect(fill = "white"))+
+  xlab("") +
+  ylab("") +
+  ggtitle("Standard deviation of regional per capita net primary income and net disposable income",
+    subtitle = "based on an index with national average = 100 and weighted by population"
+  )
+```
+
+### Map 3: Ratio of Disposable Income to Primary Income
+
+```{r}
+temp <- hh2 %>%
+  unite(na_item, c(na_item, direct)) %>%
+  filter(unit == "MIO_NAC" & time == "2018" & na_item %in% c("B5N_BAL", "B6N_BAL")) %>%
+  pivot_wider(
+    names_from = na_item,
+    values_from = values
+  ) %>%
+  mutate(
+    country = str_sub(geo, 1, 2),
+    NUTS = str_length(geo) - 2
+  ) %>%
+  filter(NUTS %in% c("0", "2") & country != "UK") %>%
+  select(geo, country, NUTS, time, B5N_BAL, B6N_BAL) %>%
+  pivot_longer(
+    cols = c("B5N_BAL", "B6N_BAL"),
+    names_to = "na_item",
+    values_to = "values"
+  )
+
+pop <- pop3 %>%
+  select(-unit) %>%
+  rename(pop = values)
+
+temp <- left_join(temp, pop) %>%
+  mutate(percapita = values * 1000 / pop) %>%
+  droplevels() %>%
+  group_by(country, na_item) %>%
+  mutate(nat_percapita = percapita * 100 / percapita[NUTS == "0"]) %>%
+  filter(NUTS == "2" & !geo %in% c("ESZZ", "FRZZ")) %>%
+  select(geo, na_item, nat_percapita) %>%
+  pivot_wider(
+    names_from = na_item,
+    values_from = nat_percapita
+  ) %>%
+  mutate(ratio = round(B6N_BAL * 100 / B5N_BAL, 1))
+
+sf <- left_join(map, temp)
+
+
+tmap_mode("view")
+sf %>%
+  tm_shape() +
+  tm_fill("ratio",
+    popup.vars = c("ratio", "NUTS_ID", "NUTS_NAME"),
+     breaks =c(78, 98, 102, 105, 107, 125),
+     palette = "RdPu",
+    title = "Ratio Disposable Income /Primary income"
+  ) +
+  tm_borders()
+
+```
+
