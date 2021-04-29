@@ -43,7 +43,7 @@ The material provided herein can be used to (re)produce some of the statistical 
 
 The resources are organised according to the thematic structure already adopted for the Statistics Explained articles:
 
-* [general/](general) for reproducing some of the Stastistics Explained articles on [_"General and regional statistics, EU policies"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General_and_regional_statistics,_EU_policies),
+<!-- * [general/](general) for reproducing some of the Stastistics Explained articles on [_"General and regional statistics, EU policies"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=General_and_regional_statistics,_EU_policies), -->
 
 * [**economy/**](economy) for [_"Economy and finance"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Economy_and_finance) articles:
   - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/economy/balance-payments/trade-investment-employment-globalisation_py.ipynb) on 
