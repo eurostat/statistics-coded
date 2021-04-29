@@ -9,12 +9,12 @@
 # install through conda conda-forge?
 install.packages(c("tidyr", "repr", "dplyr","reshape2","forcats","tidyverse"), repos="https://cloud.r-project.org")
 install.packages(c("ggplot2","ggforce","plotly","patchwork","kableExtra"),repos="https://cloud.r-project.org")
-install.packages(c("restatapi","rjson", "xml2","data.table"), repos="https://cloud.r-project.org")
+# install.packages(c("restatapi","rjson", "xml2","data.table"), repos="https://cloud.r-project.org")
 # install.packages("reticulate", repos="https://cloud.r-project.org") # python support in RMarkdown
 
 # Eurostat package restatapi: we get the dev version
 devtools::install_github("eurostat/restatapi")
-install.packages(c("rsdmx", "rdbnomics"), repos="https://cloud.r-project.org")
+# install.packages(c("rsdmx", "rdbnomics"), repos="https://cloud.r-project.org")
 # install.packages(c("timeSeries", "ggdemetra", "prophet"), repos="https://cloud.r-project.org")
 
 # eurostat packages: many dependencies...
