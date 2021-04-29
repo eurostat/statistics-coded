@@ -7,7 +7,7 @@
 # IRkernel::installspec()
 
 # install through conda conda-forge?
-install.packages(c("tidyr", "repr", "dplyr","reshape2","forcats","tidyverse","giscoR","tmap","hrbrthemes","plotly"), repos="https://cloud.r-project.org")
+install.packages(c("tidyr", "repr", "dplyr","reshape2","forcats","tidyverse","giscoR","tmap","hrbrthemes","plotly","Hmisc"), repos="https://cloud.r-project.org")
 install.packages(c("ggplot2","ggforce","plotly","patchwork","kableExtra"),repos="https://cloud.r-project.org")
 # install.packages(c("restatapi","rjson", "xml2","data.table"), repos="https://cloud.r-project.org")
 # install.packages("reticulate", repos="https://cloud.r-project.org") # python support in RMarkdown
