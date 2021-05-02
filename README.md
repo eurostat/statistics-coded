@@ -50,6 +50,10 @@ The resources are organised according to the thematic structure already adopted 
   [**trade, investment and employment as aspects of globalisation**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Trade,_investment_and_employment_as_aspects_of_globalisation),
   - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/economy/comparative-price-levels/comparative-price-consumer-goods-services_py.ipynb) on 
   [**comparative price levels of consumer goods and services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Comparative_price_levels_of_consumer_goods_and_services),
+  - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/economy/government-finance/government-finance-statistics_py.ipynb) on 
+  [**government finance statistics**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Government_finance_statistics),
+  - [`R` markdown notebook](https://eurostat.github.io/statistics-coded/economy/regional_household_income/statistics_coded_regional_HHI.html) on 
+  [**regioanal household income**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Regional_household_income_statistics),
   - ...  
   
 * [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles:
