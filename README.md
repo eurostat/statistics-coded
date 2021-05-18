@@ -66,6 +66,7 @@ The resources are organised according to the thematic structure already adopted 
   - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/mortality-viz/blob/master/02_mortality_european_regions.ipynb) on [**weekly death statistics**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Weekly_death_statistics&stable),
   - [`R` source code](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/living-conditions/income-consumption-wealth_r) for [**income, consumption and wealth**](https://ec.europa.eu/eurostat/web/experimental-statistics/income-consumption-and-wealth),
   - [`JavaScript` notebook](https://observablehq.com/@joewdavies/statistics-coded-labour-market-statistics-at-regional-lev) on [**labour market statistics at regional level**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Labour_market_statistics_at_regional_level),
+  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/living-conditions/living-conditions-time-use_r.ipynb) on [**women and men use of time**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=How_do_women_and_men_use_their_time_-_statistics),
   - ...  
   
 * [**icts/**](icts) for [_"Industry and services"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry_and_services) articles:
