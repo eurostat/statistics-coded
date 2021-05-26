@@ -16,7 +16,7 @@ The material provided herein can be used to (re)produce some of the statistical 
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population and social conditions"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/Statexpflat/ressources/themes/32x32/color/population.png"></a><a href="popul">Population and social conditions</a></td> 
  </tr> 
 <tr> <td align="left" valign="middle">
-    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry and services"><img src=https://ec.europa.eu/eurostat/statistics-explained/skins/Statexpflat/ressources/themes/32x32/color/industry.png"></a><a href="icts">Industry and services</a></td> 
+    <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry and services"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/Statexpflat/ressources/themes/32x32/color/industry.png"></a><a href="icts">Industry and services</a></td> 
     <td align="left" valign="middle">
     <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Agriculture, forestry and fisheries"><img src="https://ec.europa.eu/eurostat/statistics-explained/skins/Statexpflat/ressources/themes/32x32/color/agriculture.png"></a>Agriculture, forestry and fisheries</td> 
     <td align="left" valign="middle">
