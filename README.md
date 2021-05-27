@@ -87,7 +87,7 @@ The resources are organised according to the thematic structure already adopted 
   - ...
 
 * [**science**/](science) for [_"Science, technology and digital society"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Science,_technology_and_digital_society) articles:
-  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/science/digital-economy-society/social-media-use-by-enterprises-statistics_py.ipynb) on [**social media use by enterprises**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Social_media_-_statistics_on_the_use_by_enterprises),
+  - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/science/digital-economy-society/social-media-use-by-enterprises-statistics_py.ipynb) on [**social media use by enterprises**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Social_media_-_statistics_on_the_use_by_enterprises),
   - [`R` demo notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/science/digital-economy-society/digital-economy-society-households-individuals_r-demo.ipynb) for [**Digital economy and society statistics - households and individuals**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Digital_economy_and_society_statistics_-_households_and_individuals),
   - ...    
   
