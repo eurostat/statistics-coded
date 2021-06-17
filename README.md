@@ -52,8 +52,8 @@ The resources are organised according to the thematic structure already adopted 
   [**comparative price levels of consumer goods and services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Comparative_price_levels_of_consumer_goods_and_services),
   - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/economy/government-finance/government-finance-statistics_py.ipynb) on 
   [**government finance statistics**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Government_finance_statistics),
-  - [`R` markdown notebook](https://eurostat.github.io/statistics-coded/economy/regional_household_income/statistics_coded_regional_HHI.html) on 
-  [**regional household income**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Regional_household_income_statistics),
+  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/economy/regional_household_income/statistics_coded_regional_HHI.ipynb) on 
+  [**regional household income**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Regional_household_income_statistics) ([`R` markdown version](https://eurostat.github.io/statistics-coded/economy/regional_household_income/statistics_coded_regional_HHI.html)),
   - ...  
   
 * [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles:
