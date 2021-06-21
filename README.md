@@ -52,8 +52,8 @@ The resources are organised according to the thematic structure already adopted 
   [**comparative price levels of consumer goods and services**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Comparative_price_levels_of_consumer_goods_and_services),
   - [`Python` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/economy/government-finance/government-finance-statistics_py.ipynb) on 
   [**government finance statistics**](https://ec.europa.eu/eurostat/statistics-explained/index.php/Government_finance_statistics),
-  - [`R` markdown notebook](https://eurostat.github.io/statistics-coded/economy/regional_household_income/statistics_coded_regional_HHI.html) on 
-  [**regional household income**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Regional_household_income_statistics),
+  - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/economy/regional_household_income/statistics_coded_regional_HHI.ipynb) on 
+  [**regional household income**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Regional_household_income_statistics) ([`R` markdown version](https://eurostat.github.io/statistics-coded/economy/regional_household_income/statistics_coded_regional_HHI.html)),
   - ...  
   
 * [**popul/**](popul) for [_"Population and social conditions"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Population_and_social_conditions) articles:
@@ -67,6 +67,7 @@ The resources are organised according to the thematic structure already adopted 
   - [`R` source code](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/living-conditions/income-consumption-wealth_r) for [**income, consumption and wealth**](https://ec.europa.eu/eurostat/web/experimental-statistics/income-consumption-and-wealth),
   - [`JavaScript` notebook](https://observablehq.com/@joewdavies/statistics-coded-labour-market-statistics-at-regional-lev) on [**labour market statistics at regional level**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Labour_market_statistics_at_regional_level),
   - [`R` notebook](https://nbviewer.jupyter.org/github/eurostat/statistics-coded/blob/master/popul/living-conditions/living-conditions-time-use_r.ipynb) on [**women and men use of time**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=How_do_women_and_men_use_their_time_-_statistics),
+  - [`R` markdown notebook](https://eurostat.github.io/statistics-coded/popul/population/immigration-legislation-enforcement.html) on [**enforcement of immigration legislations**](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Enforcement_of_immigration_legislation_statistics)
   - ...  
   
 * [**icts/**](icts) for [_"Industry and services"_](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Industry_and_services) articles:
