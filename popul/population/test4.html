@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eurostat-map.js</title>
+</head>
+
+<body>
+    <svg id="map"></svg>
+    <script src="https://unpkg.com/eurostat-map"></script>
+    <script>
+        let map = eurostatmap
+            .map("ch")
+            .title("Non-EU citizens found to be illegally present in the EU Member States")
+            .titleFontSize(40)
+            .titleFill("#444")
+            .scale("20M")
+            .nutsYear(2016)
+            .nutsLvl(0)
+            .stat( { eurostatDatasetCode:"migr_eipre", filters: {time: 2020, citizen : "TOTAL", age : "TOTAL", sex : "T" },unitText: "persons" } )
+            .classifMethod("threshold").threshold([0,1000, 5000, 25000, 50000])
+            .tooltipShowFlags(false)
+            .legend({ x:10, y:180, title: "Persons apprehended", labelDecNb: 0 })
+
+            if (window.innerWidth > 800) {
+                map.insets("default")
+            } else {
+                // settings for smaller devices
+                map.legend({ labelDecNb:0, x: window.innerWidth - 80, y:5 })
+                .titleFontSize(12)
+                .botTxtFontSize(6)
+                .tooltip({fontSize:10})
+                .legend({labelFontSize:9})
+            }
+
+            map.build();
+    </script>
+</body>
+
+</html>
