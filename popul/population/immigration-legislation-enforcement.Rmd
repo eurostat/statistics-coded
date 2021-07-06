@@ -9,38 +9,54 @@ output:
     theme: paper
     highlight: pygments
     code_folding: "hide"
-    includes:
-      after_body: footer.html
+#    includes:
+#      after_body: footer.html
 ---
 
 Welcome to this *statistics coded* notebook. This notebook developed with Rmd will allow to reproduce the graphics presented in the Statistics Explained article on [Enforcement of Immigration Legislation statistics](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Enforcement_of_immigration_legislation_statistics). 
 
 
 <center>
-![EIL main Indicators](main_image.jpg)
+![EIL main Indicators](https://ec.europa.eu/eurostat/statistics-explained/images/thumb/e/e0/Non-EU_citizens_subject_to_immigration_law_enforcement%2C_2019_number_MI20.jpg/500px-Non-EU_citizens_subject_to_immigration_law_enforcement%2C_2019_number_MI20.jpg)
 </center>
 
 
 This article presents indicators on the enforcement of immigration legislation. It provides statistics on: third country or non-European Union (EU) citizens who were refused entry at the external borders of the EU-27 ^[EU aggregates are computed as the sum of the national statistics available for the EU Member States. It is possible that the statistics for the EU involve some double counting of individuals if they are found to be illegally present in more than one Member State.]; non-EU citizens who were illegally present on the territory of an EU Member State; and non-EU citizens who were ordered to leave the territory of an EU Member State ^[Statistics on the enforcement of immigration legislation refer to the concept of external borders for all EU Member States and EFTA countries, even if some of these are not in the Schengen area. The external borders of the Schengen area do not coincide with the external borders of the EU Member States due to: opt-outs for Ireland from the Schengen area; Bulgaria, Croatia, Cyprus and Romania are not yet members of the Schengen area; Iceland, Liechtenstein, Norway and Switzerland are part of the Schengen area but are not members of the EU.]. Each of these indicators can be regarded as an official record of persons subject to the enforcement of EU immigration legislation, providing a general overview of the outcomes of territorial surveillance and control procedures. 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning=F,message=F, fig.width = 10, fig.height = 6, cache=T)
+```{r setup,warning=F,message=F}
+knitr::opts_chunk$set(warning=F,message=F, fig.width = 10, fig.height = 6, cache=F)
 library(data.table)
 library(eurostat)
 library(plotly)
 library(tmap)
 library(tidyverse)
 library(DT)
-library(formatR)
+#library(formatR)
 ```
 
 ```{r, warning=F}
-ref_tot <- setDT(get_eurostat("migr_eirfs"))
-app_tot<- setDT(get_eurostat("migr_eipre"))
-ord_tot <- setDT(get_eurostat("migr_eiord"))
-ret_tot <- setDT(get_eurostat("migr_eirtn"))
-ret_type <- setDT(get_eurostat("migr_eirt_vol"))
-ret_ass <- setDT(get_eurostat("migr_eirt_ass"))
+countries <- setDT(get_eurostat_dic("geo")) %>%
+  setnames("code_name","geo")
+
+read_data <- function(table, names=countries){
+  name <- copy(names)
+  dt <- setDT(get_eurostat(table))%>%
+    left_join(name, by = "geo")%>%
+    select(-geo)%>%
+    rename(geo=full_name)
+  
+  setnames(name,"geo","citizen")
+  dt <- dt %>%
+    left_join(name, by="citizen")
+  return(dt)
+}
+
+ref_tot <- read_data("migr_eirfs")
+app_tot<- read_data("migr_eipre")
+ord_tot <- read_data("migr_eiord")
+ret_tot <- read_data("migr_eirtn")
+ret_type <- read_data("migr_eirt_vol")
+ret_ass <- read_data("migr_eirt_ass")
 
 map <- get_eurostat_geospatial(
   output_class = "sf",
@@ -52,22 +68,24 @@ map <- get_eurostat_geospatial(
 ```
 ***
 
-# Non-EU citizens subject to the enforcement of immigration legislation in EU Member States, 2009-2019
-```{r,fig.cap="Non-EU citizens subject to the enforcement of immigration legislation in EU Member States EU28, 2009-2019 (number)"}
+# Non-EU citizens subject to the enforcement of immigration legislation in EU Member States, 2010-2020
+```{r,fig.cap="Non-EU citizens subject to the enforcement of immigration legislation in EU Member States EU27_2020, 2010-2020 (number)"}
 
-refused <- ref_tot[geo == "EU28" & reason == "TOTAL" & indic_mg == "TOT_REF" & !(citizen %in% c("TOTAL","EUR_OTH","AME","AFR","ASI","EUR","OCE")), sum(values, na.rm = T),time]
+refused <- ref_tot[geo == "European Union - 27 countries (from 2020)" & reason == "TOTAL" & indic_mg == "TOT_REF" & citizen == "TOTAL", .(time,values)]
+setnames(refused, "values","refused")
 
-apprehended <- app_tot[geo == "EU28" & !(citizen %in% c("TOTAL","EUR_C_E_OTH","AME","AFR","ASI","EUR","OCE")) & age == "TOTAL" & sex == "T", sum(values, na.rm = T),time]
+apprehended <- app_tot[geo == "European Union - 27 countries (from 2020)" & citizen == "TOTAL" & age == "TOTAL" & sex == "T", .(time,values)]
+setnames(apprehended, "values","apprehended")
 
-ordered <- ord_tot[geo == "EU28" & sex == "T" & !(citizen %in% c("TOTAL","EUR_C_E_OTH","AME","AFR","ASI","EUR","OCE")) & age == "TOTAL", sum(values, na.rm =T ),time]
+ordered <- ord_tot[geo == "European Union - 27 countries (from 2020)" & sex == "T" & citizen == "TOTAL" & age == "TOTAL", .(time, values)]
+setnames(ordered, "values","ordered")
 
-returned <- ret_tot[geo == "EU28" & sex == "T" & !(citizen %in% c("TOTAL","EUR_C_E_OTH","EUR_OTH","AME","AFR","ASI","EUR","OCE")) & age == "TOTAL" & indic_mg == "TOT_RET", sum(values, na.rm =T ),time]
+returned <- ret_tot[geo == "European Union - 27 countries (from 2020)" & sex == "T" & citizen =="TOTAL" & age == "TOTAL" & indic_mg == "TOT_RET", .(time,values)]
+setnames(returned, "values","returned")
 
-dt <- copy(refused)
-dt[,apprehended := apprehended[,V1]]
-dt[,ordered := ordered[1:8,V1]]
-dt[,returned := returned[1:8,V1]]
-setnames(dt,"V1","refused")
+dt <- left_join(refused, apprehended)%>%
+  left_join(ordered)%>%
+  left_join(returned)
 
 plot_ly(dt, x = ~time,y= ~refused,
                name = "Refused",type = "scatter",mode = 'lines+markers') %>%
@@ -77,7 +95,7 @@ plot_ly(dt, x = ~time,y= ~refused,
   layout(paper_bgcolor='gray20',
            plot_bgcolor='gray87',
            xaxis = list(color = 'black',tickangle = 0),
-           yaxis = list(color = 'black', title = "Persons")
+           yaxis = list(color = 'black', title = "Persons",exponentformat="none",separatethoudands = TRUE)
     ) %>%
   layout(hovermode = "x unified")
 
@@ -87,57 +105,44 @@ plot_ly(dt, x = ~time,y= ~refused,
 
 
 ***
-# Non-EU citizens found to be illegally present 
+# Non-EU citizens found to be illegally present in the EU territory
 
 ## Overview {.tabset .tabset-fade .tabset-pills}
 ### Map
 ```{r fig.width = 9, fig.height = 5}
-tmap_mode("view")
-app_map <- app_tot[time == "2020-01-01" & !(citizen %in% c("TOTAL","EUR_C_E_OTH","AME","AFR","ASI","EUR","OCE")) & age == "TOTAL" & sex == "T", sum(values, na.rm = T),geo]
-setnames(app_map,"V1","Apprehended")
-
-map <- left_join(map, app_map, by="geo")%>%
-  tm_shape() +
-  tm_fill("Apprehended",
-    popup.vars = c("Apprehended","NUTS_ID", "NUTS_NAME"),
-    palette = "Oranges", 
-    breaks = c(0,1000, 5000, 25000, 50000, Inf),
-    title = "Persons found to be illegally present"
-  ) +
-  tm_borders() +
-  tm_layout(bg.color = "lightblue")
-
-map
+# print("toto")
+htmltools::includeHTML("immigration-legislation-js-map.html")
 ```
 
 ### Chart
-```{r, fig.cap = 'test'}
-app <- app_tot[!(geo %in% c("EU27_2020","EU28")) & !(citizen %in% c("TOTAL","EUR_C_E_OTH","AME","AFR","ASI","EUR","OCE")) & age == "TOTAL" & sex == "T",]
-app[!(geo %in% c("DE","EL","ES","FR","HU")), geo := "OTH_MS"]
-app <- app[,sum(values,na.rm = T), .(geo, time)]
-app <- dcast(app, time~geo, value.var = "V1")
+```{r, fig.cap = 'Non-EU citizens found to be illegally present in the five most affected EU Member States'}
+app <- app_tot[!(geo %in% c("European Union - 27 countries (from 2020)","European Union - 28 countries (2013-2020)","United Kingdom","Switzerland","Liechtenstein","Norway","Iceland")) & citizen == "TOTAL" & age == "TOTAL" & sex == "T",]
+app[!(geo %in% c("Germany (until 1990 former territory of the FRG)","Greece","Spain","France","Hungary")), geo := "OTH_MS"]
+app <- app[,.(geo, time, values)]
+app <- dcast(app, time~geo, value.var = "values", fun.aggregate = sum)
 
-plot_ly(app, x = ~time,y= ~DE,
+plot_ly(app, x = ~time,y= ~`Germany (until 1990 former territory of the FRG)`,
                name = "Germany",type = "scatter",mode = 'lines+markers') %>%
-  add_trace(y = ~EL, name = 'Greece', mode = 'lines+markers') %>%
-  add_trace(y = ~ES, name = 'Spain', mode = 'lines+markers') %>%
-  add_trace(y = ~FR, name = 'France', mode = 'lines+markers') %>%
-  add_trace(y = ~HU, name = 'Hungary', mode = 'lines+markers') %>%
+  add_trace(y = ~Greece, name = 'Greece', mode = 'lines+markers') %>%
+  add_trace(y = ~Spain, name = 'Spain', mode = 'lines+markers') %>%
+  add_trace(y = ~France, name = 'France', mode = 'lines+markers') %>%
+  add_trace(y = ~Hungary, name = 'Hungary', mode = 'lines+markers') %>%
   add_trace(y = ~OTH_MS, name = 'Other Member States', mode = 'lines+markers') %>%
   layout(paper_bgcolor='gray20',
            plot_bgcolor='gray87',
            xaxis = list(color = 'black',tickangle = 0),
-           yaxis = list(color = 'black', title = "Persons")
+           yaxis = list(color = 'black', title = "Persons",exponentformat="none",separatethoudands = TRUE)
     ) %>%
   layout(hovermode = "x unified")
 
 ```
+
 ## Non-EU citizens found to be illegally present — by sex and age{.tabset .tabset-fade .tabset-pills}
 ### Bar chart
 
-```{r,fig.cap="Non-EU citizens found to be illegally present in the EU-27, by sex and age - 2019"}
-app_bar <- app_tot[geo == "EU28" & !(citizen %in% c("TOTAL","EUR_C_E_OTH","AME","AFR","ASI","EUR","OCE")) & !(age %in% c("TOTAL","UNK","Y_LT18")) & sex != "T" & time == "2019-01-01", sum(values, na.rm = T),.(sex,age)] %>% 
-  dcast( age~sex, value.var = "V1")
+```{r,fig.cap="Non-EU citizens found to be illegally present in the EU-27, by sex and age"}
+app_bar <- app_tot[geo == "European Union - 27 countries (from 2020)" & citizen == "TOTAL" & !(age %in% c("TOTAL","UNK","Y_LT18")) & sex != "T" & (time=="2020-01-01" | time=="2010-01-01"), sum(values, na.rm = T),.(time,sex,age)] %>% 
+  dcast( age~sex+time, value.var = "V1")
 
 app_bar[age == "Y18-34", age := '18-34 years']
 app_bar[age == "Y14-17", age := '14-17 years']
@@ -145,25 +150,57 @@ app_bar[age == "Y_LT14", age := '< 14 years']
 app_bar[age == "Y_GE35", age := '>= 35 years']
 app_bar <- app_bar[c(3,2,1,4)]
 
-
-tit3 <- "Non-EU citizens found to be illegally present in the EU-27, by sex and age - 2019"
-plot_ly(app_bar, x = ~F, y = ~age, type = 'bar', orientation = 'h', name = 'Women',
-        marker = list(color = 'gold',
+tit3 <- "Non-EU citizens found to be illegally present in the EU-27, by sex and age - 2020 and 2010"
+plot_ly(app_bar, x = ~`F_2020-01-01`, y = ~age, type = 'bar', orientation = 'h', name = 'Women 2020',
+        marker = list(color = 'white',
                       line = list(color = 'gold',
-                                  width = 3)))%>%
-  add_trace(x = ~M, name = 'Men',
+                                  width = 3)),
+        text = format(app_bar[,`F_2020-01-01`], 
+                          big.mark = " ", 
+                          scientific = FALSE),
+            hoverinfo = "name+text+y")%>%
+  add_trace(x = ~`F_2010-01-01`, y = ~age, type = 'bar', orientation = 'h', name = 'Women 2010',
+        marker = list(color = 'orange',
+                      line = list(color = 'orange',
+                                  width = 3)),
+        text = format(app_bar[,`F_2020-01-01`], 
+                          big.mark = " ", 
+                          scientific = FALSE),
+            hoverinfo = "name+text+y")%>%
+  add_trace(x = ~-`M_2020-01-01`, name = 'Men 2020',
+            marker = list(color = 'white',
+                          line = list(color = 'royalblue',
+                                      width = 3)),
+            text = format(app_bar[,abs(`M_2020-01-01`)],
+                          big.mark = " ",
+                          scientific = FALSE),
+            hoverinfo = "name+text+y")%>%
+  add_trace(x = ~-`M_2010-01-01`, name = 'Men 2010',
             marker = list(color = 'darkblue',
                           line = list(color = 'darkblue',
-                                      width = 3)))%>%
-  layout(barmode = 'stack',
-         xaxis = list(title = "Number of persons"),
-         yaxis = list(title ="Age"),
+                                      width = 3)),
+            text = format(app_bar[,abs(`M_2010-01-01`)],
+                          big.mark = " ",
+                          scientific = FALSE),
+            hoverinfo = "name+text+y")%>%
+  layout(barmode = 'overlay',
+         xaxis = list(range = c(-350000, 100000),
+                      exponentformat = "none",
+                      separatethousands = TRUE, 
+                      tickvals = seq(-350000, 100000, 50000), 
+                      ticktext = format(abs(seq(-350000, 100000, 50000)), 
+                                        big.mark=" ", 
+                                        scientific = FALSE), 
+                      title = "Number of persons"),
+         yaxis = list(categoryorder = "array", 
+                      categoryarray = app_bar[,rev(age)], 
+                      title ="Age",exponentformat="none",separatethoudands = TRUE),
          title=tit3)
 ```
 
 ### Table
 
-**Top 20 countries of citizenship of non-EU citizens found to be illegally present in the EU-27, 2014-2019**
+**Top 20 countries of citizenship of non-EU citizens found to be illegally present in the EU-27**
 ```{r}
 app_tab <- app_tot[!(citizen %in% c("TOTAL","EUR_C_E_OTH","AME","AFR","ASI","EUR","OCE")) & age == "TOTAL" & sex == "T" & time <= "2020-01-01" & time >= "2015-01-01",sum(values,na.rm = T),.(citizen,time) ]
 
@@ -177,7 +214,7 @@ app_tab <-  dcast(app_tab, citizen~time, value.var = "V1")
 
 app_tab <- left_join(top20, app_tab)
 
-datatable(app_tab[1:20], rownames = FALSE, filter="top", options = list(pageLength = 5, scrollX=T) )
+datatable(app_tab[1:20], rownames = FALSE, filter="top", options = list(pageLength = 10, scrollX=T))
 ```
 
 
@@ -190,7 +227,7 @@ datatable(app_tab[1:20], rownames = FALSE, filter="top", options = list(pageLeng
 ord_tab <-  ord_tot[sex == "T" & citizen == "TOTAL" & age == "TOTAL"& time >= "2015-01-01" ,sum(values,na.rm=T),.(geo,time)]
 ord_tab[,time:=substring(time,1,4)]
 ord_tab <-  dcast(ord_tab, geo~time, value.var = "V1")
-datatable(ord_tab, rownames = FALSE, filter="top", options = list(pageLength = 5, scrollX=T) )
+datatable(ord_tab, rownames = FALSE, filter="top", options = list(pageLength = 10, scrollX=T) )
 ```
 
 
@@ -198,21 +235,23 @@ datatable(ord_tab, rownames = FALSE, filter="top", options = list(pageLength = 5
 **Top 20 countries of citizenship of non-EU citizens ordered to leave the EU-27, 2020 and 2019** 
 
 ```{r,fig.cap="Top 20 countries of citizenship of non-EU citizens ordered to leave the EU-27, 2020 and 2019"}
-ord_tab <-  ord_tot[geo == "EU28" & sex == "T" & age == "TOTAL"& !(citizen %in% c("TOTAL","EUR_C_E_OTH","AME","AFR","ASI","EUR","OCE")) & time <= "2019-01-01" & time >= "2018-01-01",sum(values,na.rm = T),.(citizen,time)]
+ord_tab <-  ord_tot[geo == "European Union - 27 countries (from 2020)" & sex == "T" & age == "TOTAL"& !(citizen %in% c("TOTAL","EUR_C_E_OTH","AME","AFR","ASI","EUR","OCE")) & time <= "2019-01-01" & time >= "2018-01-01",sum(values,na.rm = T),.(full_name,time)]
 ord_tab[,time:=substring(time,1,4)]
 top20 <- ord_tab[time == "2019",]
 top20 <- top20[order(-V1),]
-top20 <- top20[1:20, .(citizen)]
+top20 <- top20[1:20, .(full_name)]
 
 ord_tab <- left_join(top20,ord_tab)
-ord_tab <-  dcast(ord_tab, citizen~time, value.var = "V1")
+ord_tab <-  dcast(ord_tab, full_name~time, value.var = "V1")
 setnames(ord_tab, names(ord_tab), c("citizen","year_1","year"))
+ord_tab <- ord_tab[order(-year)]
+ord_tab[,citizen := factor(citizen,levels = ord_tab[,citizen])]
 
 plot_ly(ord_tab, x = ~citizen, y = ~year_1, type = 'bar', name = '2019')%>% 
   add_trace(y = ~year, name = '2020')%>%
   layout(barmode = 'group',
          xaxis = list(title = "Citizenship"),
-         yaxis = list(title ="Number of persons"),
+         yaxis = list(title ="Number of persons",exponentformat="none",separatethoudands = TRUE),
          hovermode='x unified')
 
 ```
@@ -223,24 +262,27 @@ plot_ly(ord_tab, x = ~citizen, y = ~year_1, type = 'bar', name = '2019')%>%
 # Returns of non-EU citizens{.tabset .tabset-fade .tabset-pills}
 ## Overview
 ```{r,fig.cap="Top 20 countries of citizenship of non-EU citizens returned outside the EU-27, 2018 and 2019"}
-ret_tab <-  ret_tot[geo == "EU28" & sex == "T" & !(citizen %in% c("TOTAL","EUR_C_E_OTH","EUR_OTH","AME","AFR","ASI","EUR","OCE")) & age == "TOTAL" & indic_mg == "RET_THRD" & (time =="2019-01-01" | time == "2018-01-01"), sum(values, na.rm =T ),.(citizen,time)]
+ret_tab <-  ret_tot[geo == "European Union - 27 countries (from 2020)" & sex == "T" & !(citizen %in% c("TOTAL","EUR_C_E_OTH","EUR_OTH","AME","AFR","ASI","EUR","OCE")) & age == "TOTAL" & indic_mg == "RET_THRD" & (time =="2019-01-01" | time == "2018-01-01"), sum(values, na.rm =T ),.(full_name,time)]
 ret_tab[,time:=substring(time,1,4)]
 top20 <- ret_tab[time == "2019",]
 top20 <- top20[order(-V1),]
-top20 <- top20[1:20, .(citizen)]
+top20 <- top20[1:20, .(full_name)]
 
 ret_tab <- left_join(top20,ret_tab)
-ret_tab <-  dcast(ret_tab, citizen~time, value.var = "V1")
+ret_tab <-  dcast(ret_tab, full_name~time, value.var = "V1")
 setnames(ret_tab, names(ret_tab), c("citizen","year_1","year"))
+ret_tab <- ret_tab[order(-year)]
+ret_tab[,citizen:=factor(citizen, levels = ret_tab[,citizen])]
 
 plot_ly(ret_tab, x = ~citizen, y = ~year_1, type = 'bar', name = '2018')%>% 
   add_trace(y = ~year, name = '2019')%>%
   layout(barmode = 'group',
          xaxis = list(title = "Citizenship"),
-         yaxis = list(title ="Number of persons"),
+         yaxis = list(title ="Number of persons",exponentformat="none",separatethoudands = TRUE),
          hovermode='x unified')
 
 ```
+
 ## Types of returns and assistance received
 
 ```{r,fig.cap="Non-EU citizens returned outside the EU-27 or EFTA countries, by type of return (2020)"}
@@ -254,7 +296,7 @@ plot_ly(ret_tab2, x = ~geo, y = ~ENFORCE, type = 'bar', name = 'Enforced return'
   add_trace(y = ~VOLUNT, name = 'Voluntary return')%>%
     layout(barmode = 'stack',
            xaxis = list(title = ""),
-           yaxis = list(title ="%"),
+           yaxis = list(title ="%",exponentformat="none",separatethoudands = TRUE),
            hovermode='x unified')
 
 ```
@@ -272,7 +314,7 @@ plot_ly(ret_tab3, x = ~geo, y = ~ASSIST, type = 'bar', name = 'Assisted return')
   add_trace(y = ~UNK, name = 'Unkown')%>%
     layout(barmode = 'stack',
            xaxis = list(title = ""),
-           yaxis = list(title ="%"),
+           yaxis = list(title ="%",exponentformat="none",separatethoudands = TRUE),
            hovermode='x unified')
 ```
 
@@ -282,35 +324,53 @@ plot_ly(ret_tab3, x = ~geo, y = ~ASSIST, type = 'bar', name = 'Assisted return')
 # Non-EU citizens refused entry into the EU-27{.tabset .tabset-fade .tabset-pills}
 ## Overview
 ```{r,fig.cap="Share of non-EU citizens refused entry into the EU-27, 2020"}
-ref_pie <- ref_tot[geo !="EU27_2020" & time == "2020-01-01" & reason == "TOTAL" & indic_mg == "TOT_REF" ,.(geo,values) ]
-plot_ly( data = ref_pie, labels = ~geo, values = ~values, type = "pie", textinfo = "label+percent", insidetextorientation = "radial" ) 
+ref_pie <- copy(ref_tot[geo !="European Union - 27 countries (from 2020)" & time == "2020-01-01" & reason == "TOTAL" & indic_mg == "TOT_REF" ,.(geo,values) ])
+ref_pie[!(geo %in% c("Hungary","Poland","Croatia","Romania","Bulgaria")), geo := "Other"]
+
+colors_ <- c('rgb(255,153,51)', 'rgb(255,128,0)', 'rgb(255,178,102)', 'rgb(255,204,153)', 'rgb(0,102,204)','rgb(102,178,255)')
+plot_ly( data = ref_pie, labels = ~geo, values = ~values, type = "pie", textinfo = "label+percent", insidetextorientation = "radial" ,
+         marker=list(colors=colors_)) 
 ```
 
 ## Bar charts
 
 ```{r,fig.cap="Top 20 countries of citizenship of non-EU citizens refused entry into the EU-27, by type of border, 2019"}
-ref_tab <-  ref_tot[!(geo %in% c("EU28","EU27_2020")) &reason == "TOTAL" & !(citizen %in% c("TOTAL","EUR_OTH","AME","AFR","ASI","EUR","OCE")) & time == "2019-01-01", sum(values, na.rm = T), .(citizen, indic_mg)]
+ref_tab <-  ref_tot[!(geo %in% c("European Union - 27 countries (from 2020)","European Union - 27 countries (from 2020)")) &reason == "TOTAL" & !(citizen %in% c("TOTAL","EUR_OTH","AME","AFR","ASI","EUR","OCE")) & time == "2019-01-01", sum(values, na.rm = T), .(full_name, indic_mg)]
 
 top20 <- ref_tab[indic_mg=="TOT_REF"]
 top20 <- top20[order(-V1)]
-top20 <- top20[1:20,.(citizen)]
+top20 <- top20[1:20,.(full_name)]
 
 ref_tab <- left_join(top20, ref_tab)
-ref_tab <-  dcast(ref_tab, citizen~indic_mg, value.var = "V1")
+ref_tab <-  dcast(ref_tab, full_name~indic_mg, value.var = "V1")
+ref_tab <- ref_tab[order(-TOT_REF)]
+ref_tab[,full_name:=factor(full_name, levels = ref_tab[,full_name])]
 
-plot_ly(ref_tab, x = ~citizen, y = ~REF_AIR, type = 'bar', name = 'Air')%>% 
+plot_ly(ref_tab, x = ~full_name, y = ~REF_AIR, type = 'bar', name = 'Air')%>% 
     add_trace(y = ~REF_LAND, name = 'Land')%>%
   add_trace(y = ~REF_SEA, name = 'Sea')%>%
     layout(barmode = 'stack',
            xaxis = list(title = ""),
-           yaxis = list(title ="%"),
+           yaxis = list(title ="%",exponentformat="none",separatethoudands = TRUE),
            hovermode='x unified')
 ```
 
 ***
 
 ```{r,fig.cap="Non-EU citizens refused entry into the EU-27, by grounds of entry refusal, 2019"}
-ref_tab2 <-  ref_tot[!(geo %in% c("EU28","EU27_2020")) &reason != "TOTAL" &indic_mg == "TOT_REF" & !(citizen %in% c("TOTAL","EUR_OTH","AME","AFR","ASI","EUR","OCE")) & time == "2019-01-01", sum(values, na.rm = T), .(reason)]
+ref_tab2 <-  ref_tot[!(geo %in% c("European Union - 27 countries (from 2020)","European Union - 27 countries (from 2020)")) &reason != "TOTAL" &indic_mg == "TOT_REF" & !(citizen %in% c("TOTAL","EUR_OTH","AME","AFR","ASI","EUR","OCE")) & time == "2019-01-01", sum(values, na.rm = T), .(reason)]
+
+ref_tab2[reason == "ALERT",reason := "An alert has been issued"]
+ref_tab2[reason == "DOC_F",reason := "False travel document"]
+ref_tab2[reason == "DOC_NVAL",reason := "No valid travel document"]
+ref_tab2[reason == "FV_FRP",reason := "False Visa or Residence permit"]
+ref_tab2[reason == "NRP_NVV",reason := "Non valid visa or Residence permit"]
+ref_tab2[reason == "NSUBS",reason := "No sufficient means of subsistence"]
+ref_tab2[reason == "PB_THRT",reason := "Person considered to be a public threat"]
+ref_tab2[reason == "PERM_3",reason := "Person already stayed 3 months in a 6-months period"]
+ref_tab2[reason == "STAY_NJ",reason := "Purpose and conditions of stay not justified"]
+ref_tab2 <- ref_tab2[order(-V1)]
+ref_tab2[,reason:=factor(reason, levels = ref_tab2[,reason])]
 
 plot_ly(ref_tab2, x = ~reason, y = ~V1, type = 'bar', name = 'Reason')%>% 
     layout(barmode = 'stack',
