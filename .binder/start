@@ -1,2 +1,3 @@
 #!/bin/bash
 git clone https://github.com/eurostat/statistics-coded.git
+exec "$@"
