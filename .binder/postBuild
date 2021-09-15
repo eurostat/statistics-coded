@@ -16,3 +16,6 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager
 # see example at: https://github.com/binder-examples/r_with_python/blob/master/binder/postBuild
 # Remove output from Jupyter notebooks
 #jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace index.ipynb
+
+# Import the workspace into JupyterLab
+jupyter lab workspaces import .binder/workspace.json
