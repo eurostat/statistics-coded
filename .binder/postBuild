@@ -18,4 +18,4 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager
 #jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace index.ipynb
 
 # Import the workspace into JupyterLab
-jupyter lab workspaces import .binder/workspace.json
+#jupyter lab workspaces import .binder/workspace.json
