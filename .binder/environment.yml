@@ -3,6 +3,7 @@ channels:
   - defaults
   - conda-forge/label/broken
 dependencies:
+#  - gdal
   - ipython
   - pip
   - matplotlib
@@ -14,6 +15,20 @@ dependencies:
   - seaborn
   - jupyter_contrib_nbextensions
   - ipywidgets
-#  - gdal
+  - google-colab
+  - folium
+  - geopandas
+  - selenium
+  - pandasdmx
+  - geojson
+  - shapely
+  - pyproj
+  - geopy
+  - plotly
+  - descartes
+  - rtree
   - pip:
-    - -r file:requirements.txt
+    - eurostatapiclient
+    - jsonstat.py
+    - dbnomics
+    - eurostat
