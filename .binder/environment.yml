@@ -27,6 +27,7 @@ dependencies:
   - plotly
   - descartes
   - rtree
+  - notebook
   - pip:
     - eurostatapiclient
     - jsonstat.py
