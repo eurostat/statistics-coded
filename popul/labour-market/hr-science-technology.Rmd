@@ -1,0 +1,110 @@
+---
+title: "Human resources in science and technologies"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+partial reproduction of the [Statistics Explained](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Human_resources_in_science_and_technology&oldid=395960) article 
+
+### Configuration values and libraries
+
+```{r config}
+library(restatapi)
+library(data.table)
+library(ggplot2)
+
+year<-2020
+age_group1<-'25 to 64' 
+age_group2<-'15 to 74'
+top<-3
+threshold<-2/3
+```
+
+### Calculation for the 1st paragraph of the article
+
+
+```{r calculation}
+eu_cc<-get("cc",envir=.restatapi_env)$EU27_2020
+efta_cc<-c("CH","NO","IS","LI")
+#get_eurostat_dsd("hrst_st_nocc")
+value0<-get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("HRSTO$","EU27_2020","THS","TOTAL",gsub(" to ","-",age_group1)),exact_match=F)$values
+value1<-get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("HRSTO$","EU27_2020","THS","TOTAL",gsub(" to ","-",age_group2)),exact_match=F)$values
+value2<-(get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("HRSTO$","EU27_2020","THS","TOTAL",gsub(" to ","-",age_group2)),exact_match=F)$values/get_eurostat_data("hrst_st_nocc",date_filter=(year-1),filters=c("HRSTO$","EU27_2020","THS","TOTAL",gsub(" to ","-",age_group2)),exact_match=F)$values-1)*100
+value2_text<-if (value2>0) {'increase'} else {'decrease'}
+value3<-(get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("HRSTO$","EU27_2020","THS","TOTAL",gsub(" to ","-",age_group1)),exact_match=F)$values/get_eurostat_data("hrst_st_nocc",date_filter=(year-1),filters=c("HRSTO$","EU27_2020","THS","TOTAL",gsub(" to ","-",age_group1)),exact_match=F)$values-1)*100
+value3_text<-if (value3>0) {'increase'} else {'decrease'}
+value4<-get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("HRSTO$","EU27_2020","^prof","^perc",gsub(" to ","-",age_group1)),exact_match=F,ignore.case=T)$values
+value4_sub1<-get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("EU27_2020","THS","TOTAL","^Scien",gsub(" to ","-",age_group1)),exact_match=F)$values/value0*100
+value4_sub2<-(get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("HRSTO$","EU27_2020","THS","OC2",gsub(" to ","-",age_group1)),exact_match=F)$values-get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("EU27_2020","THS","TOTAL","^Scien",gsub(" to ","-",age_group1)),exact_match=F)$values)/value0*100
+value5<-get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("HRSTO$","EU27_2020","^tech","^perc",gsub(" to ","-",age_group1)),exact_match=F,ignore.case=T)$values
+value6<-setorder(get_eurostat_data("hrst_st_nocc",date_filter=year,filters=list(geo=eu_cc,isco08="oc2",category="hrsto",unit="pc",age=gsub(" to ","-",age_group1)),exact_match=F,name=F,ignore.case=T,label=T,verbose=F,stringsAsFactors=F),-values)[]
+value6$geo<-gsub(" \\(.*\\)","",value6$geo)
+value6_text<-gsub("(.*),","\\1 and",lapply(value6[1:top,.(txt=paste0(geo," (",format(values,1)," %)"))],paste,collapse=", "),perl=T)
+value7<-value6[values>threshold*100 & seq_len(.N)>3]
+value7_text<-gsub("(.*),","\\1 and",lapply(value7[,.(txt=paste0(geo," (",format(values,1)," %)"))],paste,collapse=", "),perl=T)
+
+```
+
+
+### The 1st paragraph
+
+**Tweet:** In `r year`, over ~~67~~ `r round(value0/1000)` million people aged from `r age_group1` were employed in science and technology (HRSTO) in the EU.
+
+This article provides information on statistics on human resources in science and technology (HRST)) which help us to better understand the demand for and the supply of people with strong qualifications in science and technology. It describes the current stock of HRST in the European Union), the EFTA) countries and the candidate countries and gives information on the current and future supply of highly skilled people from universities and other specialised education institutions in the HRST field.
+
+Investment in research, development, education and skills is a key policy area for the EU as it is essential for economic growth and for the development of a knowledge-based economy. There is, therefore, a great need to measure and analyse the most highly skilled part of the labour force, both within the EU and internationally.
+Professionals and technicians employed in science and technology occupations
+
+In `r year`, ~~72.9~~ `r round(value1/1000,1)` million people in the EU aged from `r age_group2` were employed in science and technology (and therefore considered as human resources in science and technology by occupation — HRSTO (see Figure 5 below)), an `r  value2_text ` of ~~1.7~~ `r abs(round(value2,1))` % compared with `r year-1`.
+
+Within this ~~72.9~~ `r round(value1/1000,1)` million, ~~67.7~~ `r round(value0/1000,1)` million people were in the `r age_group1` age group, an `r  value3_text` of ~~1.9~~ `r abs(round(value3,1))` % compared with `r year-1`. From this broad group ~~57.0~~ `r value4` % were `professionals` (~~22.6%~~ `r round(value4_sub1,1)`% of ‘Scientists and Engineers’ and ~~34.4%~~ `r round(value4_sub2,1)`% of ‘Other professionals (other than SE)’) and ~~43.0%~~ `r value5`% were ‘technicians’. However, the percentage differed greatly between Member States. ~~Luxembourg (72.3 %), Lithuania (72.1 %) and Romania (70.8 %)~~ `r value6_text` reported the highest proportion of professionals. Other Member States with more than two thirds professionals were ~~Greece (70.2 %), Ireland (69.0 %) and Portugal (67.0 %)~~ `r value7_text` (see Figure 1).
+
+
+### Prepare data for the plot
+```{r get plot data}
+dt_sep<-data.table::data.table(geo=c(" ","  ","   "),group=rep("Scientists and Engineers",3),values=rep(NA,3),pct=rep(NA,3),name=c(" ","  ","   "))
+dt_fig1<-get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("THS","HRSTO","^Scient","OC",gsub(" to ","-",age_group1)),exact_match=F,label=F)[geo!="EA19",c("category","isco08","geo","values")]
+dt_fig1<-dt_fig1[grepl("^SE",category),isco08:=category]
+dt_fig1<-dcast(dt_fig1,geo ~ isco08,value.var="values")[,OC2_SE:=OC2-SE]
+setnames(dt_fig1,c("geo","Professionals","Technicians and associate professionals","Scientists and Engineers","Other professionals (other than SE)"))
+dt_fig1<-melt(dt_fig1[,c(1,3:5)],id.vars="geo")[]
+setnames(dt_fig1,c("geo","group","values"))
+dt_fig1[,pct:=values/sum(values)*100,by=geo]
+dsd<-as.data.table(get_eurostat_dsd("hrst_st_nocc"))[concept=="GEO",c("code","name")]
+dt_fig1<-merge(dt_fig1,dsd,by.x="geo",by.y="code",all.x=T)
+dt_fig1$name<-gsub(" \\(.*\\)","",dt_fig1$name)
+dt_fig1$name<-gsub("^Eu.*","EU",dt_fig1$name)
+name_ord<-dt_fig1[(geo %in% eu_cc)&grepl("^Scien",group)]
+name_ord_eu<-name_ord[order(pct)]$name
+name_ord<-dt_fig1[(geo %in% efta_cc)&grepl("^Scien",group)]
+name_ord_efta<-name_ord[order(pct)]$name
+name_ord<-dt_fig1[!(geo %in% c(efta_cc,eu_cc,"EU27_2020"))&grepl("^Scien",group)]
+name_ord_othr<-name_ord[order(pct)]$name
+name_ord<-c(name_ord_othr,' ',name_ord_efta,'  ',name_ord_eu,'   ','EU')
+dt_fig1<-rbind(dt_fig1,dt_sep)
+dt_fig1$name<-factor(dt_fig1$name,levels=name_ord)
+gr_ord<-c("Technicians and associate professionals","Other professionals (other than SE)","Scientists and Engineers")
+dt_fig1$group<-factor(dt_fig1$group,levels=gr_ord)
+
+```
+
+### Plot the data
+```{r plot data, out.width=900, out.hight=1200}
+options(repr.plot.width=9, repr.plot.height=12,repr.plot.res=400)
+fig1_colors<-c("#FAA519","#286EB4","#F06423") #,"#F6A26B","#71A8DF",,"#FDDBA3","#FCC975"
+ggplot(dt_fig1, aes(x=name,y=pct,fill=group)) + theme_minimal() +
+  geom_bar(stat='identity',width=0.5)+
+  scale_fill_manual(values = fig1_colors)+
+  scale_y_continuous(limits=c(0,101),breaks=seq(0,100,10),label =  function(x) paste0(x, "%"))+
+  ggtitle("Figure 1: HRSTO by occupation, age 25-64, 2020 (%)") +
+  ylab("")+
+  xlab("")+
+  coord_flip()+
+  theme(legend.title = element_blank(),
+        legend.position= "bottom",
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank())+             
+  guides(fill=guide_legend(reverse=T))
+```
