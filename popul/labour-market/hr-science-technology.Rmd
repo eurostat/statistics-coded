@@ -65,7 +65,7 @@ Within this ~~72.9~~ `r round(value1/1000,1)` million, ~~67.7~~ `r round(value0/
 ### Prepare data for the plot
 ```{r get plot data}
 dt_sep<-data.table::data.table(geo=c(" ","  ","   "),group=rep("Scientists and Engineers",3),values=rep(NA,3),pct=rep(NA,3),name=c(" ","  ","   "))
-dt_fig1<-get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("THS","HRSTO","^Scient","OC",gsub(" to ","-",age_group1)),exact_match=F,label=F)[geo!="EA19",c("category","isco08","geo","values")]
+dt_fig1<-get_eurostat_data("hrst_st_nocc",date_filter=year,filters=c("THS","HRSTO","^Scient","OC",gsub(" to ","-",age_group1)),exact_match=F,label=F)[!(geo %in% c("EA19","EU15","EU28")),c("category","isco08","geo","values")]
 dt_fig1<-dt_fig1[grepl("^SE",category),isco08:=category]
 dt_fig1<-dcast(dt_fig1,geo ~ isco08,value.var="values")[,OC2_SE:=OC2-SE]
 setnames(dt_fig1,c("geo","Professionals","Technicians and associate professionals","Scientists and Engineers","Other professionals (other than SE)"))
@@ -98,7 +98,7 @@ ggplot(dt_fig1, aes(x=name,y=pct,fill=group)) + theme_minimal() +
   geom_bar(stat='identity',width=0.5)+
   scale_fill_manual(values = fig1_colors)+
   scale_y_continuous(limits=c(0,101),breaks=seq(0,100,10),label =  function(x) paste0(x, "%"))+
-  ggtitle("Figure 1: HRSTO by occupation, age 25-64, 2020 (%)") +
+  ggtitle(paste("Figure 1: HRSTO by occupation, age 25-64,",year,"(%)")) +
   ylab("")+
   xlab("")+
   coord_flip()+
