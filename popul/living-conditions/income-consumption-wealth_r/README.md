@@ -88,4 +88,5 @@ such a mapping.
 
 **Contact** 
 
-<a href="https://github.com/pierre-lamarche"><img src="https://github.com/pierre-lamarche.png" width="40"></a>
+[Email me](mailto:ESTAT-ICW@ec.europa.eu)
+
