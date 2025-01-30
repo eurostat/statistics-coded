@@ -51,7 +51,7 @@ This repository is organised into different folders, each of them corresponding 
 In particular, different Statistics Explained articles have been published in order to tackle the different 
 analytical and methodological issues such statistics raise. Hence, some of the folders contain pieces of 
 script that make it possible to generate the figures shown in the different articles, namely:
-* the script [**icw1.R**](icw1.R) for the graphs in the analytical article on [the interaction of household income, consumption and wealth](http://ec.europa.eu/eurostat/statistics-explained/index.php?title=Interaction_of_household_income,_consumption_and_wealth_-_statistics_on_main_results);
+* the script [**icw1.R**](icw1.R) for the graphs in the analytical article on [the joint distribution of household income, consumption and wealth](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Joint_distribution_of_household_income,_consumption_and_wealth_-_main_indicators);
 * the script [**icw2.R**](icw2.R) for the graphs in the background paper on [the methodological issues](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_-_methodological_issues);
 * the script [**icw3.R**](icw3.R) (together with the _country_order.csv_ file in folder [data/](data/)) for the graphs in the analytical article on [the statistics on taxation](http://ec.europa.eu/eurostat/statistics-explained/index.php/Interaction_of_household_income,_consumption_and_wealth_%E2%80%93_statistics_on_taxation).
 
@@ -71,8 +71,8 @@ applied according to the type of purchased good.
 
 On the one hand, the classification commonly used to describe households' consumption for the European 
 Household Budget Survey is the Classification of Individual Consumption According to Purpose 
-([COICOP](https://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=5)). 
-On the other hand, the [European Commission's Directorate-General for Taxation and Customs Union](https://ec.europa.eu/taxation_customs/home_en) disseminates some harmonised data on VAT tax rates in the European Union. 
+([COICOP](https://unstats.un.org/unsd/classifications/Econ/Download/COICOP_2018_pre_copy_edit_publication.pdf)). 
+On the other hand, the [European Commission's Directorate-General for Taxation and Customs Union](https://taxation-customs.ec.europa.eu/index_en) disseminates some harmonised data on VAT tax rates in the European Union. 
 The principle of the exercise is therefore to perform a mapping between the different classifications 
 so as to come up with an estimation of the tax rate applied to the products that households declare 
 having purchased in the Household Budget Survey. The scripts made available in this repository perform  
@@ -81,7 +81,7 @@ such a mapping.
 **<a name="References"></a>References**
 
 * Commission on the Measurement of Economic Performance and Social Progress (2008): 
-[**Final report**](https://ec.europa.eu/eurostat/documents/118025/118123/Fitoussi+Commission+report).
+[**Final report**](https://ec.europa.eu/eurostat/documents/8131721/8131772/Stiglitz-Sen-Fitoussi-Commission-report.pdf).
 
 * Lahti L., Huovari J., Kainu M., and Biecek, P. (2017): 
 [**Retrieval and analysis of Eurostat open data with the eurostat package**](https://journal.r-project.org/archive/2017/RJ-2017-019/RJ-2017-019.pdf), _The R Journal_, 9(1):385-392.
